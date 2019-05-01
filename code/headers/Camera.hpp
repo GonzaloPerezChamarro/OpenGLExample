@@ -5,7 +5,7 @@ namespace example
 {
 	class Camera
 	{
-	private:
+	public:
 		Camera();
 	};
 }

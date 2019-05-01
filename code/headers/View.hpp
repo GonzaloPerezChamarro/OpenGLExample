@@ -17,7 +17,7 @@ namespace example
 		unsigned width;
 		unsigned height;
 
-		std::vector<std::shared_ptr<Model>> models;
+		//std::vector<std::shared_ptr<Model>> models;
 
 	public:
 		View(Camera * camera, unsigned width, unsigned height);
@@ -26,6 +26,5 @@ namespace example
 
 		void update(float deltaTime);
 		void render();
-		//void input(SDL_Event e);
 	};
 }

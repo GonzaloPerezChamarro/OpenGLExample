@@ -1,10 +1,11 @@
-#pragma once
+#ifndef KERNEL_HEADER
+#define KERNEL_HEADER
+
 
 #include <memory>
 #include <chrono>
 
 #include "Window.hpp"
-#include "View.hpp"
 
 namespace example
 {
@@ -21,7 +22,6 @@ namespace example
 		Clock_Point last_time;
 		Time deltaTime;
 
-		View view;
 		Window window;
 
 		bool running;
@@ -31,8 +31,13 @@ namespace example
 
 		void execute();
 
+		void render();
+
+
 	private:
 
 		void handler();
 	};
 }
+
+#endif // KERNEL_HEADER

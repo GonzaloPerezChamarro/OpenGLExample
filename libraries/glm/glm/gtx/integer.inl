@@ -1,5 +1,11 @@
-/// @ref gtx_integer
-/// @file glm/gtx/integer.inl
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// OpenGL Mathematics Copyright (c) 2005 - 2014 G-Truc Creation (www.g-truc.net)
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Created : 2005-12-24
+// Updated : 2011-10-13
+// Licence : This source is under MIT License
+// File    : glm/gtx/integer.inl
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace glm
 {
@@ -47,7 +53,21 @@ namespace detail
 		x += (x >> 16);
 		return(x & 0x0000003f);
 	}
-}//namespace detail
+
+	template <>
+	struct compute_log2<false>
+	{
+		template <typename T>
+		GLM_FUNC_QUALIFIER T operator() (T const & Value) const
+		{
+#if(GLM_COMPILER & (GLM_COMPILER_VC | GLM_COMPILER_GCC))
+			return Value <= static_cast<T>(1) ? T(0) : T(32) - nlz(Value - T(1));
+#else
+			return T(32) - nlz(Value - T(1));
+#endif
+		}
+	};
+}//namespace _detail
 
 	// Henry Gordon Dietz: http://aggregate.org/MAGIC/
 /*
@@ -80,29 +100,29 @@ namespace detail
 	}
 
 	template <typename T, precision P>
-	GLM_FUNC_QUALIFIER tvec2<T, P> factorial(
-		tvec2<T, P> const & x)
+	GLM_FUNC_QUALIFIER detail::tvec2<T, P> factorial(
+		detail::tvec2<T, P> const & x)
 	{
-		return tvec2<T, P>(
+		return detail::tvec2<T, P>(
 			factorial(x.x),
 			factorial(x.y));
 	}
 
 	template <typename T, precision P>
-	GLM_FUNC_QUALIFIER tvec3<T, P> factorial(
-		tvec3<T, P> const & x)
+	GLM_FUNC_QUALIFIER detail::tvec3<T, P> factorial(
+		detail::tvec3<T, P> const & x)
 	{
-		return tvec3<T, P>(
+		return detail::tvec3<T, P>(
 			factorial(x.x),
 			factorial(x.y),
 			factorial(x.z));
 	}
 
 	template <typename T, precision P>
-	GLM_FUNC_QUALIFIER tvec4<T, P> factorial(
-		tvec4<T, P> const & x)
+	GLM_FUNC_QUALIFIER detail::tvec4<T, P> factorial(
+		detail::tvec4<T, P> const & x)
 	{
-		return tvec4<T, P>(
+		return detail::tvec4<T, P>(
 			factorial(x.x),
 			factorial(x.y),
 			factorial(x.z),

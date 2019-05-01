@@ -86,15 +86,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_STATIC;GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../../libraries/sfml/include;../../libraries/tiny_obj_loader;../../libraries/glm/glm;../../libraries/glad/include;../../libraries/targa/include;../../code/headers;../../code/sources</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../libraries/sfml/include;../../libraries/tinyobjloader;../../libraries/glad/include;../../libraries/targa/include;../../code/headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>..\..\libraries\sfml\lib\32bit;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glbinding.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\libraries\sfml\lib\x32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>winmm.lib;sfml-main-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;sfml-graphics-s-d.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;freetype.lib;jpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -103,7 +103,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../../libraries/SDL2_2.0.7/include;../../libraries/tiny_obj_loader;../../libraries/glm/glm;../../libraries/glad/include;../../libraries/targa/include;../../code/headers;../../code/sources</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../libraries/tinyobjloader;../../libraries/glad/include;../../libraries/targa/include;../../code/headers;../../libraries/sfml/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -152,9 +152,12 @@
     <ClInclude Include="..\..\code\headers\Material.hpp" />
     <ClInclude Include="..\..\code\headers\Mesh.hpp" />
     <ClInclude Include="..\..\code\headers\Model.hpp" />
+    <ClInclude Include="..\..\code\headers\OpenGL.hpp" />
     <ClInclude Include="..\..\code\headers\Scene.hpp" />
     <ClInclude Include="..\..\code\headers\Texture.hpp" />
     <ClInclude Include="..\..\code\headers\Transform.hpp" />
+    <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp" />
+    <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp" />
     <ClInclude Include="..\..\code\headers\View.hpp" />
     <ClInclude Include="..\..\code\headers\Window.hpp" />
   </ItemGroup>
@@ -163,7 +166,12 @@
     <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\Mesh.cpp" />
     <ClCompile Include="..\..\code\sources\Model.cpp" />
+    <ClCompile Include="..\..\code\sources\VertexArrayObject.cpp" />
+    <ClCompile Include="..\..\code\sources\VertexBufferObject.cpp" />
+    <ClCompile Include="..\..\code\sources\View.cpp" />
     <ClCompile Include="..\..\code\sources\Window.cpp" />
+    <ClCompile Include="..\..\libraries\glad\src\glad.c" />
+    <ClCompile Include="..\..\libraries\targa\src\targa.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,7 +1,16 @@
 
+#include "Kernel.hpp"
+#include <memory>
 
-
-int main()
+namespace example
 {
-	return 0;
+	int main()
+	{
+		Kernel * kernel = new Kernel("OpenGL Example", 800, 600);
+
+		kernel->execute();
+		
+		return 0;
+	}
 }
+

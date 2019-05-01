@@ -10,24 +10,27 @@ namespace example
 {
 	
 	Kernel::Kernel(const char * title, unsigned width, unsigned height)
-		:window(title, width, height, 4), view(nullptr, width, height)
+		:window(title, width, height, 4)
 	{
 
 	}
 
 	void Kernel::execute()
 	{
-		int frames = 0;
-
+		unsigned fps = 0;
+		
 		do 
 		{
 			time = Clock::now();
-			++frames;
+			++fps;
 
 			if (deltaTime.count() >= 1.0f)
 			{
-				frames = 0;
+				fps = 0;
 			}
+
+			render();
+			window.clear_display();
 
 			handler();
 
