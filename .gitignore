@@ -1,0 +1,7 @@
+
+**/.vs
+
+projects/**/Debug
+projects/**/Release
+
+
