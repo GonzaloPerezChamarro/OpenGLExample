@@ -10,7 +10,7 @@ namespace example
 {
 	
 	Kernel::Kernel(const char * title, unsigned width, unsigned height)
-		:window(title, width, height, 4)
+		:window(title, width, height, 4), view(nullptr, width,height)
 	{
 
 	}
@@ -28,11 +28,14 @@ namespace example
 			{
 				fps = 0;
 			}
+			handler();
+
+
+			view.update(float(deltaTime.count()));
 
 			render();
 			window.clear_display();
 
-			handler();
 
 			deltaTime = Time(time - last_time);
 			last_time = time;
@@ -40,26 +43,25 @@ namespace example
 		} while (running);
 	}
 
+	void Kernel::render()
+	{
+		view.render();
+	}
+
 	void Kernel::handler()
 	{
-		/*
-		SDL_Event e;
+
+		sf::Event e;
 		while (window.poll_events(e))
 		{
-			view.input(e);
-
 			switch (e.type)
 			{
-			case SDL_KEYDOWN:
-				if (e.key.keysym.scancode == SDL_SCANCODE_ESCAPE)
-					running = false;
-				break;
-			case SDL_QUIT:
+			case sf::Event::Closed:
 				running = false;
-				break;
 			}
 		}
-		*/
+
+
 	}
 
 }

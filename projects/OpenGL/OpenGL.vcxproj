@@ -88,7 +88,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>SFML_STATIC;GLEW_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>../../libraries/sfml/include;../../libraries/tinyobjloader;../../libraries/glad/include;../../libraries/targa/include;../../code/headers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../libraries/sfml/include;../../libraries/tinyobjloader;../../libraries/glad/include;../../libraries/targa/include;../../code/headers;../../libraries/glm/glm</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -162,10 +162,13 @@
     <ClInclude Include="..\..\code\headers\Window.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\sources\Camera.cpp" />
     <ClCompile Include="..\..\code\sources\Kernel.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\Mesh.cpp" />
     <ClCompile Include="..\..\code\sources\Model.cpp" />
+    <ClCompile Include="..\..\code\sources\OpenGL.cpp" />
+    <ClCompile Include="..\..\code\sources\Transform.cpp" />
     <ClCompile Include="..\..\code\sources\VertexArrayObject.cpp" />
     <ClCompile Include="..\..\code\sources\VertexBufferObject.cpp" />
     <ClCompile Include="..\..\code\sources\View.cpp" />

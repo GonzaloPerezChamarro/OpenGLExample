@@ -6,6 +6,7 @@
 #include <chrono>
 
 #include "Window.hpp"
+#include "View.hpp"
 
 namespace example
 {
@@ -23,6 +24,7 @@ namespace example
 		Time deltaTime;
 
 		Window window;
+		View view;
 
 		bool running;
 

@@ -32,7 +32,10 @@ namespace example
 		void clear_display();
 		void active_VSync(bool active);
 
-		//int poll_events(Event & e);
+		bool poll_events(sf::Event & e)
+		{
+			return window->pollEvent(e);
+		}
 			   
 	};
 }

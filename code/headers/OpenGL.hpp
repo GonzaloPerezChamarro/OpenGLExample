@@ -11,10 +11,7 @@
 
 namespace example
 {
-	bool init_opengl_extensions()
-	{
-		return gladLoadGL() != 0;
-	}
+	bool init_opengl_extensions();
 }
 #endif // !OPENGL_HEADER
 
