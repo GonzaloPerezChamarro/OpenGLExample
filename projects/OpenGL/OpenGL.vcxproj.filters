@@ -63,6 +63,9 @@
     <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\Texture2D.hpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\Mesh.cpp">

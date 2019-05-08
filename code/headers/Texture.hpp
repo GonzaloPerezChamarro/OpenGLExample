@@ -12,16 +12,17 @@ namespace example
 	class Texture
 	{
 	public:
-		enum Parameter {
+		enum Parameter 
+		{
 			REPEAT = GL_REPEAT,
 			MIRRORED = GL_MIRRORED_REPEAT,
 			CLAMP_TO_EDGE = GL_CLAMP_TO_EDGE,
 			CLAMP_TO_BORDER = GL_CLAMP_TO_BORDER,
 
-			NEAREST = GL_NEAREST,
-			LINEAR = GL_LINEAR,
-			MIPMAP_NEAREST = GL_LINEAR_MIPMAP_NEAREST,
-			MIPMAP_LINEAR = GL_LINEAR_MIPMAP_LINEAR
+			NEAR_PIXEL_FILTER = GL_NEAREST,
+			LINEAR_FILTER = GL_LINEAR,
+			MIPMAP_NEAR_PIXEL_FILTER = GL_LINEAR_MIPMAP_NEAREST,
+			MIPMAP_LINEAR_FILTER = GL_LINEAR_MIPMAP_LINEAR
 		};
 
 
@@ -41,15 +42,15 @@ namespace example
 
 	public:
 
-		virtual void load_texture(const std::string & path) = 0;
+		virtual void load_texture(const std::string & path, Parameter w, Parameter f) = 0;
 
 		virtual void bind() = 0;
 
 		virtual void unbind() = 0;
 
-		virtual void set_wrap(Parameter) {};
+		virtual void set_wrap(Parameter p) {};
 
-		virtual void set_filter(Parameter) {};
+		virtual void set_filter(Parameter p) {};
 
 		bool is_ready() { return success; }
 
