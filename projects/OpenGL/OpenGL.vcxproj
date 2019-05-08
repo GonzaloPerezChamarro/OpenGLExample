@@ -146,7 +146,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Camera.hpp" />
+    <ClInclude Include="..\..\code\headers\Color_Rgba8888.hpp" />
+    <ClInclude Include="..\..\code\headers\Cubemap.hpp" />
     <ClInclude Include="..\..\code\headers\Entity.hpp" />
+    <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp" />
     <ClInclude Include="..\..\code\headers\Kernel.hpp" />
     <ClInclude Include="..\..\code\headers\Light.hpp" />
     <ClInclude Include="..\..\code\headers\Material.hpp" />
@@ -154,21 +157,28 @@
     <ClInclude Include="..\..\code\headers\Model.hpp" />
     <ClInclude Include="..\..\code\headers\OpenGL.hpp" />
     <ClInclude Include="..\..\code\headers\Scene.hpp" />
+    <ClInclude Include="..\..\code\headers\Shader.hpp" />
+    <ClInclude Include="..\..\code\headers\ShaderProgram.hpp" />
     <ClInclude Include="..\..\code\headers\Texture.hpp" />
     <ClInclude Include="..\..\code\headers\Texture2D.hpp" />
     <ClInclude Include="..\..\code\headers\Transform.hpp" />
     <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp" />
     <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp" />
+    <ClInclude Include="..\..\code\headers\VertexShader.hpp" />
     <ClInclude Include="..\..\code\headers\View.hpp" />
     <ClInclude Include="..\..\code\headers\Window.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\Camera.cpp" />
+    <ClCompile Include="..\..\code\sources\Cubemap.cpp" />
     <ClCompile Include="..\..\code\sources\Kernel.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\Mesh.cpp" />
     <ClCompile Include="..\..\code\sources\Model.cpp" />
     <ClCompile Include="..\..\code\sources\OpenGL.cpp" />
+    <ClCompile Include="..\..\code\sources\Shader.cpp" />
+    <ClCompile Include="..\..\code\sources\ShaderProgram.cpp" />
+    <ClCompile Include="..\..\code\sources\Texture2D.cpp" />
     <ClCompile Include="..\..\code\sources\Transform.cpp" />
     <ClCompile Include="..\..\code\sources\VertexArrayObject.cpp" />
     <ClCompile Include="..\..\code\sources\VertexBufferObject.cpp" />

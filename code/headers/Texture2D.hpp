@@ -7,17 +7,23 @@
 #include "Texture.hpp"
 #include "OpenGL.hpp"
 
+#include <map>
+
 namespace example
 {
 	class Texture2D : public Texture
 	{
+	private:
+
+		std::map<std::string, std::shared_ptr<Texture>> texture_buffer;
+
 	public:
 		Texture2D(const std::string & path, Parameter w = Parameter::CLAMP_TO_EDGE, Parameter f = Parameter::MIPMAP_LINEAR_FILTER)
 		{
 			load_texture(path, w, f);
 		}
 
-		~Texture2D() {}
+		~Texture2D();
 
 	public:
 		void bind() override
@@ -55,7 +61,7 @@ namespace example
 			}
 		}
 
-		void load_texture(const std::string & path, Parameter w, Parameter f) override;
+		bool load_texture(const std::string & path, Parameter w, Parameter f) override;
 
 	};
 
