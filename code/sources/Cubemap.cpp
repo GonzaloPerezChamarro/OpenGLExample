@@ -16,7 +16,9 @@ namespace example
 		std::vector < std::shared_ptr<Texture>> texture_sides(6);
 		for (size_t index = 0; index < 6; index++)
 		{
-			texture_sides[index] = load_texture(path + char('0' + index) + ".tga");
+			std::string name = "0" + index;
+			std::string suf = ".tga";
+			texture_sides[index] = load_texture(path + name + suf);
 
 			if (!texture_sides[index]) return;
 		}
@@ -73,8 +75,32 @@ namespace example
 		}
 	}
 
-	bool Cubemap::load_texture(const std::string & path, Parameter w, Parameter f)
+	std::auto_ptr<Texture> Cubemap::load_texture(const std::string & path)
 	{
-		return false;
+		tga_image image;
+		std::auto_ptr<Texture> texture;
+
+		const char * path_file = path.c_str();
+
+		if (tga_read(&image, path_file) == TGA_NOERR)
+		{
+			texture.reset(new Texture(image.width, image.height));
+			tga_convert_depth(&image, texture->bits_per_color());
+			tga_swap_red_blue(&image);
+
+			Texture::Color * pixels_begin = reinterpret_cast<Texture::Color*>(image.image_data);
+			Texture::Color * pixels_end = pixels_begin + image.width * image.height;
+			Texture::Color * buffer = texture->colors();
+
+			while (pixels_begin < pixels_end)
+			{
+				*buffer++ = *pixels_begin++;
+			}
+
+			tga_free_buffers(&image);
+		}
+
+
+		return texture;
 	}
 }

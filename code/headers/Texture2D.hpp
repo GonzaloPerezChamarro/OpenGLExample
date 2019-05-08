@@ -61,7 +61,7 @@ namespace example
 			}
 		}
 
-		bool load_texture(const std::string & path, Parameter w, Parameter f) override;
+		std::auto_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) override;
 
 	};
 

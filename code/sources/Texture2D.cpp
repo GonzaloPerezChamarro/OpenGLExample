@@ -18,7 +18,7 @@ namespace example
 			delete &iterator->second;
 		}
 	}
-	bool Texture2D::load_texture(const std::string & path, Parameter w, Parameter f)
+	std::auto_ptr<Texture> Texture2D::load_texture(const std::string & path, Parameter w, Parameter f)
 	{
 		tga_image image;
 
@@ -43,9 +43,8 @@ namespace example
 
 			tga_free_buffers(&image);
 
-			return true;
 		}
 
-		return false;
+		return texture;
 	}
 }

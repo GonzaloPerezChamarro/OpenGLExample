@@ -11,7 +11,7 @@ namespace example
 {
 	class Shader
 	{
-	protected:
+	public:
 		class Source_Code
 		{
 		private:

@@ -38,6 +38,12 @@ namespace example
 			const std::shared_ptr< Vertex_Buffer_Object > & index_vbo = std::shared_ptr< Vertex_Buffer_Object >()
 		);
 
+		Vertex_Array_Object() {
+			glGenVertexArrays(1, &id);
+			error = glGetError();
+			assert(error == GL_NO_ERROR);
+		}
+
 		~Vertex_Array_Object()
 		{
 			glDeleteVertexArrays(1, &id);

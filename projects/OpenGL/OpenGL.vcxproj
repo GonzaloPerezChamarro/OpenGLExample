@@ -159,6 +159,7 @@
     <ClInclude Include="..\..\code\headers\Scene.hpp" />
     <ClInclude Include="..\..\code\headers\Shader.hpp" />
     <ClInclude Include="..\..\code\headers\ShaderProgram.hpp" />
+    <ClInclude Include="..\..\code\headers\Skybox.hpp" />
     <ClInclude Include="..\..\code\headers\Texture.hpp" />
     <ClInclude Include="..\..\code\headers\Texture2D.hpp" />
     <ClInclude Include="..\..\code\headers\Transform.hpp" />
@@ -178,6 +179,7 @@
     <ClCompile Include="..\..\code\sources\OpenGL.cpp" />
     <ClCompile Include="..\..\code\sources\Shader.cpp" />
     <ClCompile Include="..\..\code\sources\ShaderProgram.cpp" />
+    <ClCompile Include="..\..\code\sources\Skybox.cpp" />
     <ClCompile Include="..\..\code\sources\Texture2D.cpp" />
     <ClCompile Include="..\..\code\sources\Transform.cpp" />
     <ClCompile Include="..\..\code\sources\VertexArrayObject.cpp" />

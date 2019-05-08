@@ -58,7 +58,7 @@ namespace example
 
 	public:
 
-		virtual bool load_texture(const std::string & path, Parameter w, Parameter f) { return false; }
+		virtual std::auto_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) { return std::auto_ptr<Texture>(); }
 
 		virtual void bind() {}
 

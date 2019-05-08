@@ -11,12 +11,11 @@ namespace example
 	{
 	public:
 		Cubemap(const std::string & path);
-
 		~Cubemap();
 
 	public:
 
-		bool load_texture(const std::string & path, Parameter w, Parameter f) override;
+		std::auto_ptr<Texture> load_texture(const std::string & path);
 
 		void bind() override 
 		{
