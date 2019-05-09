@@ -4,20 +4,20 @@
 
 namespace example
 {
-	View::View(Camera * camera, unsigned width, unsigned height)
+	View::View(Camera & camera, unsigned width, unsigned height)
+		:camera(&camera), width(width), height(height),
+		skybox(new Skybox("../../assets/skybox/"))
 	{
+		glDisable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE);// BackFace Culling
-		glEnable(GL_LIGHTING);// Lightning
-		glEnable(GL_LIGHT0);                
-		glShadeModel(GL_FLAT);// Eliminae el difuminado en los poligonos
-
+		glCullFace(GL_BACK);
 		glPolygonMode(GL_FRONT, GL_LINE);
 
 		//AA
-		glEnable(GL_BLEND);
+		/*glEnable(GL_BLEND);
 		glEnable(GL_LINE_SMOOTH);
 		glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
 	}
 
 	void View::update(float deltaTime)
@@ -27,10 +27,12 @@ namespace example
 
 	void View::render()
 	{
-		glLoadIdentity();
-		glTranslatef(0.f, 0.f, -10.f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		skybox->render(*camera);
 
 		//Render models....
+		//Lights...
 	}
 
 

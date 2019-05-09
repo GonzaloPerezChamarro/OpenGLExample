@@ -7,6 +7,7 @@
 
 #include <list>
 #include <memory>
+#include <assert.h>
 
 namespace example
 {

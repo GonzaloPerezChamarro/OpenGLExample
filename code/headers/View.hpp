@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Camera.hpp"
-
+#include "Skybox.hpp"
 #include "Model.hpp"
 
 #include <vector>
@@ -13,6 +13,7 @@ namespace example
 	private:
 
 		Camera * camera;
+		Skybox * skybox;
 
 		unsigned width;
 		unsigned height;
@@ -20,7 +21,7 @@ namespace example
 		//std::vector<std::shared_ptr<Model>> models;
 
 	public:
-		View(Camera * camera, unsigned width, unsigned height);
+		View(Camera & camera, unsigned width, unsigned height);
 
 	public:
 

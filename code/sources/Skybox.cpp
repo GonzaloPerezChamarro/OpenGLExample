@@ -103,13 +103,14 @@ namespace example
 
 	}
 
-	void Skybox::render(const glm::mat4 & projection, const Camera & camera)
+	void Skybox::render(const Camera & camera)
 	{
 		shader->use();
 
 		cubemap.bind();
 
 		glm::mat4 model_view_matrix = camera.get_view();
+		glm::mat4 projection = camera.get_projection();
 
 		model_view_matrix_id = shader->get_uniform_location("model_view_matrix");
 		projection_matrix_id = shader->get_uniform_location("projection_matrix");

@@ -24,6 +24,7 @@ namespace example
 		Time deltaTime;
 
 		Window window;
+		Camera camera;
 		View view;
 
 		bool running;

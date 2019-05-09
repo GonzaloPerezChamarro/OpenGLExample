@@ -10,9 +10,8 @@ namespace example
 {
 	
 	Kernel::Kernel(const char * title, unsigned width, unsigned height)
-		:window(title, width, height, 4), view(nullptr, width,height)
+		:window(title, width, height, 4),camera(Camera()), view(camera, width,height)
 	{
-
 	}
 
 	void Kernel::execute()

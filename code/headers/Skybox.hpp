@@ -27,7 +27,7 @@ namespace example
 		Skybox(const std::string & path);
 		~Skybox();
 
-		void render(const glm::mat4 & projection, const Camera & camera);
+		void render(const Camera & camera);
 	};
 }
 

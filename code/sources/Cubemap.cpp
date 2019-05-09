@@ -16,9 +16,7 @@ namespace example
 		std::vector < std::shared_ptr<Texture>> texture_sides(6);
 		for (size_t index = 0; index < 6; index++)
 		{
-			std::string name = "0" + index;
-			std::string suf = ".tga";
-			texture_sides[index] = load_texture(path + name + suf);
+			texture_sides[index] = load_texture(path +"cubemap_"+ char('0' + index) + ".tga");
 
 			if (!texture_sides[index]) return;
 		}
