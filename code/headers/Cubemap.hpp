@@ -15,7 +15,7 @@ namespace example
 
 	public:
 
-		std::auto_ptr<Texture> load_texture(const std::string & path);
+		std::shared_ptr<Texture> load_texture(const std::string & path);
 
 		void bind() override 
 		{

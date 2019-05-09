@@ -18,11 +18,11 @@ namespace example
 			delete &iterator->second;
 		}
 	}
-	std::auto_ptr<Texture> Texture2D::load_texture(const std::string & path, Parameter w, Parameter f)
+	std::shared_ptr<Texture> Texture2D::load_texture(const std::string & path, Parameter w, Parameter f)
 	{
 		tga_image image;
 
-		std::auto_ptr<Texture> texture;
+		std::shared_ptr<Texture> texture;
 
 		const char * path_file = path.c_str();
 

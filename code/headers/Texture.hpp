@@ -46,7 +46,7 @@ namespace example
 	public:
 		Texture() = default;
 		Texture(size_t width, size_t height)
-			:width(width), height(height), success(false)
+			:width(width), height(height), success(true), texture_buffer(width*height)
 		{}
 
 		
@@ -58,7 +58,7 @@ namespace example
 
 	public:
 
-		virtual std::auto_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) { return std::auto_ptr<Texture>(); }
+		virtual std::shared_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) { return std::shared_ptr<Texture>(); }
 
 		virtual void bind() {}
 

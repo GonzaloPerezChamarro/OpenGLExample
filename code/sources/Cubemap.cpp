@@ -73,10 +73,10 @@ namespace example
 		}
 	}
 
-	std::auto_ptr<Texture> Cubemap::load_texture(const std::string & path)
+	std::shared_ptr<Texture> Cubemap::load_texture(const std::string & path)
 	{
 		tga_image image;
-		std::auto_ptr<Texture> texture;
+		std::shared_ptr<Texture> texture;
 
 		const char * path_file = path.c_str();
 

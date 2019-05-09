@@ -5,7 +5,7 @@
 #include "VertexShader.hpp"
 #include "Fragment_Shader.hpp"
 #include "glm.hpp"
-
+#include <assert.h>
 
 
 namespace example
@@ -14,7 +14,7 @@ namespace example
 	{
 		const GLfloat coordinates[] =
 		{
-					-1.0f, +1.0f, -1.0f,
+			-1.0f, +1.0f, -1.0f,
 			-1.0f, -1.0f, -1.0f,
 			+1.0f, -1.0f, -1.0f,
 			+1.0f, -1.0f, -1.0f,

@@ -1,12 +1,43 @@
-#pragma once
+
+#ifndef MESH_HEADER
+#define MESH_HEADER
+
+
+#include "OpenGL.hpp"
+#include "VertexArrayObject.hpp"
+#include "VertexBufferObject.hpp"
 
 namespace example
 {
 	class Mesh
 	{
-	private:
+	protected:
+		
+		std::shared_ptr<Vertex_Array_Object> vao;
+
+		std::shared_ptr<Vertex_Buffer_Object> vertex_buffer;
+		std::shared_ptr<Vertex_Buffer_Object> texcoord_buffer;
+		std::shared_ptr<Vertex_Buffer_Object> normals_buffer;
+		std::shared_ptr<Vertex_Buffer_Object> indices_buffer;
 
 	public:
-		Mesh();
+		Mesh() = default;
+
+	public:
+
+		virtual void render() {}
+
+		void set_vao(const std::shared_ptr<Vertex_Array_Object> & new_vao) { vao = new_vao; }
+
+		void set_vao(const std::shared_ptr<Vertex_Buffer_Object> & new_vao) { vao = new_vao; }
+		void set_vao(const std::shared_ptr<Vertex_Buffer_Object> & texcoord) { texcoord_buffer = texcoord; }
+		void set_vao(const std::shared_ptr<Vertex_Buffer_Object> & normals) { normals_buffer = normals; }
+		void set_vao(const std::shared_ptr<Vertex_Buffer_Object> & indices) { indices_buffer = indices; }
 	};
 }
+
+
+
+#endif
+
+

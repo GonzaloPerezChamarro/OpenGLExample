@@ -36,7 +36,7 @@ namespace example
 		float sensitivity = 1.f;
 		
 	public:
-		Camera(vec3 pos, vec3 direction, float near_plane = 0.1f, float far_plane = 1000.f, float fov = 90.f, float ratio = 1.f)
+		Camera(vec3 pos, vec3 direction, float near_plane = 0.1f, float far_plane = 1000.f, float fov =90.f, float ratio = 1.f)
 			: position(pos),direction(direction),up(vec3(0.f,1.f,0.f)), front(vec3(0.f,0.f,-1.f)),
 			  yaw(-90.f), pitch(0.f), roll(0.f), near_plane(near_plane), far_plane(far_plane), fov(fov), ratio(ratio)
 		{}

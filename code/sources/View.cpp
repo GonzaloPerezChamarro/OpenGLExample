@@ -6,12 +6,11 @@ namespace example
 {
 	View::View(Camera & camera, unsigned width, unsigned height)
 		:camera(&camera), width(width), height(height),
-		skybox(new Skybox("../../assets/skybox/"))
+		skybox(new Skybox("../../assets/skybox1/"))
 	{
 		glDisable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE);// BackFace Culling
 		glCullFace(GL_BACK);
-		glPolygonMode(GL_FRONT, GL_LINE);
 
 		//AA
 		/*glEnable(GL_BLEND);
@@ -27,7 +26,8 @@ namespace example
 
 	void View::render()
 	{
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClearColor(0, 1, 0, 1);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		skybox->render(*camera);
 

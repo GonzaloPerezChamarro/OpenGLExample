@@ -163,6 +163,7 @@
     <ClInclude Include="..\..\code\headers\Texture.hpp" />
     <ClInclude Include="..\..\code\headers\Texture2D.hpp" />
     <ClInclude Include="..\..\code\headers\Transform.hpp" />
+    <ClInclude Include="..\..\code\headers\Variant.hpp" />
     <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp" />
     <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp" />
     <ClInclude Include="..\..\code\headers\VertexShader.hpp" />

@@ -61,7 +61,7 @@ namespace example
 			}
 		}
 
-		std::auto_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) override;
+		std::shared_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) override;
 
 	};
 

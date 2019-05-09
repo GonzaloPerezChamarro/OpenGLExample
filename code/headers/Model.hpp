@@ -10,9 +10,15 @@ namespace example
 {
 	class Model
 	{
+		struct Piece
+		{
+			Mesh mesh;
+			Material material;
+		};
+
 	private:
-		//std::vector<std::shared_ptr<Mesh>> meshes;
-		//std::vector < std::shared_ptr<Material>> materials;
+		std::vector<Piece> pieces;
+
 	public:
 		Model(const std::string & path, const std::string & text_path);
 

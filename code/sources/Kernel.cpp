@@ -31,13 +31,15 @@ namespace example
 
 
 			view.update(float(deltaTime.count()));
-
-			render();
 			window.clear_display();
+			render();
+
 
 
 			deltaTime = Time(time - last_time);
 			last_time = time;
+
+			window.swap_buffers();
 
 		} while (running);
 	}

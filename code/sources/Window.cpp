@@ -22,7 +22,7 @@ namespace example
 
 	void Window::swap_buffers()
 	{
-		//SDL_GL_SwapWindow(window);
+		window->display();
 	}
 
 	void Window::set_viewport(unsigned w, unsigned h)
