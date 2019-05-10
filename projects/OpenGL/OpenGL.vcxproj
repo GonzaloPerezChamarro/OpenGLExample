@@ -147,8 +147,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Camera.hpp" />
     <ClInclude Include="..\..\code\headers\Color_Rgba8888.hpp" />
+    <ClInclude Include="..\..\code\headers\Cube.hpp" />
     <ClInclude Include="..\..\code\headers\Cubemap.hpp" />
-    <ClInclude Include="..\..\code\headers\Entity.hpp" />
     <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp" />
     <ClInclude Include="..\..\code\headers\Kernel.hpp" />
     <ClInclude Include="..\..\code\headers\Light.hpp" />
@@ -156,7 +156,6 @@
     <ClInclude Include="..\..\code\headers\Mesh.hpp" />
     <ClInclude Include="..\..\code\headers\Model.hpp" />
     <ClInclude Include="..\..\code\headers\OpenGL.hpp" />
-    <ClInclude Include="..\..\code\headers\Scene.hpp" />
     <ClInclude Include="..\..\code\headers\Shader.hpp" />
     <ClInclude Include="..\..\code\headers\ShaderProgram.hpp" />
     <ClInclude Include="..\..\code\headers\Skybox.hpp" />
@@ -172,9 +171,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\Camera.cpp" />
+    <ClCompile Include="..\..\code\sources\Cube.cpp" />
     <ClCompile Include="..\..\code\sources\Cubemap.cpp" />
     <ClCompile Include="..\..\code\sources\Kernel.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
+    <ClCompile Include="..\..\code\sources\Material.cpp" />
     <ClCompile Include="..\..\code\sources\Mesh.cpp" />
     <ClCompile Include="..\..\code\sources\Model.cpp" />
     <ClCompile Include="..\..\code\sources\OpenGL.cpp" />

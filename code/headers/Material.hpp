@@ -14,14 +14,51 @@ namespace example
 	class Material
 	{
 	private:
-		Shader_Program shader;
+		std::shared_ptr < Shader_Program> shader;
 		
 		std::string id;
 		std::map<std::string, Variant> variables;
 
 	public:
+		static std::map<std::string, std::shared_ptr<Material>> factory;
 
-		Material();
+		static std::shared_ptr<Material> get(const std::string & shader_name,
+										const std::string & vertex_path,
+										const std::string & fragment_path,
+										const std::string & texture_path,
+										const std::map<std::string, Variant> & variants);
+
+	public:
+
+		Material(const std::shared_ptr<Shader_Program>& shader_program)
+			:shader(shader_program)
+		{}
+
+		Material(const std::string & shader_name,
+				const std::string & vertex_path,
+				const std::string & fragment_path,
+				const std::string & texture_path,
+				const std::map<std::string, Variant> & variants
+		);
+
+	public:
+
+		void use();
+
+		std::shared_ptr<Shader_Program> get_shader() const { return shader; }
+
+		std::string get_id()const { return id; }
+
+		bool add_variant(const std::string & name, const GLint value);
+		bool add_variant(const std::string & name, const GLuint value);
+		bool add_variant(const std::string & name, const GLfloat value);
+		bool add_variant(const std::string & name, const glm::vec2 value);
+		bool add_variant(const std::string & name, const glm::vec3 value);
+		bool add_variant(const std::string & name, const glm::vec4 value);
+
+		void set_value(const std::string & variant_name, Variant value);
+
+
 	};
 }
 

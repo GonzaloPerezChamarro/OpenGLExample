@@ -8,6 +8,7 @@
 #include "OpenGL.hpp"
 
 #include <map>
+#include <string>
 
 namespace example
 {
@@ -15,7 +16,13 @@ namespace example
 	{
 	private:
 
-		std::map<std::string, std::shared_ptr<Texture>> texture_buffer;
+		static std::map<std::string, std::shared_ptr<Texture>> factory;
+
+	public:
+
+		static std::shared_ptr<Texture> get_texture(const std::string & path,
+			Parameter wrap = Parameter::CLAMP_TO_EDGE,
+			Parameter filter = Parameter::MIPMAP_LINEAR_FILTER);
 
 	public:
 		Texture2D(const std::string & path, Parameter w = Parameter::CLAMP_TO_EDGE, Parameter f = Parameter::MIPMAP_LINEAR_FILTER)
@@ -61,7 +68,7 @@ namespace example
 			}
 		}
 
-		std::shared_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) override;
+		std::shared_ptr<Texture> load_texture(const std::string & path, Parameter w = Parameter::CLAMP_TO_EDGE, Parameter f = Parameter::MIPMAP_LINEAR_FILTER) override;
 
 	};
 

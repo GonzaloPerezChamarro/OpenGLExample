@@ -2,6 +2,7 @@
 
 #include "Texture2D.hpp"
 
+
 extern "C" 
 {
 #include <targa.h>
@@ -9,15 +10,32 @@ extern "C"
 
 namespace example
 {
+	std::map<std::string, std::shared_ptr<Texture>> Texture2D::factory;
+
+	std::shared_ptr<Texture> Texture2D::get_texture(const std::string & path, Parameter wrap, Parameter filter)
+	{
+		if (factory.count(path) > 0)
+			return factory[path];
+
+		std::shared_ptr<Texture> texture(new Texture2D(path, wrap, filter));
+
+		if (!texture->is_ready())
+		{
+			texture.reset();
+		}
+		else
+		{
+			factory[path] = texture;
+		}
+
+		return texture;
+	}
+
 	Texture2D::~Texture2D()
 	{
-		for (auto iterator = texture_buffer.begin(), end = texture_buffer.end();
-			iterator != end;
-			++iterator)
-		{
-			delete &iterator->second;
-		}
+
 	}
+
 	std::shared_ptr<Texture> Texture2D::load_texture(const std::string & path, Parameter w, Parameter f)
 	{
 		tga_image image;

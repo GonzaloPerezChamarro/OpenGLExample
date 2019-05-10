@@ -16,95 +16,110 @@
     <Filter Include="Archivos de origen\libraries">
       <UniqueIdentifier>{4e721b60-b0d5-43fd-a271-f25fcb9c7393}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Shaders">
+      <UniqueIdentifier>{6616a93e-ba26-4fde-9499-8148b19c2b4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Textures">
+      <UniqueIdentifier>{5ca3e3cb-4c64-4f40-b7aa-a7f929e9bc23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Core">
+      <UniqueIdentifier>{a6500057-0614-44b9-88c8-fd352d5b5291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Utility">
+      <UniqueIdentifier>{826ce83c-e0a5-47b0-b148-aab612387ca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Render">
+      <UniqueIdentifier>{0680f1da-65a3-4e63-a785-c35bdca4260c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Core">
+      <UniqueIdentifier>{c448f057-9b48-4b33-b268-79d868834606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Render">
+      <UniqueIdentifier>{abe42977-dccc-4719-8614-37b364534f56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Utility">
+      <UniqueIdentifier>{b40782c0-6b75-4cb8-a3a3-d0b42f5be15d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Textures">
+      <UniqueIdentifier>{e7d42744-126a-416c-9dc0-4b52e326774f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Shaders">
+      <UniqueIdentifier>{ff4b5c68-2be0-49d7-8ed9-b99292f48097}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\code\headers\Mesh.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Kernel.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Window.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Model.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\View.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Camera.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Entity.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Light.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Material.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Scene.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Texture.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Transform.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\OpenGL.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Texture2D.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Color_Rgba8888.hpp">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="..\..\code\headers\ShaderProgram.hpp">
+      <Filter>Archivos de encabezado\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Shader.hpp">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\ShaderProgram.hpp">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="..\..\code\headers\Texture.hpp">
+      <Filter>Archivos de encabezado\Textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\VertexShader.hpp">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="..\..\code\headers\Texture2D.hpp">
+      <Filter>Archivos de encabezado\Textures</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Cubemap.hpp">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Skybox.hpp">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="..\..\code\headers\Color_Rgba8888.hpp">
+      <Filter>Archivos de encabezado\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp">
+      <Filter>Archivos de encabezado\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\VertexShader.hpp">
+      <Filter>Archivos de encabezado\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Kernel.hpp">
+      <Filter>Archivos de encabezado\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\View.hpp">
+      <Filter>Archivos de encabezado\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Transform.hpp">
+      <Filter>Archivos de encabezado\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Window.hpp">
+      <Filter>Archivos de encabezado\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Camera.hpp">
+      <Filter>Archivos de encabezado\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Light.hpp">
+      <Filter>Archivos de encabezado\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\OpenGL.hpp">
+      <Filter>Archivos de encabezado\Utility</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Variant.hpp">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Model.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Material.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Mesh.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Skybox.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Cube.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\sources\Mesh.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\code\sources\main.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\Kernel.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\Window.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\Model.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\libraries\glad\src\glad.c">
@@ -113,37 +128,55 @@
     <ClCompile Include="..\..\libraries\targa\src\targa.c">
       <Filter>Archivos de origen\libraries</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\VertexArrayObject.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\View.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\VertexBufferObject.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\OpenGL.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\Camera.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="..\..\code\sources\Kernel.cpp">
+      <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Transform.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\Texture2D.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="..\..\code\sources\View.cpp">
+      <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\Shader.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="..\..\code\sources\Window.cpp">
+      <Filter>Archivos de origen\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\ShaderProgram.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="..\..\code\sources\Material.cpp">
+      <Filter>Archivos de origen\Render</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\Cubemap.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="..\..\code\sources\Mesh.cpp">
+      <Filter>Archivos de origen\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Model.cpp">
+      <Filter>Archivos de origen\Render</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Skybox.cpp">
+      <Filter>Archivos de origen\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\VertexArrayObject.cpp">
+      <Filter>Archivos de origen\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\VertexBufferObject.cpp">
+      <Filter>Archivos de origen\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Camera.cpp">
+      <Filter>Archivos de origen\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Cubemap.cpp">
+      <Filter>Archivos de origen\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Texture2D.cpp">
+      <Filter>Archivos de origen\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Shader.cpp">
+      <Filter>Archivos de origen\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\ShaderProgram.cpp">
+      <Filter>Archivos de origen\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\OpenGL.cpp">
+      <Filter>Archivos de origen\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Cube.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
