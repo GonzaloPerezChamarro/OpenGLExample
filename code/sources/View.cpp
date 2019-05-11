@@ -2,11 +2,15 @@
 #include "View.hpp"
 #include <SFML/OpenGL.hpp>
 
+#include "Cube.hpp"
+#include "ShaderProgram.hpp"
+
+
 namespace example
 {
 	View::View(Camera & camera, unsigned width, unsigned height)
 		:camera(&camera), width(width), height(height),
-		skybox(new Skybox("../../assets/skybox1/"))
+		skybox(new Skybox("../../assets/skybox/")), cube(new Cube)
 	{
 		glDisable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE);// BackFace Culling
@@ -17,11 +21,20 @@ namespace example
 		glEnable(GL_LINE_SMOOTH);
 		glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
+
+		create_scene();
+
+		Shader_Program::create_shader("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader");
+		projection_matrix = glm::perspective(glm::radians(75.f), (float)width / height, 0.3f, 1000.f);
+
 	}
 
 	void View::update(float deltaTime)
 	{
 		//Update models ....
+
+		camera->move(camera->get_camera_front() * camera_direction.y, 10.f * deltaTime);
+		camera->move(glm::normalize(glm::cross(camera->get_camera_front(), camera->get_camera_up())) * camera_direction.x, 10.f * deltaTime);
 	}
 
 	void View::render()
@@ -29,10 +42,98 @@ namespace example
 		glClearColor(0, 1, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		skybox->render(*camera);
+		std::shared_ptr<Shader_Program> shader = Shader_Program::get_shader("cubeShader");
 
-		//Render models....
-		//Lights...
+		skybox->render(*camera);
+		
+		model_view_matrix = glm::mat4();
+		model_view_matrix = camera->get_view();
+		projection_matrix = camera->get_projection();
+
+		model_view_matrix = glm::translate(model_view_matrix, glm::vec3(5.f, 10.f, -15.f));
+		model_view_matrix = glm::scale(model_view_matrix, glm::vec3(0.5f, 0.5f, 0.5f));
+
+
+		shader->use();
+		
+		GLint m_id = shader->get_uniform_location("model_view_matrix");
+		GLint p_id = shader->get_uniform_location("projection_matrix");
+
+		glUniformMatrix4fv(m_id, 1, GL_FALSE, glm::value_ptr((model_view_matrix)));
+		glUniformMatrix4fv(p_id, 1, GL_FALSE, glm::value_ptr((projection_matrix)));
+
+		cube->render();
+		
+	}
+
+	void View::handler(sf::Event & e)
+	{
+
+		switch (e.type)
+		{
+		case sf::Event::MouseMoved:
+
+			camera->rotate(e.mouseMove.x, e.mouseMove.y);
+			break;
+
+		case sf::Keyboard::Down:
+		{
+			switch (e.key.code)
+			{
+			case sf::Keyboard::W:
+				camera_direction.y = 1;
+				break;
+			case sf::Keyboard::S:
+				camera_direction.y = -1;
+				break;
+			case sf::Keyboard::A:
+				camera_direction.x = -1;
+				break;
+			case sf::Keyboard::D:
+				camera_direction.x = 1;
+				break;
+			}
+		}
+		break;
+
+		case sf::Keyboard::Up:
+		{
+
+			switch (e.key.code)
+			{
+			case sf::Keyboard::W:
+				camera_direction.y = 0;
+				break;
+			case sf::Keyboard::S:
+				camera_direction.y = 0;
+				break;
+			case sf::Keyboard::A:
+				camera_direction.x = 0;
+				break;
+			case sf::Keyboard::D:
+				camera_direction.x = 0;
+				break;
+			}
+		}
+		
+		break;
+		}
+	}
+
+	void View::create_scene()
+	{
+		/*
+		std::shared_ptr<Cube> cube(new Cube);
+
+		std::shared_ptr<Model> new_model(new Model);
+		new_model->add_piece(cube, nullptr);
+
+		models.push_back(new_model);*/
+
+		
+
+
+
 	}
 
 

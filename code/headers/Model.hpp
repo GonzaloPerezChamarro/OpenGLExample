@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MODEL_HEADER
+#define MODEL_HEADER
 
 #include "Mesh.hpp"
 #include "Material.hpp"
@@ -12,8 +13,8 @@ namespace example
 	{
 		struct Piece
 		{
-			Mesh mesh;
-			Material material;
+			std::shared_ptr<Mesh> mesh;
+			std::shared_ptr<Material> material;
 		};
 
 	private:
@@ -22,7 +23,20 @@ namespace example
 	public:
 		Model(const std::string & path, const std::string & text_path);
 
+		Model();
+
+	public:
+
+		void add_piece(std::shared_ptr<Mesh> mesh, std::shared_ptr<Material> mat);
+
+		void update();
+		void render();
+
 	private:
-		bool load();
+		bool load(const std::string & path, const std::string & text_path);
 	};
 }
+
+
+#endif
+

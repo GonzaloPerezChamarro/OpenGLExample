@@ -16,32 +16,31 @@ namespace example
 
 	void Kernel::execute()
 	{
-		unsigned fps = 0;
-		
+		unsigned fps = 60;
+		const sf::Time update = sf::seconds(1.f / float(fps));
+		sf::Clock timer;
+
+		auto last_time = sf::Time::Zero;
+		auto now = timer.getElapsedTime();
+		auto deltaTime = now - last_time;
+
 		do 
 		{
-			time = Clock::now();
-			++fps;
+			now = timer.getElapsedTime();
 
-			if (deltaTime.count() >= 1.0f)
-			{
-				fps = 0;
-			}
 			handler();
-
-
-			view.update(float(deltaTime.count()));
+			view.update(float(deltaTime.asSeconds()));
 			window.clear_display();
 			render();
 
-
-
-			deltaTime = Time(time - last_time);
-			last_time = time;
+			deltaTime = now - last_time;
+			last_time = now;
 
 			window.swap_buffers();
 
+
 		} while (running);
+
 	}
 
 	void Kernel::render()
@@ -55,10 +54,23 @@ namespace example
 		sf::Event e;
 		while (window.poll_events(e))
 		{
+			view.handler(e);
+
 			switch (e.type)
 			{
 			case sf::Event::Closed:
 				running = false;
+				break;
+
+			case sf::Event::KeyPressed:
+				switch (e.key.code)
+				{
+
+				case sf::Keyboard::Escape:
+					running = false;
+					break;
+				}
+
 			}
 		}
 

@@ -180,4 +180,12 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\shaders\fragment\cubeFragmentShader.shader">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\vertex\cubeVertexShader.shader">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+  </ItemGroup>
 </Project>

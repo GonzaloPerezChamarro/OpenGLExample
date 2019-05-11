@@ -32,6 +32,7 @@ namespace example
 	private:
 		float last_mouse_x;
 		float last_mouse_y;
+		bool first_time = true;
 
 		float sensitivity = 1.f;
 		

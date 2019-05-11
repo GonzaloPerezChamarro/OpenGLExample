@@ -3,6 +3,8 @@
 #include "Camera.hpp"
 #include "Skybox.hpp"
 #include "Model.hpp"
+#include "Cube.hpp"
+
 
 #include <vector>
 
@@ -14,11 +16,18 @@ namespace example
 
 		Camera * camera;
 		Skybox * skybox;
+		Cube * cube;
 
 		unsigned width;
 		unsigned height;
 
-		//std::vector<std::shared_ptr<Model>> models;
+		std::vector<std::shared_ptr<Model>> models;
+
+		glm::vec2 camera_direction;
+
+	private:
+		glm::mat4 model_view_matrix;
+		glm::mat4 projection_matrix;
 
 	public:
 		View(Camera & camera, unsigned width, unsigned height);
@@ -27,5 +36,11 @@ namespace example
 
 		void update(float deltaTime);
 		void render();
+
+		void handler(sf::Event & e);
+
+	private:
+
+		void create_scene();
 	};
 }

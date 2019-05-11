@@ -6,6 +6,14 @@ namespace example
 {
 	void Camera::rotate(float mouse_x, float mouse_y)
 	{
+		//Solucion posicion del raton inicial
+		if (first_time)
+		{
+			first_time = false;
+			last_mouse_x = mouse_x;
+			last_mouse_y = mouse_y;
+		}
+
 		float xoffset = float(mouse_x) - last_mouse_x;
 		float yoffset = last_mouse_y - float(mouse_y);
 
@@ -31,5 +39,6 @@ namespace example
 	}
 	void Camera::move(vec3 dir, float speed)
 	{
+		position += dir * speed;
 	}
 }

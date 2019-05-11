@@ -8,6 +8,8 @@
 #include <glad/glad.h>
 #include <cassert>
 #include <glm.hpp>
+#include <map>
+#include <string>
 
 namespace example
 {
@@ -18,7 +20,14 @@ namespace example
 		bool link_completed;
 		std::string log;
 
+	private:
+
+		static std::map<std::string, std::shared_ptr<Shader_Program>> factory;
+
 	public:
+
+		static std::shared_ptr<Shader_Program> create_shader(const std::string & name, const std::string & vertex_shader_path, const std::string & fragment_shader_path);
+		static std::shared_ptr<Shader_Program> get_shader(const std::string & name);
 
 		Shader_Program()
 		{
