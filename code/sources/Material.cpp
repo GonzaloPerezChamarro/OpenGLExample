@@ -9,7 +9,7 @@ namespace example
 	std::map<std::string, std::shared_ptr<Material>> Material::factory;
 
 
-	std::shared_ptr<Material> Material::get(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const std::string & texture_path, const std::map<std::string, Variant>& variants)
+	std::shared_ptr<Material> Material::get(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const std::string & texture_path, const std::map<std::string, Variant>& variants )
 	{
 		std::string id_temp = (vertex_path + fragment_path + texture_path);
 
@@ -25,11 +25,16 @@ namespace example
 		return material;
 	}
 
-	Material::Material(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const std::string & texture_path, const std::map<std::string, Variant>& variants)
+	Material::Material(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const std::string & texture_path , const std::map<std::string, Variant>& variants)
+		:texture(nullptr)
 	{
 		id = vertex_path + fragment_path + texture_path;
 		//Texture
+		if (texture_path != "")
+			texture = Texture2D::get_texture(texture_path);
+
 		//shader
+		shader = Shader_Program::create_shader(shader_name, vertex_path, fragment_path);
 
 		for (auto & value : variants)
 		{
@@ -77,7 +82,7 @@ namespace example
 		variant.type = Variant::Type::INT;
 		variant.value.integer = value;
 
-		//variables[name] = variant; PREGUNTAR
+		variables[name] = variant;
 
 		return true;
 	}
@@ -93,7 +98,7 @@ namespace example
 		variant.type = Variant::Type::UINT;
 		variant.value.uinteger = value;
 
-		//variables[name] = variant; PREGUNTAR
+		variables[name] = variant; 
 
 		return true;
 	}
@@ -109,7 +114,7 @@ namespace example
 		variant.type = Variant::Type::FLOAT;
 		variant.value.f = value;
 
-		//variables[name] = variant; PREGUNTAR
+		variables[name] = variant;
 
 		return true;
 	}
@@ -126,7 +131,7 @@ namespace example
 		variant.value.vec2[0] = value[0];
 		variant.value.vec2[1] = value[2];
 
-		//variables[name] = variant; PREGUNTAR
+		variables[name] = variant; 
 
 		return true;
 	}
@@ -144,7 +149,7 @@ namespace example
 		variant.value.vec3[1] = value[1];
 		variant.value.vec3[2] = value[2];
 
-		//variables[name] = variant; PREGUNTAR
+		variables[name] = variant;
 
 		return true;
 	}
@@ -163,7 +168,7 @@ namespace example
 		variant.value.vec4[2] = value[2];
 		variant.value.vec4[3] = value[3];
 
-		//variables[name] = variant; PREGUNTAR
+		variables[name] = variant;
 
 		return true;
 	}

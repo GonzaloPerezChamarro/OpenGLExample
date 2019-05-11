@@ -4,6 +4,7 @@
 
 #include "Cube.hpp"
 #include "ShaderProgram.hpp"
+#include "Material.hpp"
 
 
 namespace example
@@ -42,6 +43,8 @@ namespace example
 		glClearColor(0, 1, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		//Ejemplo cubo normal
+		/*
 		std::shared_ptr<Shader_Program> shader = Shader_Program::get_shader("cubeShader");
 
 		skybox->render(*camera);
@@ -62,7 +65,13 @@ namespace example
 		glUniformMatrix4fv(m_id, 1, GL_FALSE, glm::value_ptr((model_view_matrix)));
 		glUniformMatrix4fv(p_id, 1, GL_FALSE, glm::value_ptr((projection_matrix)));
 
-		cube->render();
+		cube->render();*/
+		skybox->render(*camera);
+
+		for (auto & model : models)
+		{
+			model->render(camera);
+		}
 		
 	}
 
@@ -76,7 +85,7 @@ namespace example
 			camera->rotate(e.mouseMove.x, e.mouseMove.y);
 			break;
 
-		case sf::Keyboard::Down:
+		case sf::Event::KeyPressed:
 		{
 			switch (e.key.code)
 			{
@@ -96,7 +105,7 @@ namespace example
 		}
 		break;
 
-		case sf::Keyboard::Up:
+		case sf::Event::KeyReleased:
 		{
 
 			switch (e.key.code)
@@ -122,16 +131,13 @@ namespace example
 
 	void View::create_scene()
 	{
-		/*
+		
 		std::shared_ptr<Cube> cube(new Cube);
 
-		std::shared_ptr<Model> new_model(new Model);
-		new_model->add_piece(cube, nullptr);
+		std::shared_ptr<Model> new_model( new Model(glm::vec3(5.f, 10.f, -15.f), glm::vec3(0.5f, 0.5f, 0.5f)));
+		new_model->add_piece(cube, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
 
-		models.push_back(new_model);*/
-
-		
-
+		models.push_back(new_model);
 
 
 	}

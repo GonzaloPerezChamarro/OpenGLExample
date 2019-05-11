@@ -110,6 +110,8 @@ namespace example
 		cubemap.bind();
 
 		glm::mat4 model_view_matrix = camera.get_view();
+		model_view_matrix = glm::translate(model_view_matrix, camera.get_position());
+
 		glm::mat4 projection = camera.get_projection();
 
 		model_view_matrix_id = shader->get_uniform_location("model_view_matrix");

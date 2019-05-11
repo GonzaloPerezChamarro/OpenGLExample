@@ -19,14 +19,16 @@ namespace example
 		std::string id;
 		std::map<std::string, Variant> variables;
 
+		std::shared_ptr<Texture> texture;
+
 	public:
 		static std::map<std::string, std::shared_ptr<Material>> factory;
 
 		static std::shared_ptr<Material> get(const std::string & shader_name,
 										const std::string & vertex_path,
 										const std::string & fragment_path,
-										const std::string & texture_path,
-										const std::map<std::string, Variant> & variants);
+										const std::string & texture_path = "",
+										const std::map<std::string, Variant> & variants = std::map<std::string, Variant>());
 
 	public:
 

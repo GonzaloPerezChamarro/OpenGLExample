@@ -34,7 +34,7 @@ namespace example
 		float last_mouse_y;
 		bool first_time = true;
 
-		float sensitivity = 1.f;
+		float sensitivity = 0.5f;
 		
 	public:
 		Camera(vec3 pos, vec3 direction, float near_plane = 0.1f, float far_plane = 1000.f, float fov =90.f, float ratio = 1.f)
