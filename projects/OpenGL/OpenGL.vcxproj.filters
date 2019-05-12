@@ -117,6 +117,9 @@
     <ClInclude Include="..\..\code\headers\Cube.hpp">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\Plane.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp">
@@ -177,6 +180,9 @@
       <Filter>Archivos de origen\Utility</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Cube.cpp">
+      <Filter>Archivos de origen\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Plane.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

@@ -156,6 +156,7 @@
     <ClInclude Include="..\..\code\headers\Mesh.hpp" />
     <ClInclude Include="..\..\code\headers\Model.hpp" />
     <ClInclude Include="..\..\code\headers\OpenGL.hpp" />
+    <ClInclude Include="..\..\code\headers\Plane.hpp" />
     <ClInclude Include="..\..\code\headers\Shader.hpp" />
     <ClInclude Include="..\..\code\headers\ShaderProgram.hpp" />
     <ClInclude Include="..\..\code\headers\Skybox.hpp" />
@@ -179,6 +180,7 @@
     <ClCompile Include="..\..\code\sources\Mesh.cpp" />
     <ClCompile Include="..\..\code\sources\Model.cpp" />
     <ClCompile Include="..\..\code\sources\OpenGL.cpp" />
+    <ClCompile Include="..\..\code\sources\Plane.cpp" />
     <ClCompile Include="..\..\code\sources\Shader.cpp" />
     <ClCompile Include="..\..\code\sources\ShaderProgram.cpp" />
     <ClCompile Include="..\..\code\sources\Skybox.cpp" />

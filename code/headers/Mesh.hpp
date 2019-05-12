@@ -7,6 +7,8 @@
 #include "VertexArrayObject.hpp"
 #include "VertexBufferObject.hpp"
 
+#include <glm.hpp>
+
 #include <memory>
 
 namespace example
