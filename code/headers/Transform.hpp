@@ -14,7 +14,6 @@ namespace example
 	private:
 		mat4 transform;
 
-
 	public:
 		Transform() : transform(mat4()) {}
 
@@ -30,6 +29,13 @@ namespace example
 		void translate(const glm::vec3 position);
 		void rotate(float angle, const glm::vec3 & axis);
 		void scale(float scaleX, float scaleY, float scaleZ);
+
+	public:
+
+		glm::mat4 & operator = (glm::mat4 other)
+		{
+			return transform = other;
+		}
 
 	};
 }

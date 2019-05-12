@@ -4,6 +4,7 @@
 #include "Skybox.hpp"
 #include "Model.hpp"
 #include "Cube.hpp"
+#include "Light.hpp"
 
 
 #include <vector>
@@ -17,6 +18,7 @@ namespace example
 		Camera * camera;
 		Skybox * skybox;
 		Cube * cube;
+		Light * light;
 
 		unsigned width;
 		unsigned height;

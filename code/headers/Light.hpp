@@ -8,10 +8,10 @@ namespace example
 {
 	class Light
 	{
-	private:
+	public:
 
 		Transform transform;
-
+	private:
 		float intensity;
 		float ambient_intensity;
 
@@ -19,7 +19,7 @@ namespace example
 
 	public:
 
-		Light(glm::vec3 vector, float i, glm::vec3 color, float ambiental = .25f)
+		Light(glm::vec3 vector, glm::vec3 color, float i = 1.f, float ambiental = .25f)
 			:transform(Transform()), intensity(i), ambient_intensity(ambiental), light_color(color)
 		{
 			transform.translate(vector);
@@ -32,6 +32,10 @@ namespace example
 		void set_ambient_intensity	(float a)				{ ambient_intensity = a; }
 		void set_intensity			(float i)				{ intensity = i; }
 
+		glm::vec3 & get_color() { return light_color; }
+		float get_intensity() { return intensity; }
+		float get_ambient_intensity() { return ambient_intensity; }
+		
 	};
 }
 #endif

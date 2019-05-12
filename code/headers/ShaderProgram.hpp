@@ -121,7 +121,30 @@ namespace example
 		void set_vertex_attribute(GLint attribute_id, const glm::vec3 & vector) { glVertexAttrib3fv(attribute_id, &vector[0]); }
 		void set_vertex_attribute(GLint attribute_id, const glm::vec4 & vector) { glVertexAttrib4fv(attribute_id, &vector[0]); }
 
+		void set_variant_value(const std::string & name, const GLint     & value) { glUniform1i(get_location_by_name(name), value); }
+		void set_variant_value(const std::string & name, const float     & value) { glUniform1f(get_location_by_name(name), value); }
+		void set_variant_value(const std::string & name, const glm::vec2  & vector) { glUniform2f(get_location_by_name(name), vector[0], vector[1]); }
+		void set_variant_value( const std::string & name, const glm::vec3  & vector) { glUniform3fv(get_location_by_name(name),1, &vector[0]); }
+		//void set_variant_value( const std::string & name, const glm::vec3  & vector) { glUniform3f(get_location_by_name(name), vector[0], vector[1], vector[2]); }
+		void set_variant_value(const std::string & name, const glm::vec4  & vector) { glUniform4f(get_location_by_name(name), vector[0], vector[1], vector[2], vector[3]); }
+		void set_variant_value(const std::string & name, const glm::mat2 & matrix) { glUniformMatrix2fv(get_location_by_name(name), 1, GL_FALSE, &matrix[0][0]); }
+		void set_variant_value(const std::string & name, const glm::mat3 & matrix) { glUniformMatrix3fv(get_location_by_name(name), 1, GL_FALSE, &matrix[0][0]); }
+		void set_variant_value(const std::string & name, const glm::mat4 & matrix) { glUniformMatrix4fv(get_location_by_name(name), 1, GL_FALSE, &matrix[0][0]); }
 
+		void set_vertex_attribute(const std::string & name, const float    & value) { glVertexAttrib1f(get_location_by_name(name), value); }
+		void set_vertex_attribute(const std::string & name, const glm::vec2 & vector) { glVertexAttrib2fv(get_location_by_name(name), &vector[0]); }
+		void set_vertex_attribute(const std::string & name, const glm::vec3 & vector) { glVertexAttrib3fv(get_location_by_name(name), &vector[0]); }
+		void set_vertex_attribute(const std::string & name, const glm::vec4 & vector) { glVertexAttrib4fv(get_location_by_name(name), &vector[0]); }
+
+		GLint get_location_by_name(const std::string & name) const
+		{
+			GLint location = glGetUniformLocation(id, name.c_str());
+
+			GLenum e = glGetError();
+			assert(e == GL_NO_ERROR);
+
+			return location;
+		}
 
 		
 	};

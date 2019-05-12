@@ -120,6 +120,12 @@
     <ClInclude Include="..\..\code\headers\Plane.hpp">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\ElevationMesh.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\MeshObj.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp">
@@ -183,7 +189,13 @@
       <Filter>Archivos de origen\Render</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Plane.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\ElevationMesh.cpp">
+      <Filter>Archivos de origen\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\MeshObj.cpp">
+      <Filter>Archivos de origen\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +203,12 @@
       <Filter>Archivos de recursos</Filter>
     </None>
     <None Include="..\..\assets\shaders\vertex\cubeVertexShader.shader">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\fragment\pointLightFragment.shader">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\vertex\pointLightVertex.shader">
       <Filter>Archivos de recursos</Filter>
     </None>
   </ItemGroup>

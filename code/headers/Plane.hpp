@@ -18,7 +18,7 @@ namespace example
 		const unsigned dim;
 		
 	public:
-		Plane(unsigned width, unsigned height);
+		Plane(size_t width, size_t height);
 
 	public:
 		void render() override;

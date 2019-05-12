@@ -3,6 +3,8 @@
 #include <SFML/OpenGL.hpp>
 
 #include "Cube.hpp"
+#include "Plane.hpp"
+#include "ElevationMesh.hpp"
 #include "ShaderProgram.hpp"
 #include "Material.hpp"
 
@@ -11,9 +13,10 @@ namespace example
 {
 	View::View(Camera & camera, unsigned width, unsigned height)
 		:camera(&camera), width(width), height(height),
-		skybox(new Skybox("../../assets/skybox/")), cube(new Cube)
+		skybox(new Skybox("../../assets/skybox/")), cube(new Cube),
+		light(new Light(glm::vec3(5.f,2.f,12.f), glm::vec3(1.f,1.f,1.f)))
 	{
-		glDisable(GL_DEPTH_TEST);
+		glEnable(GL_DEPTH_TEST);//z-buffer
 		glEnable(GL_CULL_FACE);// BackFace Culling
 		glCullFace(GL_BACK);
 
@@ -22,7 +25,7 @@ namespace example
 		glEnable(GL_LINE_SMOOTH);
 		glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
-
+		
 		create_scene();
 
 		Shader_Program::create_shader("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader");
@@ -42,7 +45,8 @@ namespace example
 	{
 		glClearColor(0, 1, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+		auto light_shader = Shader_Program::get_shader("lightShader");
+		
 		//Ejemplo cubo normal
 		/*
 		std::shared_ptr<Shader_Program> shader = Shader_Program::get_shader("cubeShader");
@@ -66,6 +70,7 @@ namespace example
 		glUniformMatrix4fv(p_id, 1, GL_FALSE, glm::value_ptr((projection_matrix)));
 
 		cube->render();*/
+
 		skybox->render(*camera);
 
 		for (auto & model : models)
@@ -131,14 +136,26 @@ namespace example
 
 	void View::create_scene()
 	{
-		
+
 		std::shared_ptr<Cube> cube(new Cube);
-
-		std::shared_ptr<Model> new_model( new Model(glm::vec3(5.f, 10.f, -15.f), glm::vec3(0.5f, 0.5f, 0.5f)));
+		std::shared_ptr<Model> new_model(new Model(glm::vec3(5.f, 10.f, -15.f), glm::vec3(0.5f, 0.5f, 0.5f)));
 		new_model->add_piece(cube, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
-
 		models.push_back(new_model);
 
+		std::shared_ptr<Cube> c(new Cube);
+		std::shared_ptr<Model> new_c(new Model(glm::vec3(5.f, 10.f, -12.f), glm::vec3(0.5f, 0.5f, 0.5f)));
+		new_c->add_piece(c, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		models.push_back(new_c);
+
+		std::shared_ptr<Plane> plane(new Plane(10, 10));
+		std::shared_ptr<Model> new_plane(new Model(glm::vec3(-5.f, -1.f, -5.f)));
+		new_plane->add_piece(plane, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		models.push_back(new_plane);
+
+		std::shared_ptr<Elevation_Mesh> terrain(new Elevation_Mesh("../../assets/heightmap/heightmap.tga", 10, 10));
+		std::shared_ptr<Model> new_terrain(new Model(glm::vec3(-20.f, -5.f, -20.f)));
+		new_terrain->add_piece(terrain, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		models.push_back(new_terrain);
 
 	}
 
