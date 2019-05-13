@@ -7,6 +7,7 @@
 #include "ElevationMesh.hpp"
 #include "ShaderProgram.hpp"
 #include "Material.hpp"
+#include "MeshObj.hpp"
 
 
 namespace example
@@ -156,6 +157,11 @@ namespace example
 		std::shared_ptr<Model> new_terrain(new Model(glm::vec3(-20.f, -5.f, -20.f)));
 		new_terrain->add_piece(terrain, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
 		models.push_back(new_terrain);
+
+		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/John Coolidge Sculpture.obj"));
+		std::shared_ptr<Model> obj_model(new Model(glm::vec3(-30.f, 10.f, -10.f)));
+		obj_model->add_piece(obj, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		models.push_back(obj_model);
 
 	}
 
