@@ -23,10 +23,12 @@ namespace example
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, vertex_buffer->get_element_type(), GL_FALSE, 3 * sizeof(GLfloat), 0);
 
-		/*
-		texcoord_buffer.reset(new Vertex_Buffer_Object(&texcoord[0], sizeof(texcoord)));
-		glEnableVertexAttribArray(2);
-		glVertexAttribPointer(2, 2, texcoord_buffer->get_element_type(), GL_FALSE, 2 * sizeof(GLfloat), 0);*/
+		if (texcoord.size() > 0)
+		{
+			texcoord_buffer.reset(new Vertex_Buffer_Object(&texcoord[0], texcoord.size() * sizeof(GLfloat)));
+			glEnableVertexAttribArray(2);
+			glVertexAttribPointer(2, 2, texcoord_buffer->get_element_type(), GL_FALSE, 2 * sizeof(GLfloat), 0);
+		}
 
 		normals_buffer.reset(new Vertex_Buffer_Object(&normals[0], normals.size() * sizeof(GLfloat)));
 		glEnableVertexAttribArray(3);
@@ -72,7 +74,7 @@ namespace example
 
 		for (size_t i = 0; i < indices.size(); ++i)
 		{
-			indices[i] = shapes[0].mesh.indices[i].vertex_index;
+			indices[i] = shapes[0].mesh.indices[i].vertex_index ;
 		}
 
 	}

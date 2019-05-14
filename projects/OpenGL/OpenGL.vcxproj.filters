@@ -197,6 +197,9 @@
     <ClCompile Include="..\..\code\sources\MeshObj.cpp">
       <Filter>Archivos de origen\Render</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\headers\Light.cpp">
+      <Filter>Archivos de origen\Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\shaders\fragment\cubeFragmentShader.shader">

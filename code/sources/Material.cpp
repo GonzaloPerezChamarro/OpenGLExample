@@ -9,13 +9,14 @@ namespace example
 	std::map<std::string, std::shared_ptr<Material>> Material::factory;
 
 
-	std::shared_ptr<Material> Material::get(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const std::string & texture_path, const std::map<std::string, Variant>& variants )
+	std::shared_ptr<Material> Material::get(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const std::string & texture_path, const glm::vec3 & c, const std::map<std::string, Variant>& variants )
 	{
 		std::string id_temp = (vertex_path + fragment_path + texture_path);
 
 		if (factory.count(id_temp) > 0) return factory[id_temp];
 
 		std::shared_ptr<Material> material(new Material(shader_name, vertex_path, fragment_path, texture_path, variants));
+		material->set_color(c);
 
 		if (!material->get_shader()->is_usable())
 			material.reset();

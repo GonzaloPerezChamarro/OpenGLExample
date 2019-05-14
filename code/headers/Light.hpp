@@ -3,6 +3,7 @@
 
 
 #include "Transform.hpp"
+#include "Camera.hpp"
 
 namespace example
 {
@@ -35,6 +36,8 @@ namespace example
 		glm::vec3 & get_color() { return light_color; }
 		float get_intensity() { return intensity; }
 		float get_ambient_intensity() { return ambient_intensity; }
+
+		void render(Camera & camera);
 		
 	};
 }

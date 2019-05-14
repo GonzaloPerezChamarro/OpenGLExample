@@ -173,6 +173,7 @@
     <ClInclude Include="..\..\code\headers\Window.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\headers\Light.cpp" />
     <ClCompile Include="..\..\code\sources\Camera.cpp" />
     <ClCompile Include="..\..\code\sources\Cube.cpp" />
     <ClCompile Include="..\..\code\sources\Cubemap.cpp" />

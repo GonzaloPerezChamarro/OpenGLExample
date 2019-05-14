@@ -27,7 +27,32 @@ namespace example
 	public:
 		Texture2D(const std::string & path, Parameter w = Parameter::CLAMP_TO_EDGE, Parameter f = Parameter::MIPMAP_LINEAR_FILTER)
 		{
-			load_texture(path, w, f);
+			std::shared_ptr<Texture> temp = load_texture(path, w, f);
+
+			if (temp.get() != 0) 
+			{
+				glEnable(GL_TEXTURE_2D);
+				glGenTextures(1, &id);
+				glBindTexture(GL_TEXTURE_2D, id);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+				// Se suben los colores de la textura a la memoria de vídeo:
+
+				glTexImage2D
+				(
+					GL_TEXTURE_2D,
+					0,
+					GL_RGBA,
+					temp->get_width(),
+					temp->get_height(),
+					0,
+					GL_RGBA,
+					GL_UNSIGNED_BYTE,
+					temp->colors()
+				);
+			}
+
 		}
 
 		~Texture2D();

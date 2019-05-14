@@ -53,7 +53,7 @@ namespace example
 
 		virtual ~Texture()
 		{
-			glDeleteTextures(1, &id);
+			//glDeleteTextures(1, &id);
 		}
 
 	public:
@@ -71,6 +71,8 @@ namespace example
 		bool is_ready() { return success; }
 
 		size_t get_size() { texture_buffer.size(); }
+
+		GLenum get_id()const { return id; }
 
 	public:
 

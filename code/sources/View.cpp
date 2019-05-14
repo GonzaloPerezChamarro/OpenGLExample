@@ -27,10 +27,13 @@ namespace example
 		glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
 		
-		create_scene();
+
 
 		Shader_Program::create_shader("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader");
+		Shader_Program::create_shader("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment");
 		projection_matrix = glm::perspective(glm::radians(75.f), (float)width / height, 0.3f, 1000.f);
+
+		create_scene();
 
 	}
 
@@ -44,10 +47,16 @@ namespace example
 
 	void View::render()
 	{
+
+		//std::shared_ptr<Texture> texture(new Texture2D("../../assets/textures/cube.tga"));
+
 		glClearColor(0, 1, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		auto light_shader = Shader_Program::get_shader("lightShader");
 		
+		light->render(*camera);
+		
+
+
 		//Ejemplo cubo normal
 		/*
 		std::shared_ptr<Shader_Program> shader = Shader_Program::get_shader("cubeShader");
@@ -140,7 +149,8 @@ namespace example
 
 		std::shared_ptr<Cube> cube(new Cube);
 		std::shared_ptr<Model> new_model(new Model(glm::vec3(5.f, 10.f, -15.f), glm::vec3(0.5f, 0.5f, 0.5f)));
-		new_model->add_piece(cube, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		new_model->add_piece(cube, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", "../../assets/textures/wood-crate-1.tga"));
+		
 		models.push_back(new_model);
 
 		std::shared_ptr<Cube> c(new Cube);
@@ -158,9 +168,9 @@ namespace example
 		new_terrain->add_piece(terrain, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
 		models.push_back(new_terrain);
 
-		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/John Coolidge Sculpture.obj"));
-		std::shared_ptr<Model> obj_model(new Model(glm::vec3(-30.f, 10.f, -10.f)));
-		obj_model->add_piece(obj, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/Cube_obj.obj"));
+		std::shared_ptr<Model> obj_model(new Model(glm::vec3(-10.f, 10.f, -10.f), glm::vec3(.05f, .05f, .05f)));
+		obj_model->add_piece(obj, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", "../../assets/textures/Cube_diffuse.tga"));
 		models.push_back(obj_model);
 
 	}

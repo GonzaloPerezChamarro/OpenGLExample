@@ -20,6 +20,7 @@ namespace example
 		std::map<std::string, Variant> variables;
 
 		std::shared_ptr<Texture> texture;
+		glm::vec3 color;
 
 	public:
 		static std::map<std::string, std::shared_ptr<Material>> factory;
@@ -28,6 +29,7 @@ namespace example
 										const std::string & vertex_path,
 										const std::string & fragment_path,
 										const std::string & texture_path = "",
+										const glm::vec3 & color = { 1,1,1 },
 										const std::map<std::string, Variant> & variants = std::map<std::string, Variant>());
 
 	public:
@@ -59,6 +61,11 @@ namespace example
 		bool add_variant(const std::string & name, const glm::vec4 value);
 
 		void set_value(const std::string & variant_name, Variant value);
+
+		std::shared_ptr<Texture> get_texture() { return texture; }
+
+		glm::vec3 get_color() const { return color; }
+		void set_color(glm::vec3 c) { color = c; }
 
 
 	};

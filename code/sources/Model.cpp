@@ -1,7 +1,8 @@
 
 
 #include "Model.hpp"
-
+#include <SFML/OpenGL.hpp>
+#include <memory>
 
 namespace example
 {
@@ -40,7 +41,15 @@ namespace example
 			glUniformMatrix4fv(m_id, 1, GL_FALSE, glm::value_ptr((model_view_matrix)));
 			glUniformMatrix4fv(p_id, 1, GL_FALSE, glm::value_ptr((camera->get_projection())));
 
+			if (piece.material->get_texture() != nullptr)
+				piece.material->get_texture()->bind();
+
+			piece.material->get_shader()->set_variant_value("_Color", piece.material->get_color());
+
 			piece.mesh->render();
+
+			if (piece.material->get_texture() != nullptr)
+				piece.material->get_texture()->unbind();
 
 		}
 	}
