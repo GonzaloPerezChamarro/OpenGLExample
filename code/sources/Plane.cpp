@@ -1,6 +1,7 @@
 
 #include "Plane.hpp"
 
+#include <iostream>
 #include <vector>
 
 namespace example
@@ -8,6 +9,7 @@ namespace example
 	Plane::Plane(size_t width, size_t height)
 		:dim(width * height)
 	{
+		
 
 		vertex.resize(dim *3);
 		normals.resize(dim *3);
@@ -27,6 +29,7 @@ namespace example
 				normals[index] = 0.f;
 				normals[index+1] = 1.f;
 				normals[index+2] = 0.f;
+
 			}
 		}
 		//Texcoord
@@ -56,12 +59,10 @@ namespace example
 			++k;
 		}
 
-
 		vao.reset(new Vertex_Array_Object);
 		vao->bind();
 
 		vertex_buffer.reset(new Vertex_Buffer_Object(&vertex[0], vertex.size() * sizeof(GLfloat)));
-		//vertex_buffer.reset(new Vertex_Buffer_Object(&vertex[0], sizeof(vertex)));
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, vertex_buffer->get_element_type(), GL_FALSE, 3 * sizeof(GLfloat), 0);
 		
@@ -70,12 +71,10 @@ namespace example
 		glVertexAttribPointer(2, 2, texcoord_buffer->get_element_type(), GL_FALSE, 2 * sizeof(GLfloat), 0);
 
 		normals_buffer.reset(new Vertex_Buffer_Object(&normals[0], normals.size() * sizeof(GLfloat)));
-		//normals_buffer.reset(new Vertex_Buffer_Object(&normals[0], sizeof(normals)));
 		glEnableVertexAttribArray(3);
 		glVertexAttribPointer(3, 3, normals_buffer->get_element_type(), GL_FALSE, 3 * sizeof(GLfloat), 0);
 
 		indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], indices.size() * sizeof(GLubyte), Vertex_Buffer_Object::EAB));
-		//indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], sizeof(indices), Vertex_Buffer_Object::EAB));
 
 		vao->unbind();
 

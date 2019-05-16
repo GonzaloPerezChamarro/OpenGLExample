@@ -4,6 +4,7 @@
 #include "Mesh.hpp"
 #include "Material.hpp"
 #include "Camera.hpp"
+#include "Transform.hpp"
 
 #include <vector>
 
@@ -21,13 +22,18 @@ namespace example
 		glm::vec3 position;
 		glm::vec3 scale;
 
+		Transform transform;
+		Transform local_transform;
+
+		Model * father;
+
 	private:
 		std::vector<Piece> pieces;
 
 	public:
 		Model(const std::string & path, const std::string & text_path, glm::vec3 position, glm::vec3 scale = glm::vec3(1,1,1));
 
-		Model(glm::vec3 position, glm::vec3 scale = glm::vec3(1, 1, 1));
+		Model(glm::vec3 position, glm::vec3 scale = glm::vec3(1, 1, 1), Model * father = nullptr);
 
 	public:
 
@@ -35,6 +41,11 @@ namespace example
 
 		void update(float deltaTime);
 		void render(const Camera * camera);
+
+		glm::vec3 get_position() const { return position; }
+		glm::vec3 get_scale() const { return scale; }
+
+		Transform & get_transform() { return transform; }
 
 	private:
 		bool load(const std::string & path, const std::string & text_path);

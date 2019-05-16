@@ -8,6 +8,7 @@
 
 
 #include <vector>
+#include <map>
 
 namespace example
 {
@@ -23,7 +24,7 @@ namespace example
 		unsigned width;
 		unsigned height;
 
-		std::vector<std::shared_ptr<Model>> models;
+		std::map<std::string, std::shared_ptr<Model>> models_map;
 
 		glm::vec2 camera_direction;
 

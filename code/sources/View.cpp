@@ -43,6 +43,16 @@ namespace example
 
 		camera->move(camera->get_camera_front() * camera_direction.y, 10.f * deltaTime);
 		camera->move(glm::normalize(glm::cross(camera->get_camera_front(), camera->get_camera_up())) * camera_direction.x, 10.f * deltaTime);
+
+		//for (auto & model : models)
+		//{
+		//	model->update(deltaTime);
+		//}
+
+		for (auto & model : models_map)
+		{
+			model.second->update(deltaTime);
+		}
 	}
 
 	void View::render()
@@ -83,9 +93,9 @@ namespace example
 
 		skybox->render(*camera);
 
-		for (auto & model : models)
+		for (auto & model : models_map)
 		{
-			model->render(camera);
+			model.second->render(camera);
 		}
 		
 	}
@@ -150,28 +160,32 @@ namespace example
 		std::shared_ptr<Cube> cube(new Cube);
 		std::shared_ptr<Model> new_model(new Model(glm::vec3(5.f, 10.f, -15.f), glm::vec3(0.5f, 0.5f, 0.5f)));
 		new_model->add_piece(cube, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", "../../assets/textures/wood-crate-1.tga"));
-		
-		models.push_back(new_model);
+		models_map["texturedCube"] = new_model;
 
-		std::shared_ptr<Cube> c(new Cube);
-		std::shared_ptr<Model> new_c(new Model(glm::vec3(5.f, 10.f, -12.f), glm::vec3(0.5f, 0.5f, 0.5f)));
-		new_c->add_piece(c, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
-		models.push_back(new_c);
+		//std::shared_ptr<Cube> c(new Cube);
+		//std::shared_ptr<Model> new_c(new Model(glm::vec3(0.f, 2.f, 0.f), glm::vec3(1.f, 1.f, 1.f), new_model.get()));
+		//new_c->add_piece(c, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		////models.push_back(new_c);
+		//models_map["childCube"] = new_c;
+
 
 		std::shared_ptr<Plane> plane(new Plane(10, 10));
 		std::shared_ptr<Model> new_plane(new Model(glm::vec3(-5.f, -1.f, -5.f)));
 		new_plane->add_piece(plane, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
-		models.push_back(new_plane);
+		models_map["plane"] = new_plane;
+
 
 		std::shared_ptr<Elevation_Mesh> terrain(new Elevation_Mesh("../../assets/heightmap/heightmap.tga", 10, 10));
 		std::shared_ptr<Model> new_terrain(new Model(glm::vec3(-20.f, -5.f, -20.f)));
 		new_terrain->add_piece(terrain, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
-		models.push_back(new_terrain);
+		models_map["terrain"] = new_terrain;
+
 
 		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/Cube_obj.obj"));
-		std::shared_ptr<Model> obj_model(new Model(glm::vec3(-10.f, 10.f, -10.f), glm::vec3(.05f, .05f, .05f)));
+		std::shared_ptr<Model> obj_model(new Model(glm::vec3(-10.f, 10.f, -10.f), glm::vec3(1.f, 1.f, 1.f)));
 		obj_model->add_piece(obj, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", "../../assets/textures/Cube_diffuse.tga"));
-		models.push_back(obj_model);
+		models_map["cubeObj"] = obj_model;
+
 
 	}
 

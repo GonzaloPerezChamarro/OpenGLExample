@@ -15,7 +15,7 @@ namespace example
 		std::vector<GLfloat> texcoord;
 		std::vector<GLubyte> indices;
 
-		const unsigned dim;
+		const size_t dim;
 		
 	public:
 		Plane(size_t width, size_t height);
