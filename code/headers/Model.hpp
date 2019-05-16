@@ -22,6 +22,8 @@ namespace example
 		glm::vec3 position;
 		glm::vec3 scale;
 
+		Transform * transform;
+
 		Model * father;
 
 	private:
@@ -30,7 +32,7 @@ namespace example
 	public:
 		Model(const std::string & path, const std::string & text_path, glm::vec3 position, glm::vec3 scale = glm::vec3(1,1,1));
 
-		Model(glm::vec3 position, glm::vec3 scale = glm::vec3(1, 1, 1), Model * father = nullptr);
+		Model(glm::vec3 position, glm::vec3 rotation = glm::vec3(0, 0, 0), glm::vec3 scale = glm::vec3(1, 1, 1), Model * father = nullptr);
 
 	public:
 
@@ -41,6 +43,8 @@ namespace example
 
 		glm::vec3 get_position() const { return position; }
 		glm::vec3 get_scale() const { return scale; }
+
+		Transform * get_transform()const { return transform; }
 
 	private:
 		bool load(const std::string & path, const std::string & text_path);

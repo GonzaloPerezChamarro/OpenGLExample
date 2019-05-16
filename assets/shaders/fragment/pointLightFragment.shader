@@ -1,9 +1,6 @@
 
 #version 330 core
 
-
-
-// Luces
 struct Light
 {
 	vec3 position;
@@ -15,9 +12,6 @@ uniform float ambientIntensity;
 uniform float intensity;
 
 uniform float specularIntensity;
-
-
-
 
 uniform vec3 viewPosition;
 
@@ -36,7 +30,6 @@ uniform sampler2D _MainTex;
 void main()
 {
 	vec3 ambient = ambientIntensity * light.color;
-	//vec3 ambient = 0.25 * vec3(1.0,1.0,1.0);
 	
 	vec3 norm = Normal.xyz;
 	vec3 lightDirection = light.position - ModelPosition.xyz;
@@ -45,18 +38,15 @@ void main()
 	vec3 L = normalize(lightDirection);
 	
 	vec3 diffuse = max(dot(N, L), 0.0) * intensity * light.color;
-	//vec3 diffuse = max(dot(N, L), 0.0) * vec3(1.0,1.0,1.0);
 	
 	vec3 V = normalize(viewPosition - ModelPosition.xyz);
 	vec3 R = reflect(-L, N);
 	
 	vec3 specular = pow(max(dot(V, R), 0.0), 128) * light.color;	
-	//vec3 specular = pow(max(dot(V, R), 0.0), 128) * vec3(1.0,1.0,1.0);
 	
 	vec3 result = (ambient + diffuse + specular) * _Color;
 
 	FragmentColor = vec4(result * texture(_MainTex, TexCoords.st).rgb, 1.0);
-	//FragmentColor = vec4(result, 1.0);
 }
 
 

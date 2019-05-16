@@ -9,7 +9,7 @@ namespace example
 	std::map<std::string, std::shared_ptr<Material>> Material::factory;
 
 
-	std::shared_ptr<Material> Material::get(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const std::string & texture_path, const glm::vec3 & c, const std::map<std::string, Variant>& variants )
+	std::shared_ptr<Material> Material::get(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const glm::vec3 & c, const std::string & texture_path, const std::map<std::string, Variant>& variants )
 	{
 		std::string id_temp = (vertex_path + fragment_path + texture_path);
 
@@ -30,9 +30,8 @@ namespace example
 		:texture(nullptr)
 	{
 		id = vertex_path + fragment_path + texture_path;
-		//Texture
-		if (texture_path != "")
-			texture = Texture2D::get_texture(texture_path);
+
+		texture = Texture2D::get_texture(texture_path);
 
 		//shader
 		shader = Shader_Program::create_shader(shader_name, vertex_path, fragment_path);

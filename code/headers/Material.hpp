@@ -28,8 +28,8 @@ namespace example
 		static std::shared_ptr<Material> get(const std::string & shader_name,
 										const std::string & vertex_path,
 										const std::string & fragment_path,
-										const std::string & texture_path = "",
 										const glm::vec3 & color = { 1,1,1 },
+										const std::string & texture_path = "../../assets/textures/default.tga",
 										const std::map<std::string, Variant> & variants = std::map<std::string, Variant>());
 
 	public:

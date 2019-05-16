@@ -11,10 +11,11 @@ namespace example
 		load(path, text_path);
 	}
 
-	Model::Model(glm::vec3 position, glm::vec3 scale, Model * father)
-		:position(position), scale(scale), father(father)
+	Model::Model(glm::vec3 position, glm::vec3 rotation, glm::vec3 scale, Model * father)
+		:position(position), scale(scale), father(father),transform(new Transform(position, rotation, scale))
 	{
-
+		if(father != nullptr)
+			transform->set_parent(father->get_transform());
 	}
 
 
@@ -22,6 +23,7 @@ namespace example
 	void Model::update(float deltaTime)
 	{
 		//nothing
+		transform->update();
 	}
 
 	void Model::render(const Camera * camera)
@@ -31,20 +33,7 @@ namespace example
 			glm::mat4 model_view_matrix = camera->get_view();
 
 
-
-			if (father != nullptr)
-			{
-				model_view_matrix == glm::translate(model_view_matrix, father->get_position() + position);
-				model_view_matrix = glm::scale(model_view_matrix, father->get_scale() * scale);
-
-			}
-			else
-			{
-				model_view_matrix = glm::translate(model_view_matrix, position);
-				model_view_matrix = glm::scale(model_view_matrix, scale);
-
-			}
-
+			model_view_matrix = model_view_matrix * transform->get_matrix();
 
 			piece.material->get_shader()->use();
 
