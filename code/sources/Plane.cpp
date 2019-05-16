@@ -63,17 +63,21 @@ namespace example
 		vao->bind();
 
 		vertex_buffer.reset(new Vertex_Buffer_Object(&vertex[0], vertex.size() * sizeof(GLfloat)));
+		//vertex_buffer.reset(new Vertex_Buffer_Object(&vertex[0], sizeof(vertex)));
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, vertex_buffer->get_element_type(), GL_FALSE, 3 * sizeof(GLfloat), 0);
 		
-		texcoord_buffer.reset(new Vertex_Buffer_Object(&texcoord[0], sizeof(texcoord)));
+		//texcoord_buffer.reset(new Vertex_Buffer_Object(&texcoord[0], sizeof(texcoord)));
+		texcoord_buffer.reset(new Vertex_Buffer_Object(&texcoord[0],texcoord.size() * sizeof(texcoord)));
 		glEnableVertexAttribArray(2);
 		glVertexAttribPointer(2, 2, texcoord_buffer->get_element_type(), GL_FALSE, 2 * sizeof(GLfloat), 0);
 
+		//normals_buffer.reset(new Vertex_Buffer_Object(&normals[0], sizeof(normals)));
 		normals_buffer.reset(new Vertex_Buffer_Object(&normals[0], normals.size() * sizeof(GLfloat)));
 		glEnableVertexAttribArray(3);
 		glVertexAttribPointer(3, 3, normals_buffer->get_element_type(), GL_FALSE, 3 * sizeof(GLfloat), 0);
 
+		//indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], sizeof(indices), Vertex_Buffer_Object::EAB));
 		indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], indices.size() * sizeof(GLubyte), Vertex_Buffer_Object::EAB));
 
 		vao->unbind();

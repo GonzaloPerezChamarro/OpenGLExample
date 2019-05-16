@@ -40,8 +40,8 @@ namespace example
 			}
 			else
 			{
-				model_view_matrix = glm::translate(model_view_matrix, transform.get_position());
-				model_view_matrix = glm::scale(model_view_matrix, transform.get_scale());
+				model_view_matrix = glm::translate(model_view_matrix, position);
+				model_view_matrix = glm::scale(model_view_matrix, scale);
 
 			}
 

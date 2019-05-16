@@ -165,11 +165,10 @@ namespace example
 		//std::shared_ptr<Cube> c(new Cube);
 		//std::shared_ptr<Model> new_c(new Model(glm::vec3(0.f, 2.f, 0.f), glm::vec3(1.f, 1.f, 1.f), new_model.get()));
 		//new_c->add_piece(c, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
-		////models.push_back(new_c);
 		//models_map["childCube"] = new_c;
 
 
-		std::shared_ptr<Plane> plane(new Plane(10, 10));
+		std::shared_ptr<Plane> plane(new Plane(50, 50));
 		std::shared_ptr<Model> new_plane(new Model(glm::vec3(-5.f, -1.f, -5.f)));
 		new_plane->add_piece(plane, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
 		models_map["plane"] = new_plane;
