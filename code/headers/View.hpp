@@ -5,6 +5,7 @@
 #include "Model.hpp"
 #include "Cube.hpp"
 #include "Light.hpp"
+#include "Framebuffer.hpp"
 
 
 #include <vector>
@@ -20,6 +21,9 @@ namespace example
 		Skybox * skybox;
 		Cube * cube;
 		Light * light;
+		Framebuffer* framebuffer;
+
+		bool postprocess_active = false;
 
 		unsigned width;
 		unsigned height;

@@ -7,6 +7,7 @@
 #include "ElevationMesh.hpp"
 #include "ShaderProgram.hpp"
 #include "Material.hpp"
+#include "Framebuffer.hpp"
 #include "MeshObj.hpp"
 
 
@@ -28,10 +29,13 @@ namespace example
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);*/
 		
 
-
 		Shader_Program::create_shader("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader");
 		Shader_Program::create_shader("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment");
+		Shader_Program::create_shader("postprocess", "../../assets/shaders/vertex/postprocessVertex", "../../assets/shaders/fragment/postprocessFragment");
 		projection_matrix = glm::perspective(glm::radians(75.f), (float)width / height, 0.3f, 1000.f);
+
+		framebuffer = new Framebuffer(width, height, "postprocess");
+		framebuffer->build();
 
 		create_scene();
 
@@ -58,7 +62,8 @@ namespace example
 		glClearColor(0, 1, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
-
+		if(postprocess_active)
+			framebuffer->bind();
 		
 		skybox->render(*camera);
 
@@ -69,6 +74,8 @@ namespace example
 			model.second->render(camera);
 		}
 		
+		if(postprocess_active)
+			framebuffer->render();
 	}
 
 	void View::create_scene()
@@ -136,6 +143,8 @@ namespace example
 			case sf::Keyboard::D:
 				camera_direction.x = 1;
 				break;
+			case sf::Keyboard::P:
+				postprocess_active = !postprocess_active;
 			}
 		}
 		break;

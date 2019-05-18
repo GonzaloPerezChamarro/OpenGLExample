@@ -46,6 +46,12 @@
     <Filter Include="Archivos de origen\Shaders">
       <UniqueIdentifier>{ff4b5c68-2be0-49d7-8ed9-b99292f48097}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de recursos\Vertex">
+      <UniqueIdentifier>{3f929012-5d9b-49c8-8a0d-bf4e771711fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Fragment">
+      <UniqueIdentifier>{712c2ef3-d489-410f-a258-51ae0c5f5ecf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\ShaderProgram.hpp">
@@ -126,6 +132,9 @@
     <ClInclude Include="..\..\code\headers\MeshObj.hpp">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\Framebuffer.hpp">
+      <Filter>Archivos de encabezado\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\main.cpp">
@@ -200,19 +209,28 @@
     <ClCompile Include="..\..\code\headers\Light.cpp">
       <Filter>Archivos de origen\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Framebuffer.cpp">
+      <Filter>Archivos de origen\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\assets\shaders\fragment\cubeFragmentShader.shader">
-      <Filter>Archivos de recursos</Filter>
-    </None>
-    <None Include="..\..\assets\shaders\vertex\cubeVertexShader.shader">
-      <Filter>Archivos de recursos</Filter>
-    </None>
-    <None Include="..\..\assets\shaders\fragment\pointLightFragment.shader">
-      <Filter>Archivos de recursos</Filter>
+    <None Include="..\..\assets\shaders\vertex\postprocessVertex.shader">
+      <Filter>Archivos de recursos\Vertex</Filter>
     </None>
     <None Include="..\..\assets\shaders\vertex\pointLightVertex.shader">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de recursos\Vertex</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\vertex\cubeVertexShader.shader">
+      <Filter>Archivos de recursos\Vertex</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\fragment\postprocessFragment.shader">
+      <Filter>Archivos de recursos\Fragment</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\fragment\cubeFragmentShader.shader">
+      <Filter>Archivos de recursos\Fragment</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\fragment\pointLightFragment.shader">
+      <Filter>Archivos de recursos\Fragment</Filter>
     </None>
   </ItemGroup>
 </Project>

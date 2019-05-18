@@ -151,6 +151,7 @@
     <ClInclude Include="..\..\code\headers\Cubemap.hpp" />
     <ClInclude Include="..\..\code\headers\ElevationMesh.hpp" />
     <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp" />
+    <ClInclude Include="..\..\code\headers\Framebuffer.hpp" />
     <ClInclude Include="..\..\code\headers\Kernel.hpp" />
     <ClInclude Include="..\..\code\headers\Light.hpp" />
     <ClInclude Include="..\..\code\headers\Material.hpp" />
@@ -178,6 +179,7 @@
     <ClCompile Include="..\..\code\sources\Cube.cpp" />
     <ClCompile Include="..\..\code\sources\Cubemap.cpp" />
     <ClCompile Include="..\..\code\sources\ElevationMesh.cpp" />
+    <ClCompile Include="..\..\code\sources\Framebuffer.cpp" />
     <ClCompile Include="..\..\code\sources\Kernel.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\Material.cpp" />
@@ -201,8 +203,10 @@
   <ItemGroup>
     <None Include="..\..\assets\shaders\fragment\cubeFragmentShader.shader" />
     <None Include="..\..\assets\shaders\fragment\pointLightFragment.shader" />
+    <None Include="..\..\assets\shaders\fragment\postprocessFragment.shader" />
     <None Include="..\..\assets\shaders\vertex\cubeVertexShader.shader" />
     <None Include="..\..\assets\shaders\vertex\pointLightVertex.shader" />
+    <None Include="..\..\assets\shaders\vertex\postprocessVertex.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
