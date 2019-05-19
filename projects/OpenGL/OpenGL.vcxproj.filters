@@ -232,5 +232,11 @@
     <None Include="..\..\assets\shaders\fragment\pointLightFragment.shader">
       <Filter>Archivos de recursos\Fragment</Filter>
     </None>
+    <None Include="..\..\assets\shaders\fragment\transparencyFragment.shader">
+      <Filter>Archivos de recursos\Fragment</Filter>
+    </None>
+    <None Include="..\..\assets\shaders\vertex\transparencyVertex.shader">
+      <Filter>Archivos de recursos\Vertex</Filter>
+    </None>
   </ItemGroup>
 </Project>

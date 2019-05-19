@@ -19,7 +19,6 @@ namespace example
 
 		Camera * camera;
 		Skybox * skybox;
-		Cube * cube;
 		Light * light;
 		Framebuffer* framebuffer;
 
@@ -29,6 +28,7 @@ namespace example
 		unsigned height;
 
 		std::map<std::string, std::shared_ptr<Model>> models_map;
+		std::map<std::string, std::shared_ptr<Model>> tr_models_map;
 
 		glm::vec2 camera_direction;
 

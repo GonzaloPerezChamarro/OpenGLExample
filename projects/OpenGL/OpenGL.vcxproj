@@ -204,9 +204,11 @@
     <None Include="..\..\assets\shaders\fragment\cubeFragmentShader.shader" />
     <None Include="..\..\assets\shaders\fragment\pointLightFragment.shader" />
     <None Include="..\..\assets\shaders\fragment\postprocessFragment.shader" />
+    <None Include="..\..\assets\shaders\fragment\transparencyFragment.shader" />
     <None Include="..\..\assets\shaders\vertex\cubeVertexShader.shader" />
     <None Include="..\..\assets\shaders\vertex\pointLightVertex.shader" />
     <None Include="..\..\assets\shaders\vertex\postprocessVertex.shader" />
+    <None Include="..\..\assets\shaders\vertex\transparencyVertex.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

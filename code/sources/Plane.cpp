@@ -42,6 +42,7 @@ namespace example
 				texcoord[index + 1] = i / float((height - 1));
 			}
 		}
+
 		//Indices
 		index = 0;
 		for (size_t i = 0, k = 0; i < height - 1; ++i)

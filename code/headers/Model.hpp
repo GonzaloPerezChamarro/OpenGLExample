@@ -46,6 +46,8 @@ namespace example
 
 		Transform * get_transform()const { return transform; }
 
+		std::shared_ptr<Material> get_material(size_t index) const { return pieces[0].material; }
+
 	private:
 		bool load(const std::string & path, const std::string & text_path);
 	};
