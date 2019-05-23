@@ -3,11 +3,14 @@
 
 uniform vec3 _Color;
 uniform vec3 lightColor;
+uniform sampler2D _MainTex;
 
 in vec3 frontColor;
 out vec4 FragColor;
 
 void main()
 {
-	FragColor = vec4(frontColor * _Color, 1.0);
+	vec3 result = frontColor * _Color;
+	FragColor = vec4(result * texture(_MainTex, TexCoords.st).rgb, 1.0);
+	
 }

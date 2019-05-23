@@ -15,7 +15,7 @@ namespace example
 		std::vector<GLfloat> vertex;
 		std::vector<GLfloat> normals;
 		std::vector<GLfloat> texcoord;
-		std::vector<GLubyte> indices;
+		std::vector<GLuint> indices;
 
 	public:
 

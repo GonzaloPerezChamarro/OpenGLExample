@@ -5,6 +5,8 @@
 #include "Color_Rgba8888.hpp"
 #include <assert.h>
 
+#include <iostream>
+
 extern "C"
 {
 #include <targa.h>
@@ -23,7 +25,7 @@ namespace example
 		{
 			colors.resize(image.width * image.height);
 			tga_convert_depth(&image, sizeof(Color_RGBA8888) * 8);
-			tga_swap_red_blue(&image);
+			//tga_swap_red_blue(&image);
 
 			Color_RGBA8888 * begin = reinterpret_cast<Color_RGBA8888*>(image.image_data);
 			Color_RGBA8888 * end = begin + image.width * image.height;
@@ -31,10 +33,6 @@ namespace example
 
 			while (begin < end)
 				*buffer++ = *begin++;
-
-			
-
-
 
 		}
 		else
@@ -81,12 +79,16 @@ namespace example
 		{
 			for (size_t j = 0; j < width; ++j, index += 3)
 			{
-				glm::vec3 n = calculate_normal(width, height, i, index / 3);
-				normals[index] = n[0];
-				normals[index + 1] = n[1];
-				normals[index + 2] = n[2];
+				//glm::vec3 n = calculate_normal(width, height, i, index / 3);
+				//normals[index] = n[0];
+				//normals[index + 1] = n[1];
+				//normals[index + 2] = n[2];
+				normals[index] = 0.f;
+				normals[index + 1] = 1;
+				normals[index + 2] = 0;
+				std::cout <<"Height: " << i << ", Width: " << j << std::endl;
+				
 			}
-			
 		}
 
 		//! generate normals
@@ -127,7 +129,7 @@ namespace example
 		glEnableVertexAttribArray(3);
 		glVertexAttribPointer(3, 3, normals_buffer->get_element_type(), GL_FALSE, 3 * sizeof(GLfloat), 0);
 
-		indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], indices.size() * sizeof(GLubyte), Vertex_Buffer_Object::EAB));
+		indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], indices.size() * sizeof(GLuint), Vertex_Buffer_Object::EAB));
 
 		vao->unbind();
 
@@ -137,7 +139,7 @@ namespace example
 	void Elevation_Mesh::render()
 	{
 		vao->bind();
-		glDrawElements(GL_TRIANGLES, GLsizei(sizeof(indices) * indices.size()), GL_UNSIGNED_BYTE, 0);
+		glDrawElements(GL_TRIANGLES, GLsizei(sizeof(indices) * indices.size()), GL_UNSIGNED_INT, 0);
 	}
 
 	glm::vec3 Elevation_Mesh::calculate_normal(unsigned width, unsigned height, size_t i, size_t index)
@@ -244,7 +246,8 @@ namespace example
 
 	std::vector<glm::vec3> Elevation_Mesh::convert_vec1_to_vec3(std::vector<float>& vector1)
 	{
-		assert(vector1.size() % 3 == 0);
+		bool check = vector1.size() % 3 == 0;
+		assert(check);
 
 		std::vector<glm::vec3> result;
 		result.resize(vector1.size() / 3);

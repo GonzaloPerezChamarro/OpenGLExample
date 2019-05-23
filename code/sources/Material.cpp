@@ -13,7 +13,10 @@ namespace example
 	{
 		std::string id_temp = (vertex_path + fragment_path + texture_path);
 
-		if (factory.count(id_temp) > 0) return factory[id_temp];
+		if (factory.count(id_temp) > 0 && factory[id_temp]->get_color() == c )
+		{
+			return factory[id_temp];
+		}
 
 		std::shared_ptr<Material> material(new Material(shader_name, vertex_path, fragment_path, texture_path, variants));
 		material->set_color(c);

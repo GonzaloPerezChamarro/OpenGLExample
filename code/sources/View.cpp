@@ -45,7 +45,7 @@ namespace example
 
 		models_map["texturedCube"]->get_transform()->rotate(glm::vec3(0, 15 * deltaTime, 0));
 		models_map["childCube"]->get_transform()->rotate(glm::vec3(0, 0, 20 * deltaTime));
-		//models_map["childCube3"]->get_transform()->rotate(glm::vec3(10 * deltaTime, 0,0));
+		models_map["childCube3"]->get_transform()->rotate(glm::vec3(10 * deltaTime, 0,0));
 
 		light->transform.update();
 
@@ -59,12 +59,11 @@ namespace example
 
 	void View::render()
 	{
+		if (postprocess_active)
+			framebuffer->bind();
 
 		glClearColor(0, 1, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		
-		if(postprocess_active)
-			framebuffer->bind();
 		
 		skybox->render(*camera);
 
@@ -76,12 +75,13 @@ namespace example
 		}
 
 		glEnable(GL_BLEND);
-		glBlendFunc (GL_ONE, GL_ONE);
+		glBlendFunc(GL_ONE, GL_ONE);
 		for (auto & model : tr_models_map)
 		{
 			model.second->render(camera);
 		}
 		glDisable(GL_BLEND);
+		glFlush();
 		
 		if(postprocess_active)
 			framebuffer->render();
@@ -106,21 +106,32 @@ namespace example
 		models_map["childCube3"] = new_cube;
 
 
-		std::shared_ptr<Plane> plane(new Plane(16, 16));
-		std::shared_ptr<Model> new_plane(new Model(glm::vec3(-5.f, -1.f, -5.f)));
-		new_plane->add_piece(plane, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		std::shared_ptr<Plane> plane(new Plane(15, 15));
+		std::shared_ptr<Model> new_plane(new Model(glm::vec3(-5.f, 10.f, -25.f), glm::vec3(90.f, 0.f, 0.f)));
+		new_plane->add_piece(plane, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(1, 1, 1), "../../assets/textures/brick-texture.tga"));
 		models_map["plane"] = new_plane;
 
 
-		std::shared_ptr<Elevation_Mesh> terrain(new Elevation_Mesh("../../assets/heightmap/heightmap.tga", 10, 10));
-		std::shared_ptr<Model> new_terrain(new Model(glm::vec3(-20.f, -5.f, -20.f)));
-		new_terrain->add_piece(terrain, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader"));
+		std::shared_ptr<Elevation_Mesh> terrain(new Elevation_Mesh("../../assets/heightmap/heightmap.tga", 50, 50));
+		std::shared_ptr<Model> new_terrain(new Model(glm::vec3(-25.f, -5.f, -25.f)));
+		new_terrain->add_piece(terrain, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader", glm::vec3(1, 1, 1), "../../assets/textures/grass.tga"));
 		models_map["terrain"] = new_terrain;
 		
 		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/Cube_obj.obj"));
 		std::shared_ptr<Model> obj_model(new Model(glm::vec3(-10.f, 10.f, -10.f), glm::vec3(0, 0, 0), glm::vec3(1.f, 1.f, 1.f)));
-		obj_model->add_piece(obj, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(1, 1, 1), "../../assets/textures/Cube_diffuse.tga"));
+		obj_model->add_piece(obj, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(1, 0.7, 0.3)));
 		models_map["cubeObj"] = obj_model;
+
+		std::shared_ptr<Mesh_Obj> tie(new Mesh_Obj("../../assets/models/tie-eye.obj"));
+		std::shared_ptr<Model> tie_model(new Model(glm::vec3(-40.f, 10.f, -10.f), glm::vec3(0, 0, 0), glm::vec3(0.01f, 0.01f, 0.01f)));
+		tie_model->add_piece(tie, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
+
+		std::shared_ptr<Mesh_Obj> tie_wl(new Mesh_Obj("../../assets/models/tie-win-l.obj"));
+		tie_model->add_piece(tie_wl, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
+		std::shared_ptr<Mesh_Obj> tie_wr(new Mesh_Obj("../../assets/models/tie-win-r.obj"));
+		tie_model->add_piece(tie_wr, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
+		models_map["tie-eye"] = tie_model;
+
 
 		std::shared_ptr<Cube> transparent_cube(new Cube);
 		std::shared_ptr<Model> tr_cube(new Model(glm::vec3(5.f, 5.f, -15.f), glm::vec3(0, 0, 0), glm::vec3(1.f, 1.f, 1.f)));

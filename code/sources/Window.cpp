@@ -18,6 +18,9 @@ namespace example
 
 		clear_color(0.f, 0.f, 0.f, 1.f);
 		glViewport(0, 0, width, height);
+
+		window->setMouseCursorGrabbed(true);
+		window->setMouseCursorVisible(true);
 	}
 
 	void Window::swap_buffers()

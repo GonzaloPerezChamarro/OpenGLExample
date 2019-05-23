@@ -6,7 +6,7 @@ using namespace example;
 
 int main()
 {
-	std::unique_ptr<Kernel> kernel(new Kernel("OpenGL Example", 800, 600));
+	std::unique_ptr<Kernel> kernel(new Kernel("OpenGL Example", 1280, 720));
 
 	kernel->execute();
 

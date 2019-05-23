@@ -13,7 +13,7 @@ namespace example
 		std::vector<GLfloat> vertex;
 		std::vector<GLfloat> normals;
 		std::vector<GLfloat> texcoord;
-		std::vector<GLubyte> indices;
+		std::vector<GLuint> indices;
 
 		const size_t dim;
 		
