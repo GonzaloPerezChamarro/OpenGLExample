@@ -62,6 +62,7 @@ namespace example
 			tga_free_buffers(&image);
 
 		}
+		
 
 		return texture;
 	}

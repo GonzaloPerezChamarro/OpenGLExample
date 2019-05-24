@@ -21,7 +21,7 @@ namespace example
 	public:
 
 		static std::shared_ptr<Texture> get_texture(const std::string & path,
-			Parameter wrap = Parameter::CLAMP_TO_EDGE,
+			Parameter wrap = Parameter::REPEAT,
 			Parameter filter = Parameter::MIPMAP_LINEAR_FILTER);
 
 	public:

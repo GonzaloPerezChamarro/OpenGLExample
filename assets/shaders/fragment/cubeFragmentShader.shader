@@ -6,6 +6,8 @@ uniform vec3 lightColor;
 uniform sampler2D _MainTex;
 
 in vec3 frontColor;
+in vec2 TexCoords;
+
 out vec4 FragColor;
 
 void main()
