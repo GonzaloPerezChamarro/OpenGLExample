@@ -53,8 +53,6 @@ namespace example
 		{
 			model.second->update(deltaTime);
 		}
-
-		
 	}
 
 	void View::render()
@@ -117,7 +115,7 @@ namespace example
 		new_terrain->add_piece(terrain, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader", glm::vec3(1, 1, 1), "../../assets/textures/grass.tga"));
 		models_map["terrain"] = new_terrain;
 		
-		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/Cube_obj.obj"));
+		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/cube.obj"));
 		std::shared_ptr<Model> obj_model(new Model(glm::vec3(-10.f, 10.f, -10.f), glm::vec3(0, 0, 0), glm::vec3(1.f, 1.f, 1.f)));
 		obj_model->add_piece(obj, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(1, 0.7, 0.3)));
 		models_map["cubeObj"] = obj_model;

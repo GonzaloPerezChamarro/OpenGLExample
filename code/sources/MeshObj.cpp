@@ -7,6 +7,7 @@
 #include <tiny_obj_loader.h>
 #include <vector>
 #include <string>
+#include <iostream>
 
 using namespace tinyobj;
 
@@ -60,15 +61,16 @@ namespace example
 		}
 
 
-		if (attributes.vertices.size() == 0) { log_error = std::string("vertex error"); }
-		if (attributes.normals.size() == 0) { log_error = std::string("normals error"); }
-		if (attributes.texcoords.size() == 0) { log_error = std::string("Texcoord error"); }
+		if (attributes.vertices.size() == 0) { log_error += std::string("vertex error"); }
+		if (attributes.normals.size() == 0) { log_error += std::string("normals error"); }
+		if (attributes.texcoords.size() == 0) { log_error += std::string("Texcoord error"); }
 		if (shapes.size() == 0) { log_error = std::string("Shapes Error"); }
 
-		//assert(log_error.empty());
-
+		std::cout << log_error << std::endl;
+				
 		vertex = attributes.vertices;
 		texcoord = attributes.texcoords;
+		
 		normals = attributes.normals;
 		indices.resize(shapes[0].mesh.indices.size());
 

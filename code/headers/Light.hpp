@@ -17,12 +17,14 @@ namespace example
 		float ambient_intensity;
 
 		glm::vec3 light_color;
+		glm::vec3 position;
 
 	public:
 
 		Light(glm::vec3 vector, glm::vec3 color, float i = 1.f, float ambiental = .25f)
 			:transform(Transform()), intensity(i), ambient_intensity(ambiental), light_color(color)
 		{
+			position = vector;
 			transform.translate(vector);
 		}
 
