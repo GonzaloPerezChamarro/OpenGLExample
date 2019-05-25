@@ -52,6 +52,7 @@ namespace example
 			+1.0f, -1.0f, +1.0f,
 		};
 
+		//Vertex shader
 		const std::string vertex_code =
 			"#version 330 core\n"
 
@@ -69,6 +70,7 @@ namespace example
 			"	gl_Position = projection_matrix * model_view_matrix * vec4(vertex, 1.0);"
 			"}";
 
+		//Fragment shader
 		const std::string fragment_code =
 			"#version 330 core\n"
 			""
@@ -87,11 +89,13 @@ namespace example
 	Skybox::Skybox(const std::string & path)
 		:cubemap(path), shader(new Shader_Program)
 	{
+		//Creacion del shader
 		shader->attach(Vertex_Shader(Shader::Source_Code::from_string(vertex_code)));
 		shader->attach(Fragment_Shader(Shader::Source_Code::from_string(fragment_code)));
 
 		shader->link();
 
+		//VAO y vbo
 		vao.reset(new Vertex_Array_Object);
 
 		vao->bind();

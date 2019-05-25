@@ -14,6 +14,7 @@ namespace example
 
 	std::shared_ptr<Texture> Texture2D::get_texture(const std::string & path, Parameter wrap, Parameter filter)
 	{
+		//Comprobacion de existencia de la textura /Factoria
 		if (factory.count(path) > 0)
 			return factory[path];
 
@@ -44,6 +45,7 @@ namespace example
 
 		const char * path_file = path.c_str();
 
+		//Lectura del .tga
 		if (tga_read(&image, path_file) == TGA_NOERR)
 		{
 			texture.reset(new Texture(image.width, image.height));

@@ -3,6 +3,7 @@
 
 void example::Light::render(Camera & camera)
 {
+	//Ajuste de variables uniformes del shader default
 	auto light_shader = Shader_Program::get_shader("lightShader");
 	light_shader->use();
 	transform = glm::mat4();

@@ -60,6 +60,7 @@ namespace example
 			++k;
 		}
 
+		//VAO y vbos
 		vao.reset(new Vertex_Array_Object);
 		vao->bind();
 

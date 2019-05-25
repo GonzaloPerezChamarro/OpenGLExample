@@ -15,8 +15,10 @@ namespace example
 {
 	Mesh_Obj::Mesh_Obj(const std::string & file)
 	{
+		//Carga del .obj
 		load_obj(file);
 
+		//Vao y vbos
 		vao.reset(new Vertex_Array_Object);
 		vao->bind();
 
@@ -60,7 +62,7 @@ namespace example
 			return;
 		}
 
-
+		//Comprobacion de errores
 		if (attributes.vertices.size() == 0) { log_error += std::string("vertex error"); }
 		if (attributes.normals.size() == 0) { log_error += std::string("normals error"); }
 		if (attributes.texcoords.size() == 0) { log_error += std::string("Texcoord error"); }

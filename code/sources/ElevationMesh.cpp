@@ -25,7 +25,6 @@ namespace example
 		{
 			colors.resize(image.width * image.height);
 			tga_convert_depth(&image, sizeof(Color_RGBA8888) * 8);
-			//tga_swap_red_blue(&image);
 
 			Color_RGBA8888 * begin = reinterpret_cast<Color_RGBA8888*>(image.image_data);
 			Color_RGBA8888 * end = begin + image.width * image.height;
@@ -55,7 +54,6 @@ namespace example
 			for (size_t j = 0; j < width; ++j, index += 3, elevation += increment)
 			{
 				vertex[index] = j;
-				//vertex[index + 1] = 0.f;
 				vertex[index + 1] = (colors[size_t(elevation)].data.component.r / float(255)) * 10.f;
 				vertex[index + 2] = i;
 			}
@@ -79,13 +77,13 @@ namespace example
 		{
 			for (size_t j = 0; j < width; ++j, index += 3)
 			{
-				//glm::vec3 n = calculate_normal(width, height, i, index / 3);
-				//normals[index] = n[0];
-				//normals[index + 1] = n[1];
-				//normals[index + 2] = n[2];
-				normals[index] = 0.f;
-				normals[index + 1] = 1;
-				normals[index + 2] = 0;
+				glm::vec3 n = calculate_normal(width, height, i, index / 3);
+				normals[index] = n[0];
+				normals[index + 1] = n[1];
+				normals[index + 2] = n[2];
+				//normals[index] = 0.f;
+				//normals[index + 1] = 1;
+				//normals[index + 2] = 0;
 				std::cout <<"Height: " << i << ", Width: " << j << std::endl;
 				
 			}
@@ -154,6 +152,7 @@ namespace example
 		size_t start = i * height;
 		size_t end = i * height + (width - 1);
 
+		//Calculo de excepciones
 		//1
 		int temp = index - width;
 		if (temp > 0)
@@ -231,7 +230,7 @@ namespace example
 			products.push_back(glm::cross(begin, end));
 		}
 
-		//Calcular medias
+		//Calcular medias entre puntos
 
 		for (size_t k = 0; k < products.size(); ++k)
 		{

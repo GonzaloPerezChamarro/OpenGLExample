@@ -22,7 +22,7 @@ namespace example
 		glEnable(GL_CULL_FACE);// BackFace Culling
 		glCullFace(GL_BACK);
 		
-
+		//Creacion de los shaders que se van a utilizar
 		Shader_Program::create_shader("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader");
 		Shader_Program::create_shader("trShader", "../../assets/shaders/vertex/transparencyVertex", "../../assets/shaders/fragment/transparencyFragment");
 		Shader_Program::create_shader("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment");
@@ -30,6 +30,7 @@ namespace example
 
 		projection_matrix = glm::perspective(glm::radians(75.f), (float)width / height, 0.3f, 1000.f);
 
+		//Postprocesado
 		framebuffer = new Framebuffer(width, height, "postprocess");
 		framebuffer->build();
 
@@ -39,14 +40,16 @@ namespace example
 
 	void View::update(float deltaTime)
 	{
+		//Movimiento de la camara
 		camera->move(camera->get_camera_front() * camera_direction.y, 10.f * deltaTime);
 		camera->move(glm::normalize(glm::cross(camera->get_camera_front(), camera->get_camera_up())) * camera_direction.x, 10.f * deltaTime);
 
-
+		//Movimiento de los elementos de escena
 		models_map["texturedCube"]->get_transform()->rotate(glm::vec3(0, 15 * deltaTime, 0));
 		models_map["childCube"]->get_transform()->rotate(glm::vec3(0, 0, 20 * deltaTime));
 		models_map["childCube3"]->get_transform()->rotate(glm::vec3(10 * deltaTime, 0,0));
 
+		//Actualizado de elementos
 		light->transform.update();
 
 		for (auto & model : models_map)
@@ -60,11 +63,12 @@ namespace example
 		if (postprocess_active)
 			framebuffer->bind();
 
+		//Limpieza de pantalla
 		glClearColor(0, 1, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
+		//Renderizado de skybox y escena
 		skybox->render(*camera);
-
 		light->render(*camera);
 
 		for (auto & model : models_map)
@@ -72,6 +76,7 @@ namespace example
 			model.second->render(camera);
 		}
 
+		//Renderizado de modelos con transparencia
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_ONE, GL_ONE);
 		for (auto & model : tr_models_map)
@@ -140,7 +145,7 @@ namespace example
 
 	void View::handler(sf::Event & e)
 	{
-
+		//Movimiento de la camara
 		switch (e.type)
 		{
 		case sf::Event::MouseMoved:

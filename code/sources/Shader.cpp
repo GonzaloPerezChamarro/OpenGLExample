@@ -10,17 +10,19 @@ namespace example
 	{
 		if (source_code.is_not_empty())
 		{
+			//Creacion del shader
 			id = glCreateShader(shader_type);
 			const char * shader_code_list[] = { source_code };
 			const GLint  shader_size_list[] = { (GLint)source_code.size() };
 
 			glShaderSource(id, 1, shader_code_list, shader_size_list);
-
+			//Compilacion del sahder
 			glCompileShader(id);
 
 			GLint succeeded = GL_FALSE;
 			glGetShaderiv(id, GL_COMPILE_STATUS, &succeeded);
 
+			//Comprobacion de error
 			if (!succeeded)
 			{
 				GLint log_length;
@@ -53,6 +55,7 @@ namespace example
 		using std::fstream;
 		Source_Code source_code;
 
+		//Lectura de archivo
 		fstream file_reader(file_path, fstream::in | fstream::binary);
 
 		if (file_reader.is_open())
@@ -66,6 +69,7 @@ namespace example
 
 				file_reader.seekg(0, fstream::beg);
 
+				//Paso de archivo a SourceCode
 				file_reader.read(&source_code.string.front(), file_size);
 
 				assert(file_reader.good());

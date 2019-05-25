@@ -22,7 +22,6 @@ namespace example
 
 	void Model::update(float deltaTime)
 	{
-		//nothing
 		transform->update();
 	}
 
@@ -35,6 +34,7 @@ namespace example
 
 			model_view_matrix = model_view_matrix * transform->get_matrix();
 
+			//APLICACION DEL SHADER
 			piece.material->get_shader()->use();
 
 			GLint m_id = piece.material->get_shader()->get_uniform_location("model_view_matrix");
@@ -43,11 +43,12 @@ namespace example
 			glUniformMatrix4fv(m_id, 1, GL_FALSE, glm::value_ptr((model_view_matrix)));
 			glUniformMatrix4fv(p_id, 1, GL_FALSE, glm::value_ptr((camera->get_projection())));
 
+			//Textura
 			if (piece.material->get_texture() != nullptr)
 				piece.material->get_texture()->bind();
-
+			//Color
 			piece.material->get_shader()->set_variant_value("_Color", piece.material->get_color());
-
+			//Renderizado
 			piece.mesh->render();
 
 			if (piece.material->get_texture() != nullptr)

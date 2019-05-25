@@ -24,6 +24,7 @@ namespace example
 		auto now = timer.getElapsedTime();
 		auto deltaTime = now - last_time;
 
+		//Flujo de juego
 		do 
 		{
 			now = timer.getElapsedTime();

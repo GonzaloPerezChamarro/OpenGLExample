@@ -9,9 +9,11 @@ namespace example
 
 	std::shared_ptr<Shader_Program> Shader_Program::create_shader(const std::string & name, const std::string & vertex_shader_path, const std::string & fragment_shader_path)
 	{
+		//Comprobacion de existencia del shader/Factoria
 		if (factory.count(name) > 0)
 			return factory[name];
 
+		//Creacion de un nuevo shader
 		std::shared_ptr<Shader_Program> shader(new Shader_Program);
 		
 		shader->attach(Vertex_Shader(Shader::Source_Code::from_file(vertex_shader_path + ".shader")));

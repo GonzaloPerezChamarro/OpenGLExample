@@ -12,6 +12,7 @@ namespace example
 	{
 		window = new sf::Window(sf::VideoMode(width, height),title, sf::Style::Titlebar | sf::Style::Close, sf::ContextSettings(32));
 		
+		//Inicializacion de OpenGL
 		if (!init_opengl_extensions()) exit(-1);
 
 		active_VSync(true);
@@ -19,6 +20,7 @@ namespace example
 		clear_color(0.f, 0.f, 0.f, 1.f);
 		glViewport(0, 0, width, height);
 
+		//Mantener el raton en la pantalla
 		window->setMouseCursorGrabbed(true);
 		window->setMouseCursorVisible(true);
 	}

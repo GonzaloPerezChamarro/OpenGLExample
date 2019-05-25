@@ -8,6 +8,7 @@ namespace example
 		:position(position), rotation(euler_angles), scale(scale), updated(false),
 		transform(glm::mat4(1.f)), local_transform(glm::mat4(1.f))
 	{
+		//Inicializacion
 		local_transform = glm::translate(glm::mat4(), position);
 		local_transform = glm::scale(local_transform, scale);
 		local_transform = glm::rotate(local_transform, rotation.x, glm::vec3(1.f, 0.f, 0.f));
@@ -18,6 +19,7 @@ namespace example
 
 	const glm::mat4 & Transform::get_matrix()
 	{
+		//Sistema de grafo de escena
 		if (updated) return transform;
 
 		if (parent != nullptr)
