@@ -115,20 +115,20 @@ namespace example
 		new_terrain->add_piece(terrain, Material::get("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader", glm::vec3(1, 1, 1), "../../assets/textures/grass.tga"));
 		models_map["terrain"] = new_terrain;
 		
-		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/cube.obj"));
+		std::shared_ptr<Mesh_Obj> obj(new Mesh_Obj("../../assets/models/Cube_obj.obj"));
 		std::shared_ptr<Model> obj_model(new Model(glm::vec3(-10.f, 10.f, -10.f), glm::vec3(0, 0, 0), glm::vec3(1.f, 1.f, 1.f)));
-		obj_model->add_piece(obj, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(1, 0.7, 0.3)));
+		obj_model->add_piece(obj, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(1, 1, 1), "../../assets/textures/Cube_diff.tga"));
 		models_map["cubeObj"] = obj_model;
 
-		std::shared_ptr<Mesh_Obj> tie(new Mesh_Obj("../../assets/models/tie-eye.obj"));
-		std::shared_ptr<Model> tie_model(new Model(glm::vec3(-40.f, 10.f, -10.f), glm::vec3(0, 0, 0), glm::vec3(0.01f, 0.01f, 0.01f)));
-		tie_model->add_piece(tie, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
+		//std::shared_ptr<Mesh_Obj> tie(new Mesh_Obj("../../assets/models/tie-eye.obj"));
+		//std::shared_ptr<Model> tie_model(new Model(glm::vec3(-40.f, 10.f, -10.f), glm::vec3(0, 0, 0), glm::vec3(0.01f, 0.01f, 0.01f)));
+		//tie_model->add_piece(tie, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
 
-		std::shared_ptr<Mesh_Obj> tie_wl(new Mesh_Obj("../../assets/models/tie-win-l.obj"));
-		tie_model->add_piece(tie_wl, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
-		std::shared_ptr<Mesh_Obj> tie_wr(new Mesh_Obj("../../assets/models/tie-win-r.obj"));
-		tie_model->add_piece(tie_wr, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
-		models_map["tie-eye"] = tie_model;
+		//std::shared_ptr<Mesh_Obj> tie_wl(new Mesh_Obj("../../assets/models/tie-win-l.obj"));
+		//tie_model->add_piece(tie_wl, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
+		//std::shared_ptr<Mesh_Obj> tie_wr(new Mesh_Obj("../../assets/models/tie-win-r.obj"));
+		//tie_model->add_piece(tie_wr, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
+		//models_map["tie-eye"] = tie_model;
 
 
 		std::shared_ptr<Cube> transparent_cube(new Cube);

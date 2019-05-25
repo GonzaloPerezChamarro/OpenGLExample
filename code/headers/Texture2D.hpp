@@ -1,4 +1,13 @@
-
+/**
+ * @file Texture2D.hpp
+ * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
+ * @brief Clase de textura 2D, hija de Texture.hpp
+ * @version 0.1
+ * @date 2019-05-24
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
 #ifndef TEXTURE_2D_HEADER
 #define TEXTURE_2D_HEADER
@@ -15,16 +24,33 @@ namespace example
 	class Texture2D : public Texture
 	{
 	private:
-
+		/**
+		 * @brief Mapa de texturas/factory
+		 * 
+		 */
 		static std::map<std::string, std::shared_ptr<Texture>> factory;
 
 	public:
-
+		/**
+		 * @brief Devuelve la textura segun su nombre en caso de que exista. SI no, crea una nueva.
+		 * 
+		 * @param path 
+		 * @param wrap 
+		 * @param filter 
+		 * @return std::shared_ptr<Texture> 
+		 */
 		static std::shared_ptr<Texture> get_texture(const std::string & path,
 			Parameter wrap = Parameter::REPEAT,
 			Parameter filter = Parameter::MIPMAP_LINEAR_FILTER);
 
 	public:
+		/**
+		 * @brief Constructor de Texture 2 D
+		 * 
+		 * @param path ruta de textura
+		 * @param w wrap
+		 * @param f filter
+		 */
 		Texture2D(const std::string & path, Parameter w = Parameter::CLAMP_TO_EDGE, Parameter f = Parameter::MIPMAP_LINEAR_FILTER)
 		{
 			std::shared_ptr<Texture> temp = load_texture(path, w, f);
@@ -37,7 +63,7 @@ namespace example
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
-				// Se suben los colores de la textura a la memoria de vídeo:
+				// Se suben los colores de la textura a la memoria de vï¿½deo:
 
 				glTexImage2D
 				(
@@ -93,6 +119,15 @@ namespace example
 			}
 		}
 
+
+		/**
+		 * @brief Carga la textura de un archivo
+		 * 
+		 * @param path ruta de la textura
+		 * @param w wrap
+		 * @param f filter
+		 * @return std::shared_ptr<Texture> 
+		 */
 		std::shared_ptr<Texture> load_texture(const std::string & path, Parameter w = Parameter::CLAMP_TO_EDGE, Parameter f = Parameter::MIPMAP_LINEAR_FILTER) override;
 
 	};

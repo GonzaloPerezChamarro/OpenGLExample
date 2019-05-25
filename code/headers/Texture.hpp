@@ -1,3 +1,14 @@
+/**
+ * @file Texture.hpp
+ * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
+ * @brief Clase base de textura
+ * @version 0.1
+ * @date 2019-05-24
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
+
 #ifndef TEXTURE_HEADER
 #define TEXTURE_HEADER
 
@@ -13,6 +24,10 @@ namespace example
 	class Texture
 	{
 	public:
+	/**
+	 * @brief Enumeracion que recoge los tipos de parametro
+	 * 
+	 */
 		enum Parameter 
 		{
 			//WRAP PARAMETERS
@@ -32,19 +47,60 @@ namespace example
 	protected:
 		typedef Color_RGBA8888 Color;
 
+		/**
+		 * @brief Id de la textura
+		 * 
+		 */
 		GLenum id;
+
+		/**
+		 * @brief Error de la textura
+		 * 
+		 */
 		GLenum error;
 
+		/**
+		 * @brief Indica si la carga de la textura ha sido correcta
+		 * 
+		 */
 		bool success;
 
+		/**
+		 * @brief Buffer de la textura
+		 * 
+		 */
 		std::vector <Color_RGBA8888> texture_buffer;
+
+		/**
+		 * @brief color
+		 * 
+		 */
 		Color color;
 
+		/**
+		 * @brief Ancho de la textura
+		 * 
+		 */
 		size_t width;
+
+		/**
+		 * @brief Alto de la textura
+		 * 
+		 */
 		size_t height;
 
 	public:
+		/**
+		 * @brief Constructor de Texture por defecto
+		 * 
+		 */
 		Texture() = default;
+		/**
+		 * @brief Constructor de Texture
+		 * 
+		 * @param width ancho
+		 * @param height alto
+		 */
 		Texture(size_t width, size_t height)
 			:width(width), height(height), success(true), texture_buffer(width*height)
 		{}
@@ -58,6 +114,14 @@ namespace example
 
 	public:
 
+		/**
+		 * @brief Metodo virtual de carga de textura
+		 * 
+		 * @param path 
+		 * @param w 
+		 * @param f 
+		 * @return std::shared_ptr<Texture> 
+		 */
 		virtual std::shared_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) { return std::shared_ptr<Texture>(); }
 
 		virtual void bind() {}
@@ -75,13 +139,31 @@ namespace example
 		GLenum get_id()const { return id; }
 
 	public:
-
+		/**
+		 * @brief Devuelve un puntero al buffer de textura
+		 * 
+		 * @return Color* 
+		 */
 		Color * colors()			{return (&texture_buffer.front());}
-
+		/**
+		 * @brief Devuelve un puntero al buffer de textura
+		 * 
+		 * @return Color* 
+		 */
 		const Color * colors() const{return (&texture_buffer.front());}
 
+		/**
+		 * @brief Devuelve el tamaño de color
+		 * 
+		 * @return int 
+		 */
 		int bits_per_color() const	{return (sizeof(Color) * 8);}
 
+		/**
+		 * @brief Tamaño de la textura
+		 * 
+		 * @return size_t 
+		 */
 		size_t size() const			{return (texture_buffer.size());}
 
 

@@ -1,3 +1,14 @@
+/**
+ * @file MeshObj.hpp
+ * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
+ * @brief Clase hija de Mesh.hpp para carga de objectos obj
+ * @version 0.1
+ * @date 2019-05-24
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
+
 
 #ifndef MESH_OBJ_HEADER
 #define MESH_OBJ_HEADER
@@ -26,6 +37,11 @@ namespace example
 		void render() override;
 
 	private:
+		/**
+		 * @brief Carga el obj a partir de su ruta
+		 * 
+		 * @param file Ruta relativa desde el ejecutable
+		 */
 		void load_obj(const std::string & file);
 	};
 }

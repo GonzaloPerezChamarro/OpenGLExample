@@ -1,4 +1,13 @@
-
+/**
+ * @file Color_Rgba8888.hpp
+ * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
+ * @brief Clase que recoge un color rgba 32bits
+ * @version 0.1
+ * @date 2019-05-24
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
 #ifndef COLOR_RGBA8888_HEADER
 #define COLOR_RGBA8888_HEADER

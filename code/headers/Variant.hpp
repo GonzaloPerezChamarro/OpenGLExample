@@ -1,4 +1,13 @@
-
+/**
+ * @file Variant.hpp
+ * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
+ * @brief Clase Variant, para el uso de variables no tipadas
+ * @version 0.1
+ * @date 2019-05-24
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 
 #include "OpenGL.hpp"
 

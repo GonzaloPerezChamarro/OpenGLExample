@@ -1,3 +1,14 @@
+/**
+ * @file Mesh.hpp
+ * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
+ * @brief Clase que representa un objeto malla
+ * @version 0.1
+ * @date 2019-05-24
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
+
 
 #ifndef MESH_HEADER
 #define MESH_HEADER
@@ -17,11 +28,33 @@ namespace example
 	{
 	protected:
 		
+		/**
+		 * @brief Vertex Array Object
+		 * 
+		 */
 		std::shared_ptr<Vertex_Array_Object> vao;
 
+		/**
+		 * @brief Buffer de vertices
+		 * 
+		 */
 		std::shared_ptr<Vertex_Buffer_Object> vertex_buffer;
+		/**
+		 * @brief Buffer de coordenadas de textura
+		 * 
+		 */
 		std::shared_ptr<Vertex_Buffer_Object> texcoord_buffer;
+
+		/**
+		 * @brief Buffer de normales
+		 * 
+		 */
 		std::shared_ptr<Vertex_Buffer_Object> normals_buffer;
+
+		/**
+		 * @brief Buffer de indices
+		 * 
+		 */
 		std::shared_ptr<Vertex_Buffer_Object> indices_buffer;
 
 	public:
