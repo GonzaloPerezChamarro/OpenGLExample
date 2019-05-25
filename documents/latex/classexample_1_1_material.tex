@@ -1,0 +1,157 @@
+\hypertarget{classexample_1_1_material}{}\section{example\+::Material Class Reference}
+\label{classexample_1_1_material}\index{example::Material@{example::Material}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_material_ad3e99abb9dc569c6c3ed8491f214d681}{Material}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \&shader\+\_\+program)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_material}{Material}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_material_a7d1c4c3f80caae091c5a1112f992dbec}{Material}} (const std\+::string \&shader\+\_\+name, const std\+::string \&vertex\+\_\+path, const std\+::string \&fragment\+\_\+path, const std\+::string \&texture\+\_\+path, const std\+::map$<$ std\+::string, \mbox{\hyperlink{structexample_1_1_variant}{Variant}} $>$ \&variants)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_material}{Material}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_material_a133e88535b7d1643501493ea97634f00}{use}} ()
+\begin{DoxyCompactList}\small\item\em Indica a Open\+GL que se va a utilizar el material. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_material_aa75e094d80c6b21e6b3a5e5efd36469c}\label{classexample_1_1_material_aa75e094d80c6b21e6b3a5e5efd36469c}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ {\bfseries get\+\_\+shader} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_af665e88da873a3bf97cb2bf11a462204}\label{classexample_1_1_material_af665e88da873a3bf97cb2bf11a462204}} 
+std\+::string {\bfseries get\+\_\+id} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_ae85fe9358d9f308fafc76019db0d7b49}\label{classexample_1_1_material_ae85fe9358d9f308fafc76019db0d7b49}} 
+bool {\bfseries add\+\_\+variant} (const std\+::string \&name, const G\+Lint value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_aa98aabeebad148347dde0543a3e42e19}\label{classexample_1_1_material_aa98aabeebad148347dde0543a3e42e19}} 
+bool {\bfseries add\+\_\+variant} (const std\+::string \&name, const G\+Luint value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_a0fb8216054d99abeb272d46363d4de69}\label{classexample_1_1_material_a0fb8216054d99abeb272d46363d4de69}} 
+bool {\bfseries add\+\_\+variant} (const std\+::string \&name, const G\+Lfloat value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_a5567665d0ea2f7bc1be205ab1ba808e2}\label{classexample_1_1_material_a5567665d0ea2f7bc1be205ab1ba808e2}} 
+bool {\bfseries add\+\_\+variant} (const std\+::string \&name, const glm\+::vec2 value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_a47d5755e9892c7df08e123f840cda0ac}\label{classexample_1_1_material_a47d5755e9892c7df08e123f840cda0ac}} 
+bool {\bfseries add\+\_\+variant} (const std\+::string \&name, const glm\+::vec3 value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_a89dcedf45417beade3637f1f1724c13b}\label{classexample_1_1_material_a89dcedf45417beade3637f1f1724c13b}} 
+bool {\bfseries add\+\_\+variant} (const std\+::string \&name, const glm\+::vec4 value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_ad609a4e2fecd256f829f271d05a4f8c7}\label{classexample_1_1_material_ad609a4e2fecd256f829f271d05a4f8c7}} 
+void {\bfseries set\+\_\+value} (const std\+::string \&variant\+\_\+name, \mbox{\hyperlink{structexample_1_1_variant}{Variant}} value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_aeee88c136da1811f469dab5573bec1d2}\label{classexample_1_1_material_aeee88c136da1811f469dab5573bec1d2}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_texture}{Texture}} $>$ {\bfseries get\+\_\+texture} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_ad404cd0e0d35c10d0d1d98b464a05037}\label{classexample_1_1_material_ad404cd0e0d35c10d0d1d98b464a05037}} 
+glm\+::vec3 {\bfseries get\+\_\+color} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_material_a52f71468aca3d0ed96c730189f77a9fb}\label{classexample_1_1_material_a52f71468aca3d0ed96c730189f77a9fb}} 
+void {\bfseries set\+\_\+color} (glm\+::vec3 c)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_material}{Material}} $>$ \mbox{\hyperlink{classexample_1_1_material_aee25c52abc2c47f9fab55faa40b7403b}{get}} (const std\+::string \&shader\+\_\+name, const std\+::string \&vertex\+\_\+path, const std\+::string \&fragment\+\_\+path, const glm\+::vec3 \&color=\{ 1, 1, 1 \}, const std\+::string \&texture\+\_\+path=\char`\"{}../../assets/textures/default.\+tga\char`\"{}, const std\+::map$<$ std\+::string, \mbox{\hyperlink{structexample_1_1_variant}{Variant}} $>$ \&variants=std\+::map$<$ std\+::string, \mbox{\hyperlink{structexample_1_1_variant}{Variant}} $>$())
+\begin{DoxyCompactList}\small\item\em Devuelve el material si ya esta creado. EN caso contrario, crea uno nuevo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_material}{Material}} $>$ $>$ \mbox{\hyperlink{classexample_1_1_material_afc40351ededce03a8620f30c635a1b35}{factory}}
+\begin{DoxyCompactList}\small\item\em Mapa de materiales. Factoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_material_ad3e99abb9dc569c6c3ed8491f214d681}\label{classexample_1_1_material_ad3e99abb9dc569c6c3ed8491f214d681}} 
+\index{example::Material@{example::Material}!Material@{Material}}
+\index{Material@{Material}!example::Material@{example::Material}}
+\subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily example\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \&}]{shader\+\_\+program }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_material}{Material}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+\_\+program} & shader \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_material_a7d1c4c3f80caae091c5a1112f992dbec}\label{classexample_1_1_material_a7d1c4c3f80caae091c5a1112f992dbec}} 
+\index{example::Material@{example::Material}!Material@{Material}}
+\index{Material@{Material}!example::Material@{example::Material}}
+\subsubsection{\texorpdfstring{Material()}{Material()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily example\+::\+Material\+::\+Material (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader\+\_\+name,  }\item[{const std\+::string \&}]{vertex\+\_\+path,  }\item[{const std\+::string \&}]{fragment\+\_\+path,  }\item[{const std\+::string \&}]{texture\+\_\+path,  }\item[{const std\+::map$<$ std\+::string, \mbox{\hyperlink{structexample_1_1_variant}{Variant}} $>$ \&}]{variants }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_material}{Material}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+\_\+name} & nombre del shader \\
+\hline
+{\em vertex\+\_\+path} & ruta del vertex shader \\
+\hline
+{\em fragment\+\_\+path} & ruta del fragment shader \\
+\hline
+{\em texture\+\_\+path} & ruta a la textura \\
+\hline
+{\em variants} & mapa de variables uniformes \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_material_aee25c52abc2c47f9fab55faa40b7403b}\label{classexample_1_1_material_aee25c52abc2c47f9fab55faa40b7403b}} 
+\index{example::Material@{example::Material}!get@{get}}
+\index{get@{get}!example::Material@{example::Material}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classexample_1_1_material}{Material}}$>$ example\+::\+Material\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{shader\+\_\+name,  }\item[{const std\+::string \&}]{vertex\+\_\+path,  }\item[{const std\+::string \&}]{fragment\+\_\+path,  }\item[{const glm\+::vec3 \&}]{color = {\ttfamily \{~1,~1,~1~\}},  }\item[{const std\+::string \&}]{texture\+\_\+path = {\ttfamily \char`\"{}../../assets/textures/default.tga\char`\"{}},  }\item[{const std\+::map$<$ std\+::string, \mbox{\hyperlink{structexample_1_1_variant}{Variant}} $>$ \&}]{variants = {\ttfamily std\+:\+:map$<$~std\+:\+:string,~\mbox{\hyperlink{structexample_1_1_variant}{Variant}}~$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve el material si ya esta creado. EN caso contrario, crea uno nuevo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader\+\_\+name} & Nombre del shader \\
+\hline
+{\em vertex\+\_\+path} & Ruta al vertex shader \\
+\hline
+{\em fragment\+\_\+path} & Ruta al fragment shader \\
+\hline
+{\em color} & Color principal del albedo \\
+\hline
+{\em texture\+\_\+path} & Ruta de textura \\
+\hline
+{\em variants} & Mapa de variables uniformes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Material$>$ Puntero al material creado 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_material_a133e88535b7d1643501493ea97634f00}\label{classexample_1_1_material_a133e88535b7d1643501493ea97634f00}} 
+\index{example::Material@{example::Material}!use@{use}}
+\index{use@{use}!example::Material@{example::Material}}
+\subsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily void example\+::\+Material\+::use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Indica a Open\+GL que se va a utilizar el material. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classexample_1_1_material_afc40351ededce03a8620f30c635a1b35}\label{classexample_1_1_material_afc40351ededce03a8620f30c635a1b35}} 
+\index{example::Material@{example::Material}!factory@{factory}}
+\index{factory@{factory}!example::Material@{example::Material}}
+\subsubsection{\texorpdfstring{factory}{factory}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classexample_1_1_material}{Material}}$>$ $>$ example\+::\+Material\+::factory\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Mapa de materiales. Factoria. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_material_8hpp}{Material.\+hpp}}\end{DoxyCompactItemize}

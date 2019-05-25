@@ -1,0 +1,307 @@
+\hypertarget{classexample_1_1_texture}{}\section{example\+::Texture Class Reference}
+\label{classexample_1_1_texture}\index{example::Texture@{example::Texture}}
+Inheritance diagram for example\+::Texture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_texture}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} \{ \newline
+{\bfseries R\+E\+P\+E\+AT} = G\+L\+\_\+\+R\+E\+P\+E\+AT, 
+{\bfseries M\+I\+R\+R\+O\+R\+ED} = G\+L\+\_\+\+M\+I\+R\+R\+O\+R\+E\+D\+\_\+\+R\+E\+P\+E\+AT, 
+{\bfseries C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE} = G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE, 
+{\bfseries C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+B\+O\+R\+D\+ER} = G\+L\+\_\+\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+B\+O\+R\+D\+ER, 
+\newline
+{\bfseries N\+E\+A\+R\+\_\+\+P\+I\+X\+E\+L\+\_\+\+F\+I\+L\+T\+ER} = G\+L\+\_\+\+N\+E\+A\+R\+E\+ST, 
+{\bfseries L\+I\+N\+E\+A\+R\+\_\+\+F\+I\+L\+T\+ER} = G\+L\+\_\+\+L\+I\+N\+E\+AR, 
+{\bfseries M\+I\+P\+M\+A\+P\+\_\+\+N\+E\+A\+R\+\_\+\+P\+I\+X\+E\+L\+\_\+\+F\+I\+L\+T\+ER} = G\+L\+\_\+\+L\+I\+N\+E\+A\+R\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+N\+E\+A\+R\+E\+ST, 
+{\bfseries M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+A\+R\+\_\+\+F\+I\+L\+T\+ER} = G\+L\+\_\+\+L\+I\+N\+E\+A\+R\+\_\+\+M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+AR
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeracion que recoge los tipos de parametro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_texture_a049d061c48276bea0627a1377cb0f2c6}{Texture}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_texture}{Texture}} por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_texture_ab23b9a71fef15550591dd458a17eaad5}{Texture}} (size\+\_\+t \mbox{\hyperlink{classexample_1_1_texture_a7145084592702dbfc07a914186a9bfd5}{width}}, size\+\_\+t \mbox{\hyperlink{classexample_1_1_texture_a5d5d9fca80c49b9b7c5c5c8adaf0f360}{height}})
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_texture}{Texture}}. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classexample_1_1_texture_abc652f37394b62296b76d933feb9cbdc}{load\+\_\+texture}} (const std\+::string \&path, \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} w, \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} f)
+\begin{DoxyCompactList}\small\item\em Metodo virtual de carga de textura. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_texture_aa94c59f3c0abc6abb366b13fe4d66983}\label{classexample_1_1_texture_aa94c59f3c0abc6abb366b13fe4d66983}} 
+virtual void {\bfseries bind} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_aebf37fc64e24abd3357d7fa534ca7ab7}\label{classexample_1_1_texture_aebf37fc64e24abd3357d7fa534ca7ab7}} 
+virtual void {\bfseries unbind} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_aa9f5a727ebf962a89f7a3ab18198de74}\label{classexample_1_1_texture_aa9f5a727ebf962a89f7a3ab18198de74}} 
+virtual void {\bfseries set\+\_\+wrap} (\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} p)
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a87fd7cd0857095d2b9169ca082b3753e}\label{classexample_1_1_texture_a87fd7cd0857095d2b9169ca082b3753e}} 
+virtual void {\bfseries set\+\_\+filter} (\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} p)
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a3684ba4f0866c9b550227142ee92ec3a}\label{classexample_1_1_texture_a3684ba4f0866c9b550227142ee92ec3a}} 
+bool {\bfseries is\+\_\+ready} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a5f682b2607f13441e07340b11a240ca5}\label{classexample_1_1_texture_a5f682b2607f13441e07340b11a240ca5}} 
+size\+\_\+t {\bfseries get\+\_\+size} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_ad35ea1f981a04abe620d1e2aa4e548d4}\label{classexample_1_1_texture_ad35ea1f981a04abe620d1e2aa4e548d4}} 
+G\+Lenum {\bfseries get\+\_\+id} () const
+\item 
+\mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color}} $\ast$ \mbox{\hyperlink{classexample_1_1_texture_ab613441c591db8dccfe13573eb1684d4}{colors}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve un puntero al buffer de textura. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color}} $\ast$ \mbox{\hyperlink{classexample_1_1_texture_adc2795254d224cfca3d4056d5bc4b963}{colors}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve un puntero al buffer de textura. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classexample_1_1_texture_adbd81b5ef83a13ee25fb0006040a3db9}{bits\+\_\+per\+\_\+color}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve el tamaño de color. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classexample_1_1_texture_a4d3fa18e34255967abbc678bd96e79a9}{size}} () const
+\begin{DoxyCompactList}\small\item\em Tamaño de la textura. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a01f247856758f3efe44dcc881025727a}\label{classexample_1_1_texture_a01f247856758f3efe44dcc881025727a}} 
+void {\bfseries set\+\_\+color} (int r, int g, int b)
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a4f84f758f032c40a79bb83685e984721}\label{classexample_1_1_texture_a4f84f758f032c40a79bb83685e984721}} 
+void {\bfseries set\+\_\+color} (const \mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color}} \&new\+\_\+color)
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a9edbba6d6955d8881f44602f40952b47}\label{classexample_1_1_texture_a9edbba6d6955d8881f44602f40952b47}} 
+void {\bfseries set\+\_\+pixel} (size\+\_\+t offset)
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a942683c708c7d86b87412ac1437f3e9c}\label{classexample_1_1_texture_a942683c708c7d86b87412ac1437f3e9c}} 
+void {\bfseries set\+\_\+pixel} (int x, int y)
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a43bc6a61c0d404731c14e29b17155e2d}\label{classexample_1_1_texture_a43bc6a61c0d404731c14e29b17155e2d}} 
+void {\bfseries gl\+\_\+draw\+\_\+pixels} (int raster\+\_\+x, int raster\+\_\+y) const
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_afe1cf0dbc7f72d889228c0d88251fdad}\label{classexample_1_1_texture_afe1cf0dbc7f72d889228c0d88251fdad}} 
+size\+\_\+t {\bfseries get\+\_\+width} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_a11061d6418ec5293af3553b811aa4bdd}\label{classexample_1_1_texture_a11061d6418ec5293af3553b811aa4bdd}} 
+size\+\_\+t {\bfseries get\+\_\+height} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture_aa43483c200a7aa396cab2c0cd65c5eed}\label{classexample_1_1_texture_aa43483c200a7aa396cab2c0cd65c5eed}} 
+typedef \mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color\+\_\+\+R\+G\+B\+A8888}} {\bfseries Color}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Lenum \mbox{\hyperlink{classexample_1_1_texture_a0552b2332a4f37a2ea65330d1795ba71}{id}}
+\begin{DoxyCompactList}\small\item\em Id de la textura. \end{DoxyCompactList}\item 
+G\+Lenum \mbox{\hyperlink{classexample_1_1_texture_aa0d052f1c7feb5a4ca4a739d260b0046}{error}}
+\begin{DoxyCompactList}\small\item\em Error de la textura. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexample_1_1_texture_a6b7f4fa04a6952de06b7496116df64ff}{success}}
+\begin{DoxyCompactList}\small\item\em Indica si la carga de la textura ha sido correcta. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color\+\_\+\+R\+G\+B\+A8888}} $>$ \mbox{\hyperlink{classexample_1_1_texture_ade1ae471d0d7d67854d6924f502a485c}{texture\+\_\+buffer}}
+\begin{DoxyCompactList}\small\item\em Buffer de la textura. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color}} \mbox{\hyperlink{classexample_1_1_texture_ad3ef14f36cf972a324055063cd452dc4}{color}}
+\begin{DoxyCompactList}\small\item\em color \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classexample_1_1_texture_a7145084592702dbfc07a914186a9bfd5}{width}}
+\begin{DoxyCompactList}\small\item\em Ancho de la textura. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classexample_1_1_texture_a5d5d9fca80c49b9b7c5c5c8adaf0f360}{height}}
+\begin{DoxyCompactList}\small\item\em Alto de la textura. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}\label{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}} 
+\index{example::Texture@{example::Texture}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{Parameter}{Parameter}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{example\+::\+Texture\+::\+Parameter}}}
+
+
+
+Enumeracion que recoge los tipos de parametro. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_texture_a049d061c48276bea0627a1377cb0f2c6}\label{classexample_1_1_texture_a049d061c48276bea0627a1377cb0f2c6}} 
+\index{example::Texture@{example::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily example\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_texture}{Texture}} por defecto. 
+
+\mbox{\Hypertarget{classexample_1_1_texture_ab23b9a71fef15550591dd458a17eaad5}\label{classexample_1_1_texture_ab23b9a71fef15550591dd458a17eaad5}} 
+\index{example::Texture@{example::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily example\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{width,  }\item[{size\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_texture}{Texture}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & ancho \\
+\hline
+{\em height} & alto \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_texture_adbd81b5ef83a13ee25fb0006040a3db9}\label{classexample_1_1_texture_adbd81b5ef83a13ee25fb0006040a3db9}} 
+\index{example::Texture@{example::Texture}!bits\_per\_color@{bits\_per\_color}}
+\index{bits\_per\_color@{bits\_per\_color}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{bits\_per\_color()}{bits\_per\_color()}}
+{\footnotesize\ttfamily int example\+::\+Texture\+::bits\+\_\+per\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el tamaño de color. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_texture_ab613441c591db8dccfe13573eb1684d4}\label{classexample_1_1_texture_ab613441c591db8dccfe13573eb1684d4}} 
+\index{example::Texture@{example::Texture}!colors@{colors}}
+\index{colors@{colors}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{colors()}{colors()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color}}$\ast$ example\+::\+Texture\+::colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un puntero al buffer de textura. 
+
+\begin{DoxyReturn}{Returns}
+Color$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_texture_adc2795254d224cfca3d4056d5bc4b963}\label{classexample_1_1_texture_adc2795254d224cfca3d4056d5bc4b963}} 
+\index{example::Texture@{example::Texture}!colors@{colors}}
+\index{colors@{colors}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{colors()}{colors()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color}}$\ast$ example\+::\+Texture\+::colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve un puntero al buffer de textura. 
+
+\begin{DoxyReturn}{Returns}
+Color$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_texture_abc652f37394b62296b76d933feb9cbdc}\label{classexample_1_1_texture_abc652f37394b62296b76d933feb9cbdc}} 
+\index{example::Texture@{example::Texture}!load\_texture@{load\_texture}}
+\index{load\_texture@{load\_texture}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{load\_texture()}{load\_texture()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classexample_1_1_texture}{Texture}}$>$ example\+::\+Texture\+::load\+\_\+texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}}}]{w,  }\item[{\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}}}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Metodo virtual de carga de textura. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+{\em w} & \\
+\hline
+{\em f} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Texture$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classexample_1_1_texture2_d_af31ea7464d42ad7f9b93ce5218ba5849}{example\+::\+Texture2D}}.
+
+\mbox{\Hypertarget{classexample_1_1_texture_a4d3fa18e34255967abbc678bd96e79a9}\label{classexample_1_1_texture_a4d3fa18e34255967abbc678bd96e79a9}} 
+\index{example::Texture@{example::Texture}!size@{size}}
+\index{size@{size}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t example\+::\+Texture\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tamaño de la textura. 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classexample_1_1_texture_ad3ef14f36cf972a324055063cd452dc4}\label{classexample_1_1_texture_ad3ef14f36cf972a324055063cd452dc4}} 
+\index{example::Texture@{example::Texture}!color@{color}}
+\index{color@{color}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color}} example\+::\+Texture\+::color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+color 
+
+\mbox{\Hypertarget{classexample_1_1_texture_aa0d052f1c7feb5a4ca4a739d260b0046}\label{classexample_1_1_texture_aa0d052f1c7feb5a4ca4a739d260b0046}} 
+\index{example::Texture@{example::Texture}!error@{error}}
+\index{error@{error}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily G\+Lenum example\+::\+Texture\+::error\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Error de la textura. 
+
+\mbox{\Hypertarget{classexample_1_1_texture_a5d5d9fca80c49b9b7c5c5c8adaf0f360}\label{classexample_1_1_texture_a5d5d9fca80c49b9b7c5c5c8adaf0f360}} 
+\index{example::Texture@{example::Texture}!height@{height}}
+\index{height@{height}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily size\+\_\+t example\+::\+Texture\+::height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Alto de la textura. 
+
+\mbox{\Hypertarget{classexample_1_1_texture_a0552b2332a4f37a2ea65330d1795ba71}\label{classexample_1_1_texture_a0552b2332a4f37a2ea65330d1795ba71}} 
+\index{example::Texture@{example::Texture}!id@{id}}
+\index{id@{id}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily G\+Lenum example\+::\+Texture\+::id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Id de la textura. 
+
+\mbox{\Hypertarget{classexample_1_1_texture_a6b7f4fa04a6952de06b7496116df64ff}\label{classexample_1_1_texture_a6b7f4fa04a6952de06b7496116df64ff}} 
+\index{example::Texture@{example::Texture}!success@{success}}
+\index{success@{success}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{success}{success}}
+{\footnotesize\ttfamily bool example\+::\+Texture\+::success\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Indica si la carga de la textura ha sido correcta. 
+
+\mbox{\Hypertarget{classexample_1_1_texture_ade1ae471d0d7d67854d6924f502a485c}\label{classexample_1_1_texture_ade1ae471d0d7d67854d6924f502a485c}} 
+\index{example::Texture@{example::Texture}!texture\_buffer@{texture\_buffer}}
+\index{texture\_buffer@{texture\_buffer}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{texture\_buffer}{texture\_buffer}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classexample_1_1_color___r_g_b_a8888}{Color\+\_\+\+R\+G\+B\+A8888}}$>$ example\+::\+Texture\+::texture\+\_\+buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Buffer de la textura. 
+
+\mbox{\Hypertarget{classexample_1_1_texture_a7145084592702dbfc07a914186a9bfd5}\label{classexample_1_1_texture_a7145084592702dbfc07a914186a9bfd5}} 
+\index{example::Texture@{example::Texture}!width@{width}}
+\index{width@{width}!example::Texture@{example::Texture}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily size\+\_\+t example\+::\+Texture\+::width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ancho de la textura. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_texture_8hpp}{Texture.\+hpp}}\end{DoxyCompactItemize}

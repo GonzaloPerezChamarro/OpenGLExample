@@ -1,0 +1,96 @@
+\hypertarget{classexample_1_1_light}{}\section{example\+::Light Class Reference}
+\label{classexample_1_1_light}\index{example::Light@{example::Light}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_light_aa6f37f679df3d5f700a69fd67372b98c}{Light}} (glm\+::vec3 vector, glm\+::vec3 color, float i=1.f, float ambiental=.\+25f)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_light_afc441dd6773289524261966564694e5e}\label{classexample_1_1_light_afc441dd6773289524261966564694e5e}} 
+void {\bfseries set\+\_\+direction} (glm\+::vec3 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_light_a4df268e4e7a15da64f9bd87dc287d497}\label{classexample_1_1_light_a4df268e4e7a15da64f9bd87dc287d497}} 
+void {\bfseries set\+\_\+color} (glm\+::vec3 \&color)
+\item 
+\mbox{\Hypertarget{classexample_1_1_light_ad4e5e71a9df1a21c2f871ca0b6fabd25}\label{classexample_1_1_light_ad4e5e71a9df1a21c2f871ca0b6fabd25}} 
+void {\bfseries set\+\_\+ambient\+\_\+intensity} (float a)
+\item 
+\mbox{\Hypertarget{classexample_1_1_light_abdbdc7a21b210982ba38d31578be906c}\label{classexample_1_1_light_abdbdc7a21b210982ba38d31578be906c}} 
+void {\bfseries set\+\_\+intensity} (float i)
+\item 
+\mbox{\Hypertarget{classexample_1_1_light_ac33fd29b91c592a98c5547b2c9a2ef7b}\label{classexample_1_1_light_ac33fd29b91c592a98c5547b2c9a2ef7b}} 
+glm\+::vec3 \& {\bfseries get\+\_\+color} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_light_ab6381a1d078b52844da0098f059633e1}\label{classexample_1_1_light_ab6381a1d078b52844da0098f059633e1}} 
+float {\bfseries get\+\_\+intensity} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_light_ac7944c96c9977aa663dc29fa28bdbe6d}\label{classexample_1_1_light_ac7944c96c9977aa663dc29fa28bdbe6d}} 
+float {\bfseries get\+\_\+ambient\+\_\+intensity} ()
+\item 
+void \mbox{\hyperlink{classexample_1_1_light_a997d9866ab2e690bb7fb1988a55da627}{render}} (\mbox{\hyperlink{classexample_1_1_camera}{Camera}} \&camera)
+\begin{DoxyCompactList}\small\item\em Actualiza los valores de la luz para el renderizado de modelos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_transform}{Transform}} \mbox{\hyperlink{classexample_1_1_light_a0780705a3879661b90acdb113818f6c3}{transform}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classexample_1_1_transform}{Transform}} de la luz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_light_aa6f37f679df3d5f700a69fd67372b98c}\label{classexample_1_1_light_aa6f37f679df3d5f700a69fd67372b98c}} 
+\index{example::Light@{example::Light}!Light@{Light}}
+\index{Light@{Light}!example::Light@{example::Light}}
+\subsubsection{\texorpdfstring{Light()}{Light()}}
+{\footnotesize\ttfamily example\+::\+Light\+::\+Light (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{vector,  }\item[{glm\+::vec3}]{color,  }\item[{float}]{i = {\ttfamily 1.f},  }\item[{float}]{ambiental = {\ttfamily .25f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & vector de direccion \\
+\hline
+{\em color} & color de la luz \\
+\hline
+{\em i} & Intensidad \\
+\hline
+{\em ambiental} & Intensidad ambiental \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_light_a997d9866ab2e690bb7fb1988a55da627}\label{classexample_1_1_light_a997d9866ab2e690bb7fb1988a55da627}} 
+\index{example::Light@{example::Light}!render@{render}}
+\index{render@{render}!example::Light@{example::Light}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void example\+::\+Light\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_camera}{Camera}} \&}]{camera }\end{DoxyParamCaption})}
+
+
+
+Actualiza los valores de la luz para el renderizado de modelos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classexample_1_1_light_a0780705a3879661b90acdb113818f6c3}\label{classexample_1_1_light_a0780705a3879661b90acdb113818f6c3}} 
+\index{example::Light@{example::Light}!transform@{transform}}
+\index{transform@{transform}!example::Light@{example::Light}}
+\subsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classexample_1_1_transform}{Transform}} example\+::\+Light\+::transform}
+
+
+
+\mbox{\hyperlink{classexample_1_1_transform}{Transform}} de la luz. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_light_8hpp}{Light.\+hpp}}\item 
+Light.\+cpp\end{DoxyCompactItemize}

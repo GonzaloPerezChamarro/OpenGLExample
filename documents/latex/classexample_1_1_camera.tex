@@ -1,0 +1,194 @@
+\hypertarget{classexample_1_1_camera}{}\section{example\+::Camera Class Reference}
+\label{classexample_1_1_camera}\index{example::Camera@{example::Camera}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_camera_ace573e0e67cfac4f812d17739d23e89e}{Camera}} (vec3 pos, vec3 direction, float near\+\_\+plane=0.\+1f, float far\+\_\+plane=1000.\+f, float fov=90.\+f, float ratio=1.\+f)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_camera}{Camera}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_camera_ab6af454c94947a2547ad0f12ae26bbc4}{Camera}} (float near\+\_\+plane=0.\+1f, float far\+\_\+plane=1000.\+f, float fov=90.\+f, float ratio=1.\+f)
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_camera_ad28315b25725770ec0d63bc3aa2a671a}{rotate}} (float mouse\+\_\+x, float mouse\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Rota la camara en funcion del raton. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_camera_ac85de92e05dfb5be2d4194dba06ca276}{move}} (glm\+::vec3 dir, float speed)
+\begin{DoxyCompactList}\small\item\em Movimiento de la camara en una direccion y una velocidad. \end{DoxyCompactList}\item 
+mat4 \mbox{\hyperlink{classexample_1_1_camera_a0422ecf5eb81c6a6c1f816ba4013cd7b}{get\+\_\+view}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve la matriz de vista. \end{DoxyCompactList}\item 
+mat4 \mbox{\hyperlink{classexample_1_1_camera_a3360041bcaca72ff4ad85e93dd6c0044}{get\+\_\+projection}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve la matriz de proyeccion. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{classexample_1_1_camera_ab031bb4b8fc48d8654c95619c1d5b6d4}{get\+\_\+position}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve la posicion de la camara. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{classexample_1_1_camera_a0ad064a98aa910853f35741858c64eaf}{get\+\_\+camera\+\_\+front}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve camera front. \end{DoxyCompactList}\item 
+vec3 \mbox{\hyperlink{classexample_1_1_camera_a517cbf4dc63f932664ac24acdf991e2e}{get\+\_\+camera\+\_\+up}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve camera up. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classexample_1_1_camera_a439177a28f84f352c046ec2d315f6de2}{get\+\_\+camera\+\_\+fov}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve camera field of view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_camera_ace573e0e67cfac4f812d17739d23e89e}\label{classexample_1_1_camera_ace573e0e67cfac4f812d17739d23e89e}} 
+\index{example::Camera@{example::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily example\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{vec3}]{pos,  }\item[{vec3}]{direction,  }\item[{float}]{near\+\_\+plane = {\ttfamily 0.1f},  }\item[{float}]{far\+\_\+plane = {\ttfamily 1000.f},  }\item[{float}]{fov = {\ttfamily 90.f},  }\item[{float}]{ratio = {\ttfamily 1.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_camera}{Camera}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Posicion inicial de la camaa \\
+\hline
+{\em direction} & direccion a la que mira \\
+\hline
+{\em near\+\_\+plane} & plano renderizado minimo \\
+\hline
+{\em far\+\_\+plane} & plano de renderizado maximo \\
+\hline
+{\em fov} & punto de vista \\
+\hline
+{\em ratio} & ratio \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_camera_ab6af454c94947a2547ad0f12ae26bbc4}\label{classexample_1_1_camera_ab6af454c94947a2547ad0f12ae26bbc4}} 
+\index{example::Camera@{example::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily example\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{float}]{near\+\_\+plane = {\ttfamily 0.1f},  }\item[{float}]{far\+\_\+plane = {\ttfamily 1000.f},  }\item[{float}]{fov = {\ttfamily 90.f},  }\item[{float}]{ratio = {\ttfamily 1.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor por defecto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em near\+\_\+plane} & \\
+\hline
+{\em far\+\_\+plane} & \\
+\hline
+{\em fov} & \\
+\hline
+{\em ratio} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_camera_a439177a28f84f352c046ec2d315f6de2}\label{classexample_1_1_camera_a439177a28f84f352c046ec2d315f6de2}} 
+\index{example::Camera@{example::Camera}!get\_camera\_fov@{get\_camera\_fov}}
+\index{get\_camera\_fov@{get\_camera\_fov}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{get\_camera\_fov()}{get\_camera\_fov()}}
+{\footnotesize\ttfamily float example\+::\+Camera\+::get\+\_\+camera\+\_\+fov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve camera field of view. 
+
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_camera_a0ad064a98aa910853f35741858c64eaf}\label{classexample_1_1_camera_a0ad064a98aa910853f35741858c64eaf}} 
+\index{example::Camera@{example::Camera}!get\_camera\_front@{get\_camera\_front}}
+\index{get\_camera\_front@{get\_camera\_front}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{get\_camera\_front()}{get\_camera\_front()}}
+{\footnotesize\ttfamily vec3 example\+::\+Camera\+::get\+\_\+camera\+\_\+front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve camera front. 
+
+\begin{DoxyReturn}{Returns}
+vec3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_camera_a517cbf4dc63f932664ac24acdf991e2e}\label{classexample_1_1_camera_a517cbf4dc63f932664ac24acdf991e2e}} 
+\index{example::Camera@{example::Camera}!get\_camera\_up@{get\_camera\_up}}
+\index{get\_camera\_up@{get\_camera\_up}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{get\_camera\_up()}{get\_camera\_up()}}
+{\footnotesize\ttfamily vec3 example\+::\+Camera\+::get\+\_\+camera\+\_\+up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve camera up. 
+
+\begin{DoxyReturn}{Returns}
+vec3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_camera_ab031bb4b8fc48d8654c95619c1d5b6d4}\label{classexample_1_1_camera_ab031bb4b8fc48d8654c95619c1d5b6d4}} 
+\index{example::Camera@{example::Camera}!get\_position@{get\_position}}
+\index{get\_position@{get\_position}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{get\_position()}{get\_position()}}
+{\footnotesize\ttfamily vec3 example\+::\+Camera\+::get\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la posicion de la camara. 
+
+\begin{DoxyReturn}{Returns}
+vec3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_camera_a3360041bcaca72ff4ad85e93dd6c0044}\label{classexample_1_1_camera_a3360041bcaca72ff4ad85e93dd6c0044}} 
+\index{example::Camera@{example::Camera}!get\_projection@{get\_projection}}
+\index{get\_projection@{get\_projection}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{get\_projection()}{get\_projection()}}
+{\footnotesize\ttfamily mat4 example\+::\+Camera\+::get\+\_\+projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la matriz de proyeccion. 
+
+\begin{DoxyReturn}{Returns}
+mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_camera_a0422ecf5eb81c6a6c1f816ba4013cd7b}\label{classexample_1_1_camera_a0422ecf5eb81c6a6c1f816ba4013cd7b}} 
+\index{example::Camera@{example::Camera}!get\_view@{get\_view}}
+\index{get\_view@{get\_view}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{get\_view()}{get\_view()}}
+{\footnotesize\ttfamily mat4 example\+::\+Camera\+::get\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve la matriz de vista. 
+
+\begin{DoxyReturn}{Returns}
+mat4 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_camera_ac85de92e05dfb5be2d4194dba06ca276}\label{classexample_1_1_camera_ac85de92e05dfb5be2d4194dba06ca276}} 
+\index{example::Camera@{example::Camera}!move@{move}}
+\index{move@{move}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void example\+::\+Camera\+::move (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{dir,  }\item[{float}]{speed }\end{DoxyParamCaption})}
+
+
+
+Movimiento de la camara en una direccion y una velocidad. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Direccion \\
+\hline
+{\em speed} & Velocidad \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_camera_ad28315b25725770ec0d63bc3aa2a671a}\label{classexample_1_1_camera_ad28315b25725770ec0d63bc3aa2a671a}} 
+\index{example::Camera@{example::Camera}!rotate@{rotate}}
+\index{rotate@{rotate}!example::Camera@{example::Camera}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void example\+::\+Camera\+::rotate (\begin{DoxyParamCaption}\item[{float}]{mouse\+\_\+x,  }\item[{float}]{mouse\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Rota la camara en funcion del raton. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+\_\+x} & \\
+\hline
+{\em mouse\+\_\+y} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}}\end{DoxyCompactItemize}

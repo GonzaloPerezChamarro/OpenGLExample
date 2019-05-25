@@ -1,0 +1,127 @@
+\hypertarget{classexample_1_1_model}{}\section{example\+::Model Class Reference}
+\label{classexample_1_1_model}\index{example::Model@{example::Model}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_model_acdfb26d4a8616aaaec055e1da4ce4331}{Model}} (const std\+::string \&path, const std\+::string \&text\+\_\+path, glm\+::vec3 position, glm\+::vec3 scale=glm\+::vec3(1, 1, 1))
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_model}{Model}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_model_ae763def759a07586ab7cd6dbffcd3557}{Model}} (glm\+::vec3 position, glm\+::vec3 rotation=glm\+::vec3(0, 0, 0), glm\+::vec3 scale=glm\+::vec3(1, 1, 1), \mbox{\hyperlink{classexample_1_1_model}{Model}} $\ast$father=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_model}{Model}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_model_a32d1ef428a575d9204b8702f267b163e}{add\+\_\+piece}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_mesh}{Mesh}} $>$ mesh, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_material}{Material}} $>$ mat)
+\begin{DoxyCompactList}\small\item\em Añade una pieza al vector de piezas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_model_a6070718d4527d2e659241097b3bed3b6}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza el modelo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_model_a685a05967dbfc7204e501f5534553a54}{render}} (const \mbox{\hyperlink{classexample_1_1_camera}{Camera}} $\ast$camera)
+\begin{DoxyCompactList}\small\item\em Renderiza todas las piezas con sus materiales. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_model_a23d2cf3c1f775c9ae988714d5b242fdf}\label{classexample_1_1_model_a23d2cf3c1f775c9ae988714d5b242fdf}} 
+glm\+::vec3 {\bfseries get\+\_\+position} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_model_a5e452f702c97b263d16a603ceb08c871}\label{classexample_1_1_model_a5e452f702c97b263d16a603ceb08c871}} 
+glm\+::vec3 {\bfseries get\+\_\+scale} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_model_a659eec889496a1f84b7341a46b004b31}\label{classexample_1_1_model_a659eec889496a1f84b7341a46b004b31}} 
+\mbox{\hyperlink{classexample_1_1_transform}{Transform}} $\ast$ {\bfseries get\+\_\+transform} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_model_a36bb0739806bd2add78a11f8e2cd7617}\label{classexample_1_1_model_a36bb0739806bd2add78a11f8e2cd7617}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_material}{Material}} $>$ {\bfseries get\+\_\+material} (size\+\_\+t index) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_model_acdfb26d4a8616aaaec055e1da4ce4331}\label{classexample_1_1_model_acdfb26d4a8616aaaec055e1da4ce4331}} 
+\index{example::Model@{example::Model}!Model@{Model}}
+\index{Model@{Model}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily example\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{text\+\_\+path,  }\item[{glm\+::vec3}]{position,  }\item[{glm\+::vec3}]{scale = {\ttfamily glm\+:\+:vec3(1,~1,~1)} }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_model}{Model}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+{\em text\+\_\+path} & \\
+\hline
+{\em position} & \\
+\hline
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_model_ae763def759a07586ab7cd6dbffcd3557}\label{classexample_1_1_model_ae763def759a07586ab7cd6dbffcd3557}} 
+\index{example::Model@{example::Model}!Model@{Model}}
+\index{Model@{Model}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily example\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position,  }\item[{glm\+::vec3}]{rotation = {\ttfamily glm\+:\+:vec3(0,~0,~0)},  }\item[{glm\+::vec3}]{scale = {\ttfamily glm\+:\+:vec3(1,~1,~1)},  }\item[{\mbox{\hyperlink{classexample_1_1_model}{Model}} $\ast$}]{father = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_model}{Model}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+{\em rotation} & \\
+\hline
+{\em scale} & \\
+\hline
+{\em father} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_model_a32d1ef428a575d9204b8702f267b163e}\label{classexample_1_1_model_a32d1ef428a575d9204b8702f267b163e}} 
+\index{example::Model@{example::Model}!add\_piece@{add\_piece}}
+\index{add\_piece@{add\_piece}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{add\_piece()}{add\_piece()}}
+{\footnotesize\ttfamily void example\+::\+Model\+::add\+\_\+piece (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_mesh}{Mesh}} $>$}]{mesh,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_material}{Material}} $>$}]{mat }\end{DoxyParamCaption})}
+
+
+
+Añade una pieza al vector de piezas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & malla \\
+\hline
+{\em mat} & material \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_model_a685a05967dbfc7204e501f5534553a54}\label{classexample_1_1_model_a685a05967dbfc7204e501f5534553a54}} 
+\index{example::Model@{example::Model}!render@{render}}
+\index{render@{render}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void example\+::\+Model\+::render (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classexample_1_1_camera}{Camera}} $\ast$}]{camera }\end{DoxyParamCaption})}
+
+
+
+Renderiza todas las piezas con sus materiales. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_model_a6070718d4527d2e659241097b3bed3b6}\label{classexample_1_1_model_a6070718d4527d2e659241097b3bed3b6}} 
+\index{example::Model@{example::Model}!update@{update}}
+\index{update@{update}!example::Model@{example::Model}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Model\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Actualiza el modelo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_model_8hpp}{Model.\+hpp}}\end{DoxyCompactItemize}

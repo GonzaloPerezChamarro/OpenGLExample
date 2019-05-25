@@ -1,0 +1,173 @@
+\hypertarget{classexample_1_1_transform}{}\section{example\+::Transform Class Reference}
+\label{classexample_1_1_transform}\index{example::Transform@{example::Transform}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_transform_a46be94fa65b39ee9ffca7dadcf2af4eb}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_transform}{Transform}} por defecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_transform_a19448445e6cfa9c54f9d18169e6be903}{Transform}} (glm\+::vec3 position, glm\+::vec3 euler\+\_\+angles, glm\+::vec3 scale)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_transform}{Transform}}. \end{DoxyCompactList}\item 
+const glm\+::mat4 \& \mbox{\hyperlink{classexample_1_1_transform_a9d28491bfefe00ebe8180bffe40896e2}{get\+\_\+matrix}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve la matriz de transform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_transform_a74dbc1eee1a67a039ffcb78b0c5207ab}\label{classexample_1_1_transform_a74dbc1eee1a67a039ffcb78b0c5207ab}} 
+glm\+::vec3 {\bfseries get\+\_\+position} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_transform_ab150ef3d4563d18222abd9df2ba54a13}\label{classexample_1_1_transform_ab150ef3d4563d18222abd9df2ba54a13}} 
+glm\+::vec3 {\bfseries get\+\_\+rotation} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_transform_ac19e852f229f8357019338fce70c551f}\label{classexample_1_1_transform_ac19e852f229f8357019338fce70c551f}} 
+glm\+::vec3 {\bfseries get\+\_\+scale} ()
+\item 
+void \mbox{\hyperlink{classexample_1_1_transform_a42ff7ae62e0b0c8b5a31f37a8b1de4da}{translate}} (const glm\+::vec3 position)
+\begin{DoxyCompactList}\small\item\em Traslada el transform el desplazamiento recibido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_transform_a0336a174c3ddaa8f670345cb0c6202a8}{rotate}} (glm\+::vec3 euler\+\_\+angles)
+\begin{DoxyCompactList}\small\item\em Rota el transform los angulos recibidos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_transform_a5e4e335ac8cf42199192dfc6bbdba0a3}{to\+\_\+scale}} (glm\+::vec3 scale)
+\begin{DoxyCompactList}\small\item\em Escala el transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_transform_ab41344f38e2a79e206a65ae7c4a67c68}{update}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza el transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_transform_aff4f7e057327de2c74ff9f355f7c3b29}{set\+\_\+parent}} (\mbox{\hyperlink{classexample_1_1_transform}{Transform}} $\ast$tr)
+\begin{DoxyCompactList}\small\item\em Modifica el valor de parent. \end{DoxyCompactList}\item 
+glm\+::mat4 \& \mbox{\hyperlink{classexample_1_1_transform_aecbcb584dbcd3b76bdffd3b2a70c9a5f}{operator=}} (glm\+::mat4 other)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador =. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_transform_a46be94fa65b39ee9ffca7dadcf2af4eb}\label{classexample_1_1_transform_a46be94fa65b39ee9ffca7dadcf2af4eb}} 
+\index{example::Transform@{example::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily example\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_transform}{Transform}} por defecto. 
+
+\mbox{\Hypertarget{classexample_1_1_transform_a19448445e6cfa9c54f9d18169e6be903}\label{classexample_1_1_transform_a19448445e6cfa9c54f9d18169e6be903}} 
+\index{example::Transform@{example::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily example\+::\+Transform\+::\+Transform (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{position,  }\item[{glm\+::vec3}]{euler\+\_\+angles,  }\item[{glm\+::vec3}]{scale }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_transform}{Transform}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Posicion inicial \\
+\hline
+{\em euler\+\_\+angles} & Rotacion inicial \\
+\hline
+{\em scale} & Escala global \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_transform_a9d28491bfefe00ebe8180bffe40896e2}\label{classexample_1_1_transform_a9d28491bfefe00ebe8180bffe40896e2}} 
+\index{example::Transform@{example::Transform}!get\_matrix@{get\_matrix}}
+\index{get\_matrix@{get\_matrix}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{get\_matrix()}{get\_matrix()}}
+{\footnotesize\ttfamily const glm\+::mat4\& example\+::\+Transform\+::get\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve la matriz de transform. 
+
+\begin{DoxyReturn}{Returns}
+const glm\+::mat4\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_transform_aecbcb584dbcd3b76bdffd3b2a70c9a5f}\label{classexample_1_1_transform_aecbcb584dbcd3b76bdffd3b2a70c9a5f}} 
+\index{example::Transform@{example::Transform}!operator=@{operator=}}
+\index{operator=@{operator=}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily glm\+::mat4\& example\+::\+Transform\+::operator= (\begin{DoxyParamCaption}\item[{glm\+::mat4}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sobrecarga del operador =. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+glm\+::mat4\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_transform_a0336a174c3ddaa8f670345cb0c6202a8}\label{classexample_1_1_transform_a0336a174c3ddaa8f670345cb0c6202a8}} 
+\index{example::Transform@{example::Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void example\+::\+Transform\+::rotate (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{euler\+\_\+angles }\end{DoxyParamCaption})}
+
+
+
+Rota el transform los angulos recibidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em euler\+\_\+angles} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_transform_aff4f7e057327de2c74ff9f355f7c3b29}\label{classexample_1_1_transform_aff4f7e057327de2c74ff9f355f7c3b29}} 
+\index{example::Transform@{example::Transform}!set\_parent@{set\_parent}}
+\index{set\_parent@{set\_parent}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{set\_parent()}{set\_parent()}}
+{\footnotesize\ttfamily void example\+::\+Transform\+::set\+\_\+parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexample_1_1_transform}{Transform}} $\ast$}]{tr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica el valor de parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tr} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_transform_a5e4e335ac8cf42199192dfc6bbdba0a3}\label{classexample_1_1_transform_a5e4e335ac8cf42199192dfc6bbdba0a3}} 
+\index{example::Transform@{example::Transform}!to\_scale@{to\_scale}}
+\index{to\_scale@{to\_scale}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{to\_scale()}{to\_scale()}}
+{\footnotesize\ttfamily void example\+::\+Transform\+::to\+\_\+scale (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{scale }\end{DoxyParamCaption})}
+
+
+
+Escala el transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_transform_a42ff7ae62e0b0c8b5a31f37a8b1de4da}\label{classexample_1_1_transform_a42ff7ae62e0b0c8b5a31f37a8b1de4da}} 
+\index{example::Transform@{example::Transform}!translate@{translate}}
+\index{translate@{translate}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void example\+::\+Transform\+::translate (\begin{DoxyParamCaption}\item[{const glm\+::vec3}]{position }\end{DoxyParamCaption})}
+
+
+
+Traslada el transform el desplazamiento recibido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_transform_ab41344f38e2a79e206a65ae7c4a67c68}\label{classexample_1_1_transform_ab41344f38e2a79e206a65ae7c4a67c68}} 
+\index{example::Transform@{example::Transform}!update@{update}}
+\index{update@{update}!example::Transform@{example::Transform}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void example\+::\+Transform\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Actualiza el transform. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_transform_8hpp}{Transform.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,162 @@
+\hypertarget{classexample_1_1_window}{}\section{example\+::Window Class Reference}
+\label{classexample_1_1_window}\index{example::Window@{example::Window}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_window_a144eb8c2ca14e51d35ba18bc37f2eb56}{Window}} (const char $\ast$title, unsigned width, unsigned height, int flags)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_window}{Window}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_window_a890353e04d12a85a3536004c01a1a0cd}{$\sim$\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de \mbox{\hyperlink{classexample_1_1_window}{Window}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_window_a9e121c70862294ea01409c640cf9065d}\label{classexample_1_1_window_a9e121c70862294ea01409c640cf9065d}} 
+unsigned {\bfseries get\+\_\+width} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_window_a6ec5b72acf2f41814b950adcef13415c}\label{classexample_1_1_window_a6ec5b72acf2f41814b950adcef13415c}} 
+unsigned {\bfseries get\+\_\+height} ()
+\item 
+void \mbox{\hyperlink{classexample_1_1_window_a3f27b4a057e3d4219335cce4edc669fe}{swap\+\_\+buffers}} ()
+\begin{DoxyCompactList}\small\item\em sf\+::\+Window\+::display() \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_window_a1b6b6b9cfb24fb32a0f2db4b7d7ba798}{set\+\_\+viewport}} (unsigned w, unsigned h)
+\begin{DoxyCompactList}\small\item\em Modifica el valor del tamaño de viewport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_window_ae3c35c4dc60fc4fe3fc4828fcbf95ecd}{clear\+\_\+color}} (float r, float g, float b, float a)
+\begin{DoxyCompactList}\small\item\em Limpia la pantalla con el color recibido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_window_acb15170727291416c3a3ea19afa1b729}{clear\+\_\+display}} ()
+\begin{DoxyCompactList}\small\item\em Limpia la pantalla. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_window_a1d967d9de886bf8e0ab1432d8030d761}{active\+\_\+\+V\+Sync}} (bool active)
+\begin{DoxyCompactList}\small\item\em Activa/desactiva la sincronizacion vertical. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classexample_1_1_window_abebfb01402035477a536d3fae1bed660}{poll\+\_\+events}} (sf\+::\+Event \&e)
+\begin{DoxyCompactList}\small\item\em Gestiona os eventos de ventana de sfml. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_window_a144eb8c2ca14e51d35ba18bc37f2eb56}\label{classexample_1_1_window_a144eb8c2ca14e51d35ba18bc37f2eb56}} 
+\index{example::Window@{example::Window}!Window@{Window}}
+\index{Window@{Window}!example::Window@{example::Window}}
+\subsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily example\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{unsigned}]{width,  }\item[{unsigned}]{height,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_window}{Window}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Titulo de la ventana \\
+\hline
+{\em width} & ancho de la ventana \\
+\hline
+{\em height} & alto de la ventana \\
+\hline
+{\em flags} & flags de la ventana \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_window_a890353e04d12a85a3536004c01a1a0cd}\label{classexample_1_1_window_a890353e04d12a85a3536004c01a1a0cd}} 
+\index{example::Window@{example::Window}!````~Window@{$\sim$Window}}
+\index{````~Window@{$\sim$Window}!example::Window@{example::Window}}
+\subsubsection{\texorpdfstring{$\sim$Window()}{~Window()}}
+{\footnotesize\ttfamily example\+::\+Window\+::$\sim$\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor de \mbox{\hyperlink{classexample_1_1_window}{Window}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_window_a1d967d9de886bf8e0ab1432d8030d761}\label{classexample_1_1_window_a1d967d9de886bf8e0ab1432d8030d761}} 
+\index{example::Window@{example::Window}!active\_VSync@{active\_VSync}}
+\index{active\_VSync@{active\_VSync}!example::Window@{example::Window}}
+\subsubsection{\texorpdfstring{active\_VSync()}{active\_VSync()}}
+{\footnotesize\ttfamily void example\+::\+Window\+::active\+\_\+\+V\+Sync (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})}
+
+
+
+Activa/desactiva la sincronizacion vertical. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_window_ae3c35c4dc60fc4fe3fc4828fcbf95ecd}\label{classexample_1_1_window_ae3c35c4dc60fc4fe3fc4828fcbf95ecd}} 
+\index{example::Window@{example::Window}!clear\_color@{clear\_color}}
+\index{clear\_color@{clear\_color}!example::Window@{example::Window}}
+\subsubsection{\texorpdfstring{clear\_color()}{clear\_color()}}
+{\footnotesize\ttfamily void example\+::\+Window\+::clear\+\_\+color (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{float}]{a }\end{DoxyParamCaption})}
+
+
+
+Limpia la pantalla con el color recibido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & \\
+\hline
+{\em g} & \\
+\hline
+{\em b} & \\
+\hline
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_window_acb15170727291416c3a3ea19afa1b729}\label{classexample_1_1_window_acb15170727291416c3a3ea19afa1b729}} 
+\index{example::Window@{example::Window}!clear\_display@{clear\_display}}
+\index{clear\_display@{clear\_display}!example::Window@{example::Window}}
+\subsubsection{\texorpdfstring{clear\_display()}{clear\_display()}}
+{\footnotesize\ttfamily void example\+::\+Window\+::clear\+\_\+display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Limpia la pantalla. 
+
+\mbox{\Hypertarget{classexample_1_1_window_abebfb01402035477a536d3fae1bed660}\label{classexample_1_1_window_abebfb01402035477a536d3fae1bed660}} 
+\index{example::Window@{example::Window}!poll\_events@{poll\_events}}
+\index{poll\_events@{poll\_events}!example::Window@{example::Window}}
+\subsubsection{\texorpdfstring{poll\_events()}{poll\_events()}}
+{\footnotesize\ttfamily bool example\+::\+Window\+::poll\+\_\+events (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gestiona os eventos de ventana de sfml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_window_a1b6b6b9cfb24fb32a0f2db4b7d7ba798}\label{classexample_1_1_window_a1b6b6b9cfb24fb32a0f2db4b7d7ba798}} 
+\index{example::Window@{example::Window}!set\_viewport@{set\_viewport}}
+\index{set\_viewport@{set\_viewport}!example::Window@{example::Window}}
+\subsubsection{\texorpdfstring{set\_viewport()}{set\_viewport()}}
+{\footnotesize\ttfamily void example\+::\+Window\+::set\+\_\+viewport (\begin{DoxyParamCaption}\item[{unsigned}]{w,  }\item[{unsigned}]{h }\end{DoxyParamCaption})}
+
+
+
+Modifica el valor del tamaño de viewport. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & \\
+\hline
+{\em h} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_window_a3f27b4a057e3d4219335cce4edc669fe}\label{classexample_1_1_window_a3f27b4a057e3d4219335cce4edc669fe}} 
+\index{example::Window@{example::Window}!swap\_buffers@{swap\_buffers}}
+\index{swap\_buffers@{swap\_buffers}!example::Window@{example::Window}}
+\subsubsection{\texorpdfstring{swap\_buffers()}{swap\_buffers()}}
+{\footnotesize\ttfamily void example\+::\+Window\+::swap\+\_\+buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sf\+::\+Window\+::display() 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_window_8hpp}{Window.\+hpp}}\end{DoxyCompactItemize}

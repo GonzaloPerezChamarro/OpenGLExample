@@ -1,0 +1,111 @@
+\hypertarget{classexample_1_1_texture2_d}{}\section{example\+::Texture2D Class Reference}
+\label{classexample_1_1_texture2_d}\index{example::Texture2D@{example::Texture2D}}
+Inheritance diagram for example\+::Texture2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_texture2_d}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_texture2_d_ad23ba32ac7e93532c2b794eb71593bfd}{Texture2D}} (const std\+::string \&path, \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} w=Parameter\+::\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE, \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} f=Parameter\+::\+M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+A\+R\+\_\+\+F\+I\+L\+T\+ER)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_texture}{Texture}} 2 D. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_texture2_d_a55a3a2e435a2590fb97b732436dbda23}\label{classexample_1_1_texture2_d_a55a3a2e435a2590fb97b732436dbda23}} 
+void {\bfseries bind} () override
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture2_d_a9a8bd3b33cac53ce5b65a71428e6bd93}\label{classexample_1_1_texture2_d_a9a8bd3b33cac53ce5b65a71428e6bd93}} 
+void {\bfseries unbind} () override
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture2_d_aa11b8b77c8db7c70d686f6e830ce0397}\label{classexample_1_1_texture2_d_aa11b8b77c8db7c70d686f6e830ce0397}} 
+void {\bfseries set\+\_\+wrap} (\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} parameter) override
+\item 
+\mbox{\Hypertarget{classexample_1_1_texture2_d_a09bef9925fdac334919759201cdb1b1b}\label{classexample_1_1_texture2_d_a09bef9925fdac334919759201cdb1b1b}} 
+void {\bfseries set\+\_\+filter} (\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} parameter) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classexample_1_1_texture2_d_af31ea7464d42ad7f9b93ce5218ba5849}{load\+\_\+texture}} (const std\+::string \&path, \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} w=Parameter\+::\+C\+L\+A\+M\+P\+\_\+\+T\+O\+\_\+\+E\+D\+GE, \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} f=Parameter\+::\+M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+A\+R\+\_\+\+F\+I\+L\+T\+ER) override
+\begin{DoxyCompactList}\small\item\em Carga la textura de un archivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classexample_1_1_texture2_d_a85fa0256a1d1f2e1a2770fc631deee02}{get\+\_\+texture}} (const std\+::string \&path, \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} wrap=Parameter\+::\+R\+E\+P\+E\+AT, \mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}} filter=Parameter\+::\+M\+I\+P\+M\+A\+P\+\_\+\+L\+I\+N\+E\+A\+R\+\_\+\+F\+I\+L\+T\+ER)
+\begin{DoxyCompactList}\small\item\em Devuelve la textura segun su nombre en caso de que exista. SI no, crea una nueva. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_texture2_d_ad23ba32ac7e93532c2b794eb71593bfd}\label{classexample_1_1_texture2_d_ad23ba32ac7e93532c2b794eb71593bfd}} 
+\index{example::Texture2D@{example::Texture2D}!Texture2D@{Texture2D}}
+\index{Texture2D@{Texture2D}!example::Texture2D@{example::Texture2D}}
+\subsubsection{\texorpdfstring{Texture2D()}{Texture2D()}}
+{\footnotesize\ttfamily example\+::\+Texture2\+D\+::\+Texture2D (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}}}]{w = {\ttfamily Parameter\+:\+:CLAMP\+\_\+TO\+\_\+EDGE},  }\item[{\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}}}]{f = {\ttfamily Parameter\+:\+:MIPMAP\+\_\+LINEAR\+\_\+FILTER} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_texture}{Texture}} 2 D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & ruta de textura \\
+\hline
+{\em w} & wrap \\
+\hline
+{\em f} & filter \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_texture2_d_a85fa0256a1d1f2e1a2770fc631deee02}\label{classexample_1_1_texture2_d_a85fa0256a1d1f2e1a2770fc631deee02}} 
+\index{example::Texture2D@{example::Texture2D}!get\_texture@{get\_texture}}
+\index{get\_texture@{get\_texture}!example::Texture2D@{example::Texture2D}}
+\subsubsection{\texorpdfstring{get\_texture()}{get\_texture()}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classexample_1_1_texture}{Texture}}$>$ example\+::\+Texture2\+D\+::get\+\_\+texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}}}]{wrap = {\ttfamily Parameter\+:\+:REPEAT},  }\item[{\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}}}]{filter = {\ttfamily Parameter\+:\+:MIPMAP\+\_\+LINEAR\+\_\+FILTER} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve la textura segun su nombre en caso de que exista. SI no, crea una nueva. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+{\em wrap} & \\
+\hline
+{\em filter} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Texture$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_texture2_d_af31ea7464d42ad7f9b93ce5218ba5849}\label{classexample_1_1_texture2_d_af31ea7464d42ad7f9b93ce5218ba5849}} 
+\index{example::Texture2D@{example::Texture2D}!load\_texture@{load\_texture}}
+\index{load\_texture@{load\_texture}!example::Texture2D@{example::Texture2D}}
+\subsubsection{\texorpdfstring{load\_texture()}{load\_texture()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classexample_1_1_texture}{Texture}}$>$ example\+::\+Texture2\+D\+::load\+\_\+texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}}}]{w = {\ttfamily Parameter\+:\+:CLAMP\+\_\+TO\+\_\+EDGE},  }\item[{\mbox{\hyperlink{classexample_1_1_texture_a4f7233e69c4a5b913dbe53d729c1765f}{Parameter}}}]{f = {\ttfamily Parameter\+:\+:MIPMAP\+\_\+LINEAR\+\_\+FILTER} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Carga la textura de un archivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & ruta de la textura \\
+\hline
+{\em w} & wrap \\
+\hline
+{\em f} & filter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Texture$>$ 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classexample_1_1_texture_abc652f37394b62296b76d933feb9cbdc}{example\+::\+Texture}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_texture2_d_8hpp}{Texture2\+D.\+hpp}}\end{DoxyCompactItemize}

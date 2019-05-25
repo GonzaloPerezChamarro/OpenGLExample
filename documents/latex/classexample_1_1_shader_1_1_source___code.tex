@@ -1,0 +1,85 @@
+\hypertarget{classexample_1_1_shader_1_1_source___code}{}\section{example\+::Shader\+::Source\+\_\+\+Code Class Reference}
+\label{classexample_1_1_shader_1_1_source___code}\index{example::Shader::Source\_Code@{example::Shader::Source\_Code}}
+
+
+Clase que recoge el codigo de un shader.  
+
+
+
+
+{\ttfamily \#include $<$Shader.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader_1_1_source___code_a292ec182f1e3e7440bbda037c25df24c}\label{classexample_1_1_shader_1_1_source___code_a292ec182f1e3e7440bbda037c25df24c}} 
+size\+\_\+t {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader_1_1_source___code_ab3ffac64d2530fbd4fe51b9c7835afda}\label{classexample_1_1_shader_1_1_source___code_ab3ffac64d2530fbd4fe51b9c7835afda}} 
+bool {\bfseries is\+\_\+empty} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader_1_1_source___code_a316341560e88e77b03b1a7e0cdcaff57}\label{classexample_1_1_shader_1_1_source___code_a316341560e88e77b03b1a7e0cdcaff57}} 
+bool {\bfseries is\+\_\+not\+\_\+empty} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader_1_1_source___code_a61fcc5c271673f67740263735e40759d}\label{classexample_1_1_shader_1_1_source___code_a61fcc5c271673f67740263735e40759d}} 
+{\bfseries operator const std\+::string \&} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader_1_1_source___code_ae9f1b732bad5360c81abdf0912cb0f9e}\label{classexample_1_1_shader_1_1_source___code_ae9f1b732bad5360c81abdf0912cb0f9e}} 
+{\bfseries operator const char $\ast$} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code_a81c2e0da8c100613612f9e78302d74d3}{from\+\_\+string}} (const std\+::string \&code\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Devuelve un objeto \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} a partir de un string. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code_ad6a459c381ded3e246890b7a7e99bc42}{from\+\_\+file}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Devuelve un objeto \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} a partir de un archivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase que recoge el codigo de un shader. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_shader_1_1_source___code_ad6a459c381ded3e246890b7a7e99bc42}\label{classexample_1_1_shader_1_1_source___code_ad6a459c381ded3e246890b7a7e99bc42}} 
+\index{example::Shader::Source\_Code@{example::Shader::Source\_Code}!from\_file@{from\_file}}
+\index{from\_file@{from\_file}!example::Shader::Source\_Code@{example::Shader::Source\_Code}}
+\subsubsection{\texorpdfstring{from\_file()}{from\_file()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} example\+::\+Shader\+::\+Source\+\_\+\+Code\+::from\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un objeto \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} a partir de un archivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_shader_1_1_source___code_a81c2e0da8c100613612f9e78302d74d3}\label{classexample_1_1_shader_1_1_source___code_a81c2e0da8c100613612f9e78302d74d3}} 
+\index{example::Shader::Source\_Code@{example::Shader::Source\_Code}!from\_string@{from\_string}}
+\index{from\_string@{from\_string}!example::Shader::Source\_Code@{example::Shader::Source\_Code}}
+\subsubsection{\texorpdfstring{from\_string()}{from\_string()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} example\+::\+Shader\+::\+Source\+\_\+\+Code\+::from\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{code\+\_\+string }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Devuelve un objeto \mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} a partir de un string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+\_\+string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classexample_1_1_shader_1_1_source___code}{Source\+\_\+\+Code}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_shader_8hpp}{Shader.\+hpp}}\end{DoxyCompactItemize}

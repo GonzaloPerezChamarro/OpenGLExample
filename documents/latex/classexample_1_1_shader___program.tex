@@ -1,0 +1,234 @@
+\hypertarget{classexample_1_1_shader___program}{}\section{example\+::Shader\+\_\+\+Program Class Reference}
+\label{classexample_1_1_shader___program}\index{example::Shader\_Program@{example::Shader\_Program}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_shader___program_aa76001651ab84fda3d899a2b57f2a4b3}{Shader\+\_\+\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_shader___program_a39b461d067ffc3a10662e1d4fcb6d689}{$\sim$\+Shader\+\_\+\+Program}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_shader___program_a94cce35e866d39287ee503150b262b6d}{Shader\+\_\+\+Program}} (const \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} \&)=default
+\begin{DoxyCompactList}\small\item\em Constructor de copia de \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_ae76d165cf329883dfc287b37ecc313c2}\label{classexample_1_1_shader___program_ae76d165cf329883dfc287b37ecc313c2}} 
+bool {\bfseries is\+\_\+usable} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_ab4b58aa69e6a4afc44e63a660b0e59b0}\label{classexample_1_1_shader___program_ab4b58aa69e6a4afc44e63a660b0e59b0}} 
+void {\bfseries attach} (const \mbox{\hyperlink{classexample_1_1_shader}{Shader}} \&shader)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a83c1ac06873858589f454c5dfaa7b00c}\label{classexample_1_1_shader___program_a83c1ac06873858589f454c5dfaa7b00c}} 
+void {\bfseries detach} (const \mbox{\hyperlink{classexample_1_1_shader}{Shader}} \&shader)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a6cf9a8d19d6c43210aaf5a51c036d214}\label{classexample_1_1_shader___program_a6cf9a8d19d6c43210aaf5a51c036d214}} 
+bool {\bfseries link} ()
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a70c29ba798a57a71ca2b74463f5ffe19}\label{classexample_1_1_shader___program_a70c29ba798a57a71ca2b74463f5ffe19}} 
+void {\bfseries use} () const
+\item 
+G\+Lint \mbox{\hyperlink{classexample_1_1_shader___program_afa8e232ca74aa2ed94afaa7a14842464}{get\+\_\+uniform\+\_\+location}} (const char $\ast$identifier)
+\begin{DoxyCompactList}\small\item\em Devuelve el id (location) de una variable uniforme del shader a partir de su nombre. \end{DoxyCompactList}\item 
+G\+Lint \mbox{\hyperlink{classexample_1_1_shader___program_a456f2b6cee0125a6f02816b02d6ed702}{get\+\_\+vertex\+\_\+attrib\+\_\+location}} (const char $\ast$identifier)
+\begin{DoxyCompactList}\small\item\em Devuelve el id (location) de un atributo del shader a partir de su nombre. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a496fcf1c81fb5812026d3ffa5d1bbe43}\label{classexample_1_1_shader___program_a496fcf1c81fb5812026d3ffa5d1bbe43}} 
+const std\+::string \& {\bfseries get\+\_\+log} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a0c9b4a8eca4fa15682d92c29801d55f1}\label{classexample_1_1_shader___program_a0c9b4a8eca4fa15682d92c29801d55f1}} 
+{\bfseries operator G\+Luint} () const
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a80db53308908d1f44931ca6f09d8cd2b}\label{classexample_1_1_shader___program_a80db53308908d1f44931ca6f09d8cd2b}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (G\+Lint variant\+\_\+id, const G\+Lint \&value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a41518b1dc93c17beaaed95a800babbc3}\label{classexample_1_1_shader___program_a41518b1dc93c17beaaed95a800babbc3}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (G\+Lint variant\+\_\+id, const float \&value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_aafb8e263c3e0795f4db23ddee08da012}\label{classexample_1_1_shader___program_aafb8e263c3e0795f4db23ddee08da012}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (G\+Lint variant\+\_\+id, const glm\+::vec2 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_ad8b23ef03d61adde52ecf72fbbd4a6ec}\label{classexample_1_1_shader___program_ad8b23ef03d61adde52ecf72fbbd4a6ec}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (G\+Lint variant\+\_\+id, const glm\+::vec3 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a00688c6c2c7d831503c99e69f67f3288}\label{classexample_1_1_shader___program_a00688c6c2c7d831503c99e69f67f3288}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (G\+Lint variant\+\_\+id, const glm\+::vec4 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a93a22aa6829ff0be7c532acb7fd05694}\label{classexample_1_1_shader___program_a93a22aa6829ff0be7c532acb7fd05694}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (G\+Lint variant\+\_\+id, const glm\+::mat2 \&matrix)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_aca12e7c6d741e66bdfca344fc7ba1bd1}\label{classexample_1_1_shader___program_aca12e7c6d741e66bdfca344fc7ba1bd1}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (G\+Lint variant\+\_\+id, const glm\+::mat3 \&matrix)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a289700aa2fe5bd795cc1fa119e1beece}\label{classexample_1_1_shader___program_a289700aa2fe5bd795cc1fa119e1beece}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (G\+Lint variant\+\_\+id, const glm\+::mat4 \&matrix)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a3f3c9e0b56278a38b467a50a8e52d396}\label{classexample_1_1_shader___program_a3f3c9e0b56278a38b467a50a8e52d396}} 
+void {\bfseries set\+\_\+vertex\+\_\+attribute} (G\+Lint attribute\+\_\+id, const float \&value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_ad0308ff685cf521c86e50b68464403d1}\label{classexample_1_1_shader___program_ad0308ff685cf521c86e50b68464403d1}} 
+void {\bfseries set\+\_\+vertex\+\_\+attribute} (G\+Lint attribute\+\_\+id, const glm\+::vec2 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a5ee43d113b313bb6d79f5a2890799204}\label{classexample_1_1_shader___program_a5ee43d113b313bb6d79f5a2890799204}} 
+void {\bfseries set\+\_\+vertex\+\_\+attribute} (G\+Lint attribute\+\_\+id, const glm\+::vec3 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a6bbe76513606a9a87cba7b4e3190ed03}\label{classexample_1_1_shader___program_a6bbe76513606a9a87cba7b4e3190ed03}} 
+void {\bfseries set\+\_\+vertex\+\_\+attribute} (G\+Lint attribute\+\_\+id, const glm\+::vec4 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a18d971d346f8c48b9bf2206ec556f8c6}\label{classexample_1_1_shader___program_a18d971d346f8c48b9bf2206ec556f8c6}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (const std\+::string \&name, const G\+Lfloat value)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a15b1ba1455bee9bff24a6d3ed8f29a92}\label{classexample_1_1_shader___program_a15b1ba1455bee9bff24a6d3ed8f29a92}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (const std\+::string \&name, const glm\+::vec2 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_aa7a23bef3da0f252d7d84245e2182a89}\label{classexample_1_1_shader___program_aa7a23bef3da0f252d7d84245e2182a89}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (const std\+::string \&name, const glm\+::vec3 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_af90bb5f5221831ae859a1fc8bfb0b399}\label{classexample_1_1_shader___program_af90bb5f5221831ae859a1fc8bfb0b399}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (const std\+::string \&name, const glm\+::vec4 \&vector)
+\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a38459d84126c54662c658ccf386274c5}\label{classexample_1_1_shader___program_a38459d84126c54662c658ccf386274c5}} 
+void {\bfseries set\+\_\+variant\+\_\+value} (const std\+::string \&name, const \mbox{\hyperlink{classexample_1_1_texture}{Texture}} \&tex)
+\item 
+G\+Lint \mbox{\hyperlink{classexample_1_1_shader___program_a26373bbe694a2e5abec0815d0e489e40}{get\+\_\+location\+\_\+by\+\_\+name}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Devuelve el id (location) de una variable uniforme del shader a partir de su nombre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{classexample_1_1_shader___program_ac15e932e1dd47497720722af3e43ce75}{create\+\_\+shader}} (const std\+::string \&name, const std\+::string \&vertex\+\_\+shader\+\_\+path, const std\+::string \&fragment\+\_\+shader\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Crea un nuevo \mbox{\hyperlink{classexample_1_1_shader}{Shader}} Program. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ \mbox{\hyperlink{classexample_1_1_shader___program_a96511d5af161c7e28137357ffb3d878d}{get\+\_\+shader}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Devuelve un shader a partir de su nombre si ya existe. En caso contrairo, crea uno nuevo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classexample_1_1_shader___program_a1fe0129a78e4bf33fd07de4448e3657b}\label{classexample_1_1_shader___program_a1fe0129a78e4bf33fd07de4448e3657b}} 
+static void {\bfseries disable} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_shader___program_aa76001651ab84fda3d899a2b57f2a4b3}\label{classexample_1_1_shader___program_aa76001651ab84fda3d899a2b57f2a4b3}} 
+\index{example::Shader\_Program@{example::Shader\_Program}!Shader\_Program@{Shader\_Program}}
+\index{Shader\_Program@{Shader\_Program}!example::Shader\_Program@{example::Shader\_Program}}
+\subsubsection{\texorpdfstring{Shader\_Program()}{Shader\_Program()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily example\+::\+Shader\+\_\+\+Program\+::\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}}. 
+
+\mbox{\Hypertarget{classexample_1_1_shader___program_a39b461d067ffc3a10662e1d4fcb6d689}\label{classexample_1_1_shader___program_a39b461d067ffc3a10662e1d4fcb6d689}} 
+\index{example::Shader\_Program@{example::Shader\_Program}!````~Shader\_Program@{$\sim$Shader\_Program}}
+\index{````~Shader\_Program@{$\sim$Shader\_Program}!example::Shader\_Program@{example::Shader\_Program}}
+\subsubsection{\texorpdfstring{$\sim$Shader\_Program()}{~Shader\_Program()}}
+{\footnotesize\ttfamily example\+::\+Shader\+\_\+\+Program\+::$\sim$\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor de \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}}. 
+
+\mbox{\Hypertarget{classexample_1_1_shader___program_a94cce35e866d39287ee503150b262b6d}\label{classexample_1_1_shader___program_a94cce35e866d39287ee503150b262b6d}} 
+\index{example::Shader\_Program@{example::Shader\_Program}!Shader\_Program@{Shader\_Program}}
+\index{Shader\_Program@{Shader\_Program}!example::Shader\_Program@{example::Shader\_Program}}
+\subsubsection{\texorpdfstring{Shader\_Program()}{Shader\_Program()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily example\+::\+Shader\+\_\+\+Program\+::\+Shader\+\_\+\+Program (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Constructor de copia de \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_shader___program_ac15e932e1dd47497720722af3e43ce75}\label{classexample_1_1_shader___program_ac15e932e1dd47497720722af3e43ce75}} 
+\index{example::Shader\_Program@{example::Shader\_Program}!create\_shader@{create\_shader}}
+\index{create\_shader@{create\_shader}!example::Shader\_Program@{example::Shader\_Program}}
+\subsubsection{\texorpdfstring{create\_shader()}{create\_shader()}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}}$>$ example\+::\+Shader\+\_\+\+Program\+::create\+\_\+shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{vertex\+\_\+shader\+\_\+path,  }\item[{const std\+::string \&}]{fragment\+\_\+shader\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un nuevo \mbox{\hyperlink{classexample_1_1_shader}{Shader}} Program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nombre del shader \\
+\hline
+{\em vertex\+\_\+shader\+\_\+path} & ruta al vertex shader \\
+\hline
+{\em fragment\+\_\+shader\+\_\+path} & ruta al frag shader \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Shader\+\_\+\+Program$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_shader___program_a26373bbe694a2e5abec0815d0e489e40}\label{classexample_1_1_shader___program_a26373bbe694a2e5abec0815d0e489e40}} 
+\index{example::Shader\_Program@{example::Shader\_Program}!get\_location\_by\_name@{get\_location\_by\_name}}
+\index{get\_location\_by\_name@{get\_location\_by\_name}!example::Shader\_Program@{example::Shader\_Program}}
+\subsubsection{\texorpdfstring{get\_location\_by\_name()}{get\_location\_by\_name()}}
+{\footnotesize\ttfamily G\+Lint example\+::\+Shader\+\_\+\+Program\+::get\+\_\+location\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el id (location) de una variable uniforme del shader a partir de su nombre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G\+Lint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_shader___program_a96511d5af161c7e28137357ffb3d878d}\label{classexample_1_1_shader___program_a96511d5af161c7e28137357ffb3d878d}} 
+\index{example::Shader\_Program@{example::Shader\_Program}!get\_shader@{get\_shader}}
+\index{get\_shader@{get\_shader}!example::Shader\_Program@{example::Shader\_Program}}
+\subsubsection{\texorpdfstring{get\_shader()}{get\_shader()}}
+{\footnotesize\ttfamily static std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}}$>$ example\+::\+Shader\+\_\+\+Program\+::get\+\_\+shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Devuelve un shader a partir de su nombre si ya existe. En caso contrairo, crea uno nuevo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Shader\+\_\+\+Program$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_shader___program_afa8e232ca74aa2ed94afaa7a14842464}\label{classexample_1_1_shader___program_afa8e232ca74aa2ed94afaa7a14842464}} 
+\index{example::Shader\_Program@{example::Shader\_Program}!get\_uniform\_location@{get\_uniform\_location}}
+\index{get\_uniform\_location@{get\_uniform\_location}!example::Shader\_Program@{example::Shader\_Program}}
+\subsubsection{\texorpdfstring{get\_uniform\_location()}{get\_uniform\_location()}}
+{\footnotesize\ttfamily G\+Lint example\+::\+Shader\+\_\+\+Program\+::get\+\_\+uniform\+\_\+location (\begin{DoxyParamCaption}\item[{const char $\ast$}]{identifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el id (location) de una variable uniforme del shader a partir de su nombre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G\+Lint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_shader___program_a456f2b6cee0125a6f02816b02d6ed702}\label{classexample_1_1_shader___program_a456f2b6cee0125a6f02816b02d6ed702}} 
+\index{example::Shader\_Program@{example::Shader\_Program}!get\_vertex\_attrib\_location@{get\_vertex\_attrib\_location}}
+\index{get\_vertex\_attrib\_location@{get\_vertex\_attrib\_location}!example::Shader\_Program@{example::Shader\_Program}}
+\subsubsection{\texorpdfstring{get\_vertex\_attrib\_location()}{get\_vertex\_attrib\_location()}}
+{\footnotesize\ttfamily G\+Lint example\+::\+Shader\+\_\+\+Program\+::get\+\_\+vertex\+\_\+attrib\+\_\+location (\begin{DoxyParamCaption}\item[{const char $\ast$}]{identifier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Devuelve el id (location) de un atributo del shader a partir de su nombre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em identifier} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+G\+Lint 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_shader_program_8hpp}{Shader\+Program.\+hpp}}\end{DoxyCompactItemize}

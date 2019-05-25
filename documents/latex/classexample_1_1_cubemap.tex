@@ -1,0 +1,104 @@
+\hypertarget{classexample_1_1_cubemap}{}\section{example\+::Cubemap Class Reference}
+\label{classexample_1_1_cubemap}\index{example::Cubemap@{example::Cubemap}}
+Inheritance diagram for example\+::Cubemap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexample_1_1_cubemap}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classexample_1_1_cubemap_ada15ba89709eb522748452e0544ae8c6}{Cubemap}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Constructor de \mbox{\hyperlink{classexample_1_1_cubemap}{Cubemap}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexample_1_1_cubemap_aaafb4798ec24447afa68ea07f2e39501}{$\sim$\+Cubemap}} ()
+\begin{DoxyCompactList}\small\item\em Destructor de \mbox{\hyperlink{classexample_1_1_cubemap}{Cubemap}}. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_texture}{Texture}} $>$ \mbox{\hyperlink{classexample_1_1_cubemap_a18940faf62bea6cdef2fb306fd037b3c}{load\+\_\+texture}} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Carga una textura para el cubemap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_cubemap_a057cc50abb439ea55351ba52bea6d021}{bind}} () override
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Bindea\char`\"{} el cubemap \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classexample_1_1_cubemap_a95571938ee65dcb9dce352e175b63247}{unbind}} () override
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Desbindea\char`\"{} el cubemap \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexample_1_1_cubemap_ada15ba89709eb522748452e0544ae8c6}\label{classexample_1_1_cubemap_ada15ba89709eb522748452e0544ae8c6}} 
+\index{example::Cubemap@{example::Cubemap}!Cubemap@{Cubemap}}
+\index{Cubemap@{Cubemap}!example::Cubemap@{example::Cubemap}}
+\subsubsection{\texorpdfstring{Cubemap()}{Cubemap()}}
+{\footnotesize\ttfamily example\+::\+Cubemap\+::\+Cubemap (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Constructor de \mbox{\hyperlink{classexample_1_1_cubemap}{Cubemap}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexample_1_1_cubemap_aaafb4798ec24447afa68ea07f2e39501}\label{classexample_1_1_cubemap_aaafb4798ec24447afa68ea07f2e39501}} 
+\index{example::Cubemap@{example::Cubemap}!````~Cubemap@{$\sim$Cubemap}}
+\index{````~Cubemap@{$\sim$Cubemap}!example::Cubemap@{example::Cubemap}}
+\subsubsection{\texorpdfstring{$\sim$Cubemap()}{~Cubemap()}}
+{\footnotesize\ttfamily example\+::\+Cubemap\+::$\sim$\+Cubemap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de \mbox{\hyperlink{classexample_1_1_cubemap}{Cubemap}}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexample_1_1_cubemap_a057cc50abb439ea55351ba52bea6d021}\label{classexample_1_1_cubemap_a057cc50abb439ea55351ba52bea6d021}} 
+\index{example::Cubemap@{example::Cubemap}!bind@{bind}}
+\index{bind@{bind}!example::Cubemap@{example::Cubemap}}
+\subsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void example\+::\+Cubemap\+::bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\char`\"{}\+Bindea\char`\"{} el cubemap 
+
+
+
+Reimplemented from \mbox{\hyperlink{classexample_1_1_texture}{example\+::\+Texture}}.
+
+\mbox{\Hypertarget{classexample_1_1_cubemap_a18940faf62bea6cdef2fb306fd037b3c}\label{classexample_1_1_cubemap_a18940faf62bea6cdef2fb306fd037b3c}} 
+\index{example::Cubemap@{example::Cubemap}!load\_texture@{load\_texture}}
+\index{load\_texture@{load\_texture}!example::Cubemap@{example::Cubemap}}
+\subsubsection{\texorpdfstring{load\_texture()}{load\_texture()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classexample_1_1_texture}{Texture}}$>$ example\+::\+Cubemap\+::load\+\_\+texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Carga una textura para el cubemap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::shared\+\_\+ptr$<$\+Texture$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexample_1_1_cubemap_a95571938ee65dcb9dce352e175b63247}\label{classexample_1_1_cubemap_a95571938ee65dcb9dce352e175b63247}} 
+\index{example::Cubemap@{example::Cubemap}!unbind@{unbind}}
+\index{unbind@{unbind}!example::Cubemap@{example::Cubemap}}
+\subsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily void example\+::\+Cubemap\+::unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\char`\"{}\+Desbindea\char`\"{} el cubemap 
+
+
+
+Reimplemented from \mbox{\hyperlink{classexample_1_1_texture}{example\+::\+Texture}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_cubemap_8hpp}{Cubemap.\+hpp}}\end{DoxyCompactItemize}
