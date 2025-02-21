@@ -1,11 +1,11 @@
 /**
  * @file Color_Rgba8888.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que recoge un color rgba 32bits
- * @version 0.1
+ * @brief Class of a rgba color (32bits)
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -27,10 +27,10 @@ namespace example
 				uint8_t g;
 				uint8_t b;
 				uint8_t a;
-			}component;
+			}
+			component;
 
 			uint32_t value;
-
 		};
 
 		Data data;
@@ -43,13 +43,13 @@ namespace example
 			data.component.a = a;
 		}
 
-		Color_RGBA8888 & operator = (const int & value)
+		Color_RGBA8888& operator= (const int& value)
 		{
 			data.value = uint32_t(value);
 			return (*this);
 		}
 
-		static Color_RGBA8888 & red()
+		static Color_RGBA8888& red()
 		{
 			Color_RGBA8888 c;
 			c.data.component.r = 255;
@@ -59,22 +59,22 @@ namespace example
 			return c;
 		}
 
-		static Color_RGBA8888 & blue()
-		{
-			Color_RGBA8888 c;
-			c.data.component.r = 0;
-			c.data.component.g = 255;
-			c.data.component.b = 0;
-			c.data.component.a = 255;
-			return c;
-		}
-
-		static Color_RGBA8888 & green()
+		static Color_RGBA8888& blue()
 		{
 			Color_RGBA8888 c;
 			c.data.component.r = 0;
 			c.data.component.g = 0;
 			c.data.component.b = 255;
+			c.data.component.a = 255;
+			return c;
+		}
+
+		static Color_RGBA8888& green()
+		{
+			Color_RGBA8888 c;
+			c.data.component.r = 0;
+			c.data.component.g = 255;
+			c.data.component.b = 0;
 			c.data.component.a = 255;
 			return c;
 		}

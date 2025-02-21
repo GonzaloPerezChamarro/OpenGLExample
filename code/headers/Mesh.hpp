@@ -1,11 +1,11 @@
 /**
  * @file Mesh.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que representa un objeto malla
+ * @brief Class that represent a mesh object
  * @version 0.1
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -19,7 +19,6 @@
 #include "VertexBufferObject.hpp"
 
 #include <glm.hpp>
-
 #include <memory>
 
 namespace example
@@ -27,41 +26,26 @@ namespace example
 	class Mesh
 	{
 	protected:
-		
-		/**
-		 * @brief Vertex Array Object
-		 * 
-		 */
+		/* Vertex Array Object */
 		std::shared_ptr<Vertex_Array_Object> vao;
 
-		/**
-		 * @brief Buffer de vertices
-		 * 
-		 */
+		/* Vectex buffer */
 		std::shared_ptr<Vertex_Buffer_Object> vertex_buffer;
-		/**
-		 * @brief Buffer de coordenadas de textura
-		 * 
-		 */
+
+		/* Texture coord buffer */
 		std::shared_ptr<Vertex_Buffer_Object> texcoord_buffer;
 
-		/**
-		 * @brief Buffer de normales
-		 * 
-		 */
+		/* Array of normals */
 		std::shared_ptr<Vertex_Buffer_Object> normals_buffer;
 
-		/**
-		 * @brief Buffer de indices
-		 * 
-		 */
+		/* Array of indices */
 		std::shared_ptr<Vertex_Buffer_Object> indices_buffer;
 
 	public:
+		/* Constructor by default */
 		Mesh() = default;
 
 	public:
-
 		virtual void render() {}
 
 		void set_vao(const std::shared_ptr<Vertex_Array_Object> & new_vao) { vao = new_vao; }
@@ -73,8 +57,4 @@ namespace example
 	};
 }
 
-
-
 #endif
-
-

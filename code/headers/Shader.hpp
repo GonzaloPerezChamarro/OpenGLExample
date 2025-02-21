@@ -1,11 +1,11 @@
 /**
  * @file Shader.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase padre de un shader
- * @version 0.1
+ * @brief Base class of a shader
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -21,109 +21,52 @@ namespace example
 	class Shader
 	{
 	public:
-		/**
-		 * @brief Clase que recoge el codigo de un shader 
-		 * 
-		 */
+		/* Class of a shader code */
 		class Source_Code
 		{
-		private:
-			/**
-			 * @brief Codigo del sahder
-			 * 
-			 */
-			std::string string;
 
 		public:
-			/**
-			 * @brief Devuelve un objeto Source_Code a partir de un string
-			 * 
-			 * @param code_string 
-			 * @return Source_Code 
-			 */
+			/* Returns a Source_Code object from a code string */
 			static Source_Code from_string(const std::string & code_string)
 			{
 				return (Source_Code(code_string));
 			}
 
-			/**
-			 * @brief Devuelve un objeto Source_Code a partir de un archivo
-			 * 
-			 * @param file_path 
-			 * @return Source_Code 
-			 */
+			/* Returns a Source_Code object from a file */
 			static Source_Code from_file(const std::string & file_path);
 
-		private:
-			/**
-			 * @brief Constructor de Source_Code por defecto
-			 * 
-			 */
-			Source_Code() {}
-
-			/**
-			 * @brief Constructor de Source_Code a partir de un string
-			 * 
-			 * @param source_code_string 
-			 */
-			Source_Code(const std::string & source_code_string)
-				:string(source_code_string)
-			{}
-
-
 		public:
-
 			size_t size() const { return (string.size()); }
 			bool   is_empty() const { return (string.empty()); }
 			bool   is_not_empty() const { return (!string.empty()); }
 
 		public:
 
-			operator const std::string & () const
+			operator const std::string& () const
 			{
 				return (Source_Code::string);
 			}
 
-			operator const char * () const
+			operator const char* () const
 			{
 				return (Source_Code::string.c_str());
 			}
 
+		private:
+			/* Constructor by default */
+			Source_Code() {}
 
+			/* Constructor from a source code string */
+			Source_Code(const std::string & source_code_string)
+				:string(source_code_string)
+			{}
+
+		private:
+			/* Code*/
+			std::string string;
 		};
 
-	private:
-
-		/**
-		 * @brief Id del shader
-		 * 
-		 */
-		GLuint      id;
-
-		/**
-		 * @brief Texto de log de error
-		 * 
-		 */
-		std::string log_string;
-
-	protected:
-
-		/**
-		 * @brief Constructor de Shader
-		 * 
-		 * @param source_code Objeto Source Code
-		 * @param shader_type Tipo de shader (Vertex o fragment)
-		 */
-		Shader(const Source_Code & source_code, GLenum shader_type);
-
-		/**
-		 * @brief Destructor de Shader
-		 * 
-		 */
-		virtual ~Shader();
-
 	public:
-
 		bool is_compiled() const
 		{
 			return (id != 0);
@@ -144,6 +87,23 @@ namespace example
 			return (id);
 		}
 
+	protected:
+		/**
+		 * @brief Constructor
+		 * @param source_code Source code object
+		 * @param shader_type Vertex or fragment
+		 */
+		Shader(const Source_Code& source_code, GLenum shader_type);
+
+		/* Destructor */
+		virtual ~Shader();
+
+	private:
+		/* Shader id */
+		GLuint id;
+
+		/* Error log */
+		std::string log_string;
 	};
 }
 

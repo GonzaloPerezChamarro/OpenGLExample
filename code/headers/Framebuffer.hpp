@@ -1,11 +1,11 @@
 /**
  * @file Framebuffer.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase Frambuffer. Se realiza el postprocesado
+ * @brief Class of a framebuffer, used for postprocess
  * @version 0.1
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -21,49 +21,33 @@ namespace example
 	class Framebuffer
 	{
 	private:
-		/**
-		 * @brief Id del frambuffer
-		 * 
-		 */
+		/* Framebffer id */
 		GLuint id;
 
-		/**
-		 * @brief id de la textura que se genera
-		 * 
-		 */
+		/* Id of the generated texture */
 		GLuint out_texture_id;
 
-		/**
-		 * @brief Ancho de la pantalla (o del postprocesado)
-		 * 
-		 */
+		/* Width of the window (or postprocess) */
 		int width;
 
-		/**
-		 * @brief Alto de la pantalla (o del postprocesado)
-		 * 
-		 */
+		/* Height of the window (or postprocess) */
 		int height;
 
-		/**
-		 * @brief Shader de postprocesado
-		 * 
-		 */
+		/* Pointer to shader */
 		std::shared_ptr<Shader_Program> shader_program;
 
 		GLuint triangle_vbo0;
 		GLuint triangle_vbo1;
 
 	public:
-		/**
-		 * @brief Constructor de Framebuffer
-		 * 
-		 * @param width ancho de la pantalla (o del postprocesado)
-		 * @param height alto de la pantalla (o del postprocesado)
-		 * @param shader nombre del shader
-		 */
+		/* Constructor */
 		Framebuffer(int width, int height, const std::string shader);
 
+		/* Builds the framebuffer */
+		void build();
+
+		/* Renders the postprocess */
+		void render();
 
 		void bind()
 		{
@@ -75,18 +59,6 @@ namespace example
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 		}
-
-		/**
-		 * @brief Contruye el frambuffer
-		 * 
-		 */
-		void build();
-
-		/**
-		 * @brief Renderiza el postprocesado
-		 * 
-		 */
-		void render();
 	};
 }
 #endif

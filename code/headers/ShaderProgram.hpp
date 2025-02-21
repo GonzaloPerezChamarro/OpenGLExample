@@ -1,11 +1,11 @@
 /**
  * @file ShaderProgram.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase Shader Program
- * @version 0.1
+ * @brief Class of a Shader Program
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -27,53 +27,33 @@ namespace example
 	class Shader_Program
 	{
 	private:
-		/**
-		 * @brief Id del shader programm
-		 * 
-		 */
+		/* If of the shader program */
 		GLuint id;
-		/**
-		 * @brief Indica si la vinculacion ha sido correcta
-		 * 
-		 */
+
+		/* Flag that indicates if the link was succeded */
 		bool link_completed;
 
-		/**
-		 * @brief Texto de error/log
-		 * 
-		 */
+		/* Error log */
 		std::string log;
 
 	private:
-		/**
-		 * @brief Mapa de shaders/factoria.
-		 * 
-		 */
+		/* Map of shaders. Factory */
 		static std::map<std::string, std::shared_ptr<Shader_Program>> factory;
 
 	public:
 		/**
-		 * @brief Crea un nuevo Shader Program
-		 * 
-		 * @param name nombre del shader
-		 * @param vertex_shader_path ruta al vertex shader
-		 * @param fragment_shader_path ruta al frag shader
+		 * @brief Creates a new shader program
+		 * @param name Name of the sahder
+		 * @param vertex_shader_path path to the vertex shader
+		 * @param fragment_shader_path path tot eh fragment shader
 		 * @return std::shared_ptr<Shader_Program> 
 		 */
 		static std::shared_ptr<Shader_Program> create_shader(const std::string & name, const std::string & vertex_shader_path, const std::string & fragment_shader_path);
 		
-		/**
-		 * @brief Devuelve un shader a partir de su nombre si ya existe. En caso contrairo, crea uno nuevo.
-		 * 
-		 * @param name 
-		 * @return std::shared_ptr<Shader_Program> 
-		 */
+		/* Returns a shader program from its name if it already exists. Otherwise, it creates a new one*/
 		static std::shared_ptr<Shader_Program> get_shader(const std::string & name);
 
-		/**
-		 * @brief Constructor de Shader_Program
-		 * 
-		 */
+		/* Constructor */
 		Shader_Program()
 		{
 			id = glCreateProgram();
@@ -81,21 +61,14 @@ namespace example
 			assert(id != 0);
 		}
 
-		/**
-		 * @brief Destructor de Shader_Program
-		 * 
-		 */
+		/* Destructor */
 		~Shader_Program()
 		{
 			glDeleteProgram(id);
 			id = 0;
 		}
-
-	public:
-		/**
-		 * @brief Constructor de copia de Shader_Program
-		 * 
-		 */
+		
+		/* Copy constructor */
 		Shader_Program(const Shader_Program &) = default;
 
 	public:
@@ -119,38 +92,38 @@ namespace example
 			glDetachShader(id, shader);
 		}
 
-
-		bool link();
-
 		void use() const 
 		{
 			assert(is_usable());
 			glUseProgram(id);
 		}
+		
+		bool link();
 
-		/**
-		 * @brief Devuelve el id (location) de una variable uniforme del shader a partir de su nombre
-		 * 
-		 * @param identifier 
-		 * @return GLint 
-		 */
-		GLint get_uniform_location(const char * identifier)
+		/* Returns the id (location) of a uniform variable of a shader from its name (char array) */
+		GLint get_uniform_location(const char* name)
 		{
 			assert(is_usable());
 
-			GLint uniform_location = glGetUniformLocation(id, identifier);
+			GLint uniform_location = glGetUniformLocation(id, name);
 
 			assert(uniform_location != -1);
 
 			return uniform_location;
 		}
 
-		/**
-		 * @brief Devuelve el id (location) de un atributo del shader a partir de su nombre
-		 * 
-		 * @param identifier 
-		 * @return GLint 
-		 */
+		 /* Returns the id (location) of a uniform variable of a shader from its name (string) */
+		GLint get_location_by_name(const std::string& name) const
+		{
+			GLint location = glGetUniformLocation(id, name.c_str());
+
+			GLenum e = glGetError();
+			assert(e == GL_NO_ERROR);
+
+			return location;
+		}
+
+		 /* Returns the id (location) of a vertex attribute of a shader from its name */
 		GLint get_vertex_attrib_location(const char * identifier)
 		{
 			assert(is_usable());
@@ -162,6 +135,7 @@ namespace example
 			return attrib_id;
 		}
 
+		/* Returns the error log */
 		const std::string & get_log() const
 		{
 			return log;
@@ -195,24 +169,6 @@ namespace example
 		{
 			glUniform1i(get_location_by_name(name), tex.get_id() );
 		}
-
-		/**
-		 * @brief Devuelve el id (location) de una variable uniforme del shader a partir de su nombre
-		 * 
-		 * @param identifier 
-		 * @return GLint 
-		 */
-		GLint get_location_by_name(const std::string & name) const
-		{
-			GLint location = glGetUniformLocation(id, name.c_str());
-
-			GLenum e = glGetError();
-			assert(e == GL_NO_ERROR);
-
-			return location;
-		}
-
-		
 	};
 }
 

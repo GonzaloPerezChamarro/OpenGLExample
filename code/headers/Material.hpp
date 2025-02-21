@@ -2,10 +2,11 @@
  * @file Material.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
  * @brief Clase material que reune ushader y texturas, asi como color
- * @version 0.1
+ * @brief Class that represents a material, that groups shader, textures and color
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -23,53 +24,34 @@ namespace example
 	class Material
 	{
 	private:
-		/**
-		 * @brief Shader principal
-		 * 
-		 */
+		/* Pointer to main shader */
 		std::shared_ptr < Shader_Program> shader;
 		
-		/**
-		 * @brief id del material
-		 * 
-		 */
+		/* Material id */
 		std::string id;
 
-		/**
-		 * @brief mapa de variables uniformes
-		 * 
-		 */
+		/* Mpa of uniform variables */
 		std::map<std::string, Variant> variables;
 
-		/**
-		 * @brief Textura principal dell material
-		 * 
-		 */
+		/* Main texture */
 		std::shared_ptr<Texture> texture;
 
-		/**
-		 * @brief Color del albedo
-		 * 
-		 */
+		/* Albedo color */
 		glm::vec3 color;
 
 	public:
-		/**
-		 * @brief Mapa de materiales. Factoria
-		 * 
-		 */
+		/* Map of materials. Factory */
 		static std::map<std::string, std::shared_ptr<Material>> factory;
 
 		/**
-		 * @brief Devuelve el material si ya esta creado. EN caso contrario, crea uno nuevo
-		 * 
-		 * @param shader_name Nombre del shader
-		 * @param vertex_path Ruta al vertex shader
-		 * @param fragment_path Ruta al fragment shader
-		 * @param color Color principal del albedo
-		 * @param texture_path Ruta de textura
-		 * @param variants Mapa de variables uniformes
-		 * @return std::shared_ptr<Material> Puntero al material creado
+		 * @brief Returns the material if is already created. Otherwise, it creates a new one
+		 * @param shader_name Name of the shader
+		 * @param vertex_path Path to the shader
+		 * @param fragment_path Path to the fragment shader
+		 * @param color Albedo
+		 * @param texture_path Path to the texture
+		 * @param variants Uniform variables
+		 * @return std::shared_ptr<Material> Created material
 		 */
 		static std::shared_ptr<Material> get(const std::string & shader_name,
 										const std::string & vertex_path,
@@ -80,24 +62,12 @@ namespace example
 
 	public:
 
-		/**
-		 * @brief Constructor de Material
-		 * 
-		 * @param shader_program shader
-		 */
+		/* Constructor by a shader program */
 		Material(const std::shared_ptr<Shader_Program>& shader_program)
 			:shader(shader_program)
 		{}
 
-		/**
-		 * @brief Constructor de Material
-		 * 
-		 * @param shader_name nombre del shader
-		 * @param vertex_path ruta del vertex shader
-		 * @param fragment_path ruta del fragment shader
-		 * @param texture_path ruta a la textura
-		 * @param variants mapa de variables uniformes
-		 */
+		/* Constructor */
 		Material(const std::string & shader_name,
 				const std::string & vertex_path,
 				const std::string & fragment_path,
@@ -106,16 +76,25 @@ namespace example
 		);
 
 	public:
-		/**
-		 * @brief Indica a OpenGL que se va a utilizar el material
-		 * 
-		 */
+		/* Indicates to OpenGL that this material is going to be used */
 		void use();
 
+		/* Returns the shader */
 		std::shared_ptr<Shader_Program> get_shader() const { return shader; }
 
-		std::string get_id()const { return id; }
+		/* Returns the main texture */
+		std::shared_ptr<Texture> get_texture() const { return texture; }
 
+		/* Returns the material id */
+		std::string get_id() const { return id; }
+
+		/* Returns the color*/
+		glm::vec3 get_color() const { return color; }
+
+		/* Modifies the color */
+		void set_color(glm::vec3 c) { color = c; }
+
+		/* Method to add a uniform variable */
 		bool add_variant(const std::string & name, const GLint value);
 		bool add_variant(const std::string & name, const GLuint value);
 		bool add_variant(const std::string & name, const GLfloat value);
@@ -123,16 +102,9 @@ namespace example
 		bool add_variant(const std::string & name, const glm::vec3 value);
 		bool add_variant(const std::string & name, const glm::vec4 value);
 
+		/* Method to modify a variable */
 		void set_value(const std::string & variant_name, Variant value);
-
-		std::shared_ptr<Texture> get_texture() { return texture; }
-
-		glm::vec3 get_color() const { return color; }
-		void set_color(glm::vec3 c) { color = c; }
-
-
 	};
 }
-
 
 #endif

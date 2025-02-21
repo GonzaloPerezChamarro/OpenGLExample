@@ -1,11 +1,11 @@
 /**
  * @file Model.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que recoge cualquier modelo o conjunto de modelos con sus materiales correspondientes
- * @version 0.1
+ * @brief Class that represent any model or models group and their materials
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -24,88 +24,51 @@ namespace example
 {
 	class Model
 	{
-		/**
-		 * @brief Estructura que unifica una malla con un material
-		 * 
-		 */
+		/* Struct that unifies a mesh and a material */
 		struct Piece
 		{
 			std::shared_ptr<Mesh> mesh;
 			std::shared_ptr<Material> material;
 		};
-		/**
-		 * @brief Posicion del modelo
-		 * 
-		 */
-		glm::vec3 position;
 
-		/**
-		 * @brief Escala del modelo
-		 * 
-		 */
+		glm::vec3 position;
 		glm::vec3 scale;
 
-		/**
-		 * @brief Puntero al transform del modelo
-		 * 
-		 */
-		Transform * transform;
+		/* Pointer to model's transform */
+		Transform* transform;
 
-		/**
-		 * @brief Puntero al modelo padre. Nullptr si no existe
-		 * 
-		 */
-		Model * father;
+		/* Pointer to parent model (if any) */
+		Model* parent;
 
 	private:
-		/**
-		 * @brief Vector conjunto de piezas
-		 * 
-		 */
+		/* Array of pieces */
 		std::vector<Piece> pieces;
 
 	public:
-		/**
-		 * @brief Constructor de Model
-		 * 
-		 * @param path 
-		 * @param text_path 
-		 * @param position 
-		 * @param scale 
-		 */
+		/* Constructor */
 		Model(const std::string & path, const std::string & text_path, glm::vec3 position, glm::vec3 scale = glm::vec3(1,1,1));
 
-		/**
-		 * @brief Constructor de Model
-		 * 
-		 * @param position 
-		 * @param rotation 
-		 * @param scale 
-		 * @param father 
-		 */
+		/* Alternative constructor */
 		Model(glm::vec3 position, glm::vec3 rotation = glm::vec3(0, 0, 0), glm::vec3 scale = glm::vec3(1, 1, 1), Model * father = nullptr);
 
 	public:
 
 		/**
-		 * @brief Añade una pieza al vector de piezas
-		 * 
-		 * @param mesh malla
-		 * @param mat material
+		 * @brief Adds a piece to the array of pieces
+		 * @param mesh Mesh of the piece
+		 * @param mat Material of the piece
 		 */
 		void add_piece(std::shared_ptr<Mesh> mesh, std::shared_ptr<Material> mat);
 
 		/**
-		 * @brief Actualiza el modelo
-		 * 
-		 * @param deltaTime 
+		 * @brief Updates the model 
+		 * @param deltaTime Delta time
 		 */
 		void update(float deltaTime);
 
 		/**
-		 * @brief Renderiza todas las piezas con sus materiales
-		 * 
-		 * @param camera 
+		 * @brief Renders all pieces
+		 * @param camera Pointer to main camera
 		 */
 		void render(const Camera * camera);
 
@@ -114,7 +77,7 @@ namespace example
 
 		Transform * get_transform()const { return transform; }
 
-		std::shared_ptr<Material> get_material(size_t index) const { return pieces[0].material; }
+		std::shared_ptr<Material> get_material(size_t index) const { return index < pieces.size() ? pieces[index].material : nullptr; }
 
 	private:
 		bool load(const std::string & path, const std::string & text_path);

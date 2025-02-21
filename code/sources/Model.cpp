@@ -12,7 +12,7 @@ namespace example
 	}
 
 	Model::Model(glm::vec3 position, glm::vec3 rotation, glm::vec3 scale, Model * father)
-		:position(position), scale(scale), father(father),transform(new Transform(position, rotation, scale))
+		:position(position), scale(scale), parent(father),transform(new Transform(position, rotation, scale))
 	{
 		if(father != nullptr)
 			transform->set_parent(father->get_transform());

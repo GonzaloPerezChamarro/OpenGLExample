@@ -1,11 +1,11 @@
 /**
  * @file Transform.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase Trasform
- * @version 0.1
+ * @brief Class Trasform
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -23,69 +23,31 @@ namespace example
 	class Transform
 	{
 	private:
-		/**
-		 * @brief matriz de trasformacion global
-		 * 
-		 */
+		/* World transform matrix */
 		mat4 transform;
 
-		/**
-		 * @brief matriz de transformacion local
-		 * 
-		 */
+		/* Local transform matrix */
 		mat4 local_transform;
 
-		/**
-		 * @brief indica si el transform ha sido actualizado
-		 * 
-		 */
+		/* FLag that indicates if the transform is updated */
 		bool updated;
 
-		/**
-		 * @brief posicion del transform
-		 * 
-		 */
+		
 		glm::vec3 position;
-
-		/**
-		 * @brief Rotacion del transform
-		 * 
-		 */
 		glm::vec3 rotation;
-
-		/**
-		 * @brief Escala del transform
-		 * 
-		 */
 		glm::vec3 scale;
 
-		/**
-		 * @brief puntero al transform padre
-		 * 
-		 */
+		/* Pointer to parent transform (if any) */
 		Transform * parent = nullptr;
 
 	public:
-		/**
-		 * @brief Constructor de Transform por defecto
-		 * 
-		 */
-		Transform() : transform(mat4()) {}
+		/* Constructor by default */
+		Transform() : transform(mat4()), updated(false) {}
 
-		/**
-		 * @brief Constructor de Transform
-		 * 
-		 * @param position Posicion inicial
-		 * @param euler_angles Rotacion inicial
-		 * @param scale Escala global
-		 */
+		/* Constructor with params */
 		Transform(glm::vec3 position, glm::vec3 euler_angles, glm::vec3 scale);
 
-		/**
-		 * @brief Devuelve la matriz de transform
-		 * 
-		 * @return const glm::mat4& 
-		 */
+		/* Returns the matrix transform (world) */
 		const glm::mat4 & get_matrix();
 
 		glm::vec3 get_position();
@@ -94,53 +56,40 @@ namespace example
 
 		/**
 		 * @brief Traslada el transform el desplazamiento recibido
-		 * 
-		 * @param position 
+		 * @brief Moves the transform
+		 * @param position vector to add to current position
 		 */
 		void translate(const glm::vec3 position);
 
 		/**
-		 * @brief Rota el transform los angulos recibidos
-		 * 
+		 * @brief Rotates the transform specific angles
 		 * @param euler_angles 
 		 */
 		void rotate(glm::vec3 euler_angles);
 
 		/**
-		 * @brief Escala el transform
-		 * 
-		 * @param scale 
+		 * @brief Scales the transform
+		 * @param scale to multiply current scale
 		 */
 		void to_scale(glm::vec3 scale);
 
-		/**
-		 * @brief Actualiza el transform
-		 * 
-		 */
+		/* Updates the transform */
 		void update() { updated = false; }
 
 		/**
-		 * @brief Modifica el valor de parent 
-		 * 
-		 * @param tr 
+		 * @brief Modifies the parent value
+		 * @param tr new parent
 		 */
 		void set_parent(Transform * tr) { parent = tr; }
 
 	public:
-		/**
-		 * @brief Sobrecarga del operador =
-		 * 
-		 * @param other 
-		 * @return glm::mat4& 
-		 */
-		glm::mat4 & operator = (glm::mat4 other)
+		/* Overloading of operator = for comparing with a matrix (local)*/
+		glm::mat4 & operator= (glm::mat4 other)
 		{
 			return local_transform = other;
 		}
-
 	};
 }
-
 
 #endif // TRANSFORM_HEADER
 

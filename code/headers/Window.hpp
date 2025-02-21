@@ -2,10 +2,10 @@
  * @file Window.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
  * @brief Clase de la ventana de la aplicacion
- * @version 0.1
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -21,96 +21,56 @@ namespace example
 	class Window
 	{
 	private:
-		/**
-		 * @brief Ventana de SFML
-		 * 
-		 */
+		/* Pointer to SFML window */
 		sf::Window * window;
 
-		/**
-		 * @brief Ancho de la ventana
-		 * 
-		 */
+		/* Window's width */
 		unsigned width;
 
-		/**
-		 * @brief Alto de la ventana
-		 * 
-		 */
+		/* Window's height */
 		unsigned height;
 
 	public:
 		/**
-		 * @brief Constructor de Window
-		 * 
-		 * @param title Titulo de la ventana
-		 * @param width ancho de la ventana
-		 * @param height alto de la ventana
-		 * @param flags flags de la ventana
+		 * @brief Constructor
+		 * @param title Title of the window
+		 * @param width Window's width
+		 * @param height Window's height
+		 * @param flags Flags mask of the window
 		 */
 		Window(const char * title, unsigned width, unsigned height, int flags);
 		
-		/**
-		 * @brief Destructor de Window
-		 * 
-		 */
+		/* Destructor */
 		~Window() { delete window; }
 
 	public:
-		unsigned get_width() { return width; }
-		unsigned get_height() { return height; }
+		unsigned get_width() const { return width; }
+		unsigned get_height() const { return height; }
 
-
-	public:
-		/**
-		 * @brief sf::Window::display()
-		 * 
-		 */
+		/* sf::Window::display() */
 		void swap_buffers();
 
-		/**
-		 * @brief Modifica el valor del tamaño de viewport 
-		 * 
-		 * @param w 
-		 * @param h 
-		 */
+		/* Modifies the viewport size */
 		void set_viewport(unsigned w, unsigned h);
 
-		/**
-		 * @brief Limpia la pantalla con el color recibido
-		 * 
-		 * @param r 
-		 * @param g 
-		 * @param b 
-		 * @param a 
-		 */
+		/* Clear the window with the received color */
 		void clear_color(float r, float g, float b, float a);
 
-		/**
-		 * @brief Limpia la pantalla
-		 * 
-		 */
+		/* Clear the window */
 		void clear_display();
 
-		/**
-		 * @brief Activa/desactiva la sincronizacion vertical
-		 * 
-		 * @param active 
-		 */
+		/* Enables/disables the vertical sync */
 		void active_VSync(bool active);
 
 		/**
-		 * @brief Gestiona os eventos de ventana de sfml
-		 * 
-		 * @param e 
-		 * @return true 
-		 * @return false 
+		 * @brief Manages the events of the window
+		 * @param e Event
+		 * @return True if an event was returned, or false if the event queue was empty
 		 */
 		bool poll_events(sf::Event & e)
 		{
 			return window->pollEvent(e);
-		}
-			   
+		}  
 	};
 }
 #endif // !WINDOW_HEADER

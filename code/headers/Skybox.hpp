@@ -23,61 +23,35 @@ namespace example
 	class Skybox
 	{
 	private:
-		/**
-		 * @brief Vertex Array Object
-		 * 
-		 */
+		/* Vertex Array Object*/
 		std::shared_ptr<Vertex_Array_Object> vao;
 
-		/**
-		 * @brief Vertex Buffer Object
-		 * 
-		 */
+		/* Vertex Buffer Object */
 		std::shared_ptr<Vertex_Buffer_Object> vbo;
 
-		/**
-		 * @brief Id de la matriz de camara
-		 * 
-		 */
+		/* If of the view matrix */
 		GLint model_view_matrix_id;
 
-		/**
-		 * @brief Id de la matriz de proyeccion
-		 * 
-		 */
+		/* Id of the projection matrix */
 		GLint projection_matrix_id;
 
-		/**
-		 * @brief Textura cubemap del skybox
-		 * 
-		 */
+		/* Cubemap texture*/
 		Cubemap cubemap;
 
-		/**
-		 * @brief Shader del skybox
-		 * 
-		 */
+		/* Shader of the skybox */
 		std::shared_ptr<Shader_Program> shader;
 
 	public:
 		/**
-		 * @brief Constructor de Skybox
-		 * 
-		 * @param path 
+		 * @brief Constructor
+		 * @param path Path of the cubemap
 		 */
 		Skybox(const std::string & path);
 
-		/**
-		 * @brief Destructor de Skybox
-		 * 
-		 */
-		~Skybox();
+		/* Destructor */
+		~Skybox() {};
 
-		/**
-		 * @brief renderiza el skybox en pantalla
-		 * 
-		 * @param camera 
-		 */
+		/* Renders the skybox */
 		void render(const Camera & camera);
 	};
 }

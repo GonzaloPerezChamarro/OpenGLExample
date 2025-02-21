@@ -165,7 +165,7 @@ namespace example
 		glEnableVertexAttribArray(3);
 		glVertexAttribPointer(3, 3, normals_buffer->get_element_type(), GL_FALSE, 3 * sizeof(GLfloat), 0);
 
-		indices_buffer.reset(new Vertex_Buffer_Object(indices, sizeof(indices), Vertex_Buffer_Object::EAB));
+		indices_buffer.reset(new Vertex_Buffer_Object(indices, sizeof(indices), Vertex_Buffer_Object::Target::EAB));
 
 		vao->unbind();
 

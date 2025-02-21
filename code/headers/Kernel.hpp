@@ -1,11 +1,11 @@
 /**
  * @file Kernel.hpp
- * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Kernel base de funcionamiento
- * @version 0.1
+ * @author Gonzalo Perez Chamarro
+ * @brief Class of the kernel base
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -25,59 +25,35 @@ namespace example
 	{
 	private:
 
-		/**
-		 * @brief Ventana de la aplicacion
-		 * 
-		 */
+		/* Main application window */
 		Window window;
 
-		/**
-		 * @brief Camara principal
-		 * 
-		 */
+		/* Main camera */
 		Camera camera;
 
-		/**
-		 * @brief Escena 
-		 * 
-		 */
+		/* Scene */
 		View view;
 
-
-		/**
-		 * @brief Booleano que indica si la aplicacion esta corriendo
-		 * 
-		 */
+		/* Flag that indicates if kernel is running */
 		bool running;
 
 	public:
 		/**
-		 * @brief Constructor de Kernel
-		 * 
-		 * @param title Nombre de titulo de la ventana
-		 * @param width ancho de la ventana
-		 * @param height alto de la ventana
+		 * @brief Constructor
+		 * @param title Title name of the window
+		 * @param width window's width
+		 * @param height window's height
 		 */
 		Kernel(const char * title, unsigned width, unsigned height);
 
-		/**
-		 * @brief Inicia la aplicacion
-		 * 
-		 */
+		/* Starts the kernel */
 		void execute();
 
-		/**
-		 * @brief Renderiza la escena
-		 * 
-		 */
+		/* Renders the scene */
 		void render();
 
-
 	private:
-		/**
-		 * @brief Gestiona los eventos
-		 * 
-		 */
+		/* Manages events */
 		void handler();
 	};
 }

@@ -1,11 +1,11 @@
 /**
  * @file Texture.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase base de textura
- * @version 0.1
+ * @brief Base class of a texture
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -24,10 +24,7 @@ namespace example
 	class Texture
 	{
 	public:
-	/**
-	 * @brief Enumeracion que recoge los tipos de parametro
-	 * 
-	 */
+		/* Enum of parameter types */
 		enum Parameter 
 		{
 			//WRAP PARAMETERS
@@ -43,85 +40,26 @@ namespace example
 			MIPMAP_LINEAR_FILTER = GL_LINEAR_MIPMAP_LINEAR
 		};
 
-
 	protected:
 		typedef Color_RGBA8888 Color;
 
-		/**
-		 * @brief Id de la textura
-		 * 
-		 */
-		GLenum id;
-
-		/**
-		 * @brief Error de la textura
-		 * 
-		 */
-		GLenum error;
-
-		/**
-		 * @brief Indica si la carga de la textura ha sido correcta
-		 * 
-		 */
-		bool success;
-
-		/**
-		 * @brief Buffer de la textura
-		 * 
-		 */
-		std::vector <Color_RGBA8888> texture_buffer;
-
-		/**
-		 * @brief color
-		 * 
-		 */
-		Color color;
-
-		/**
-		 * @brief Ancho de la textura
-		 * 
-		 */
-		size_t width;
-
-		/**
-		 * @brief Alto de la textura
-		 * 
-		 */
-		size_t height;
-
 	public:
-		/**
-		 * @brief Constructor de Texture por defecto
-		 * 
-		 */
+		/* Constructor by default */
 		Texture() = default;
-		/**
-		 * @brief Constructor de Texture
-		 * 
-		 * @param width ancho
-		 * @param height alto
-		 */
+
+		/* Constructor by the size */
 		Texture(size_t width, size_t height)
-			:width(width), height(height), success(true), texture_buffer(width*height)
+			:width(width), height(height), success(true), texture_buffer(width * height)
 		{}
 
-		
-
+		/* Destructor */
 		virtual ~Texture()
 		{
 			//glDeleteTextures(1, &id);
 		}
 
 	public:
-
-		/**
-		 * @brief Metodo virtual de carga de textura
-		 * 
-		 * @param path 
-		 * @param w 
-		 * @param f 
-		 * @return std::shared_ptr<Texture> 
-		 */
+		/* Loads a texture */
 		virtual std::shared_ptr<Texture> load_texture(const std::string & path, Parameter w, Parameter f) { return std::shared_ptr<Texture>(); }
 
 		virtual void bind() {}
@@ -138,35 +76,19 @@ namespace example
 
 		GLenum get_id()const { return id; }
 
-	public:
-		/**
-		 * @brief Devuelve un puntero al buffer de textura
-		 * 
-		 * @return Color* 
-		 */
-		Color * colors()			{return (&texture_buffer.front());}
-		/**
-		 * @brief Devuelve un puntero al buffer de textura
-		 * 
-		 * @return Color* 
-		 */
-		const Color * colors() const{return (&texture_buffer.front());}
+		/* Returns a pointer to the texture buffer */
+		Color* colors() { return &texture_buffer.front(); }
 
-		/**
-		 * @brief Devuelve el tamaño de color
-		 * 
-		 * @return int 
-		 */
-		int bits_per_color() const	{return (sizeof(Color) * 8);}
+		/* Returns a pointer to the texture buffer */
+		const Color* colors() const { return &texture_buffer.front(); }
 
-		/**
-		 * @brief Tamaño de la textura
-		 * 
-		 * @return size_t 
-		 */
-		size_t size() const			{return (texture_buffer.size());}
+		/* Returns the size of Color */
+		static int bits_per_color() { return (sizeof(Color) * 8); }
 
+		/* Returns the size of the texture */
+		size_t size() const { return (texture_buffer.size()); }
 
+		/* Modifies the color */
 		void set_color(int r, int g, int b)
 		{
 			color.data.component.r = uint8_t(r < 0 ? 0 : r > 255 ? 255 : r);
@@ -175,12 +97,14 @@ namespace example
 			color.data.component.a = 0xFF;
 		}
 
-		void set_color(const Color & new_color){color = new_color;}
+		/* Modifies the color */
+		void set_color(const Color & new_color) { color = new_color; }
 
-		void set_pixel(size_t offset){texture_buffer[offset] = color;}
+		/* Modifies a pixel with the color */
+		void set_pixel(size_t offset) { texture_buffer[offset] = color; }
 
-		void set_pixel(int x, int y){texture_buffer[y * width + x] = color;}
-
+		/* Modifies a pixel with the color */
+		void set_pixel(int x, int y) { texture_buffer[y * width + x] = color; }
 
 		void gl_draw_pixels(int raster_x, int raster_y) const
 		{
@@ -188,9 +112,30 @@ namespace example
 			//glDrawPixels(width, height, GL_RGBA, GL_UNSIGNED_BYTE, colors());
 		}
 
-		size_t get_width()const { return width; }
-		size_t get_height()const { return height; }
+		size_t get_width() const { return width; }
+		size_t get_height() const { return height; }
 
+	protected:
+		/* Type id of the texture */
+		GLenum id;
+
+		/* OpenGL error */
+		GLenum error;
+
+		/* Flag that indicates if the loading was succeeded */
+		bool success;
+
+		/* Texture color buffer */
+		std::vector <Color_RGBA8888> texture_buffer;
+
+		/* Color */
+		Color color;
+
+		/* Texture's width */
+		size_t width;
+
+		/* Texture's height */
+		size_t height;
 	};
 }
 #endif

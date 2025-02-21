@@ -1,11 +1,11 @@
 /**
  * @file Camera.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que representa a un objeto camara
- * @version 0.1
+ * @brief Class that represents a camera object
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -41,36 +41,28 @@ namespace example
 		vec3 front;
 
 	private:
-		float last_mouse_x;
-		float last_mouse_y;
+		float last_mouse_x = 0.f;
+		float last_mouse_y = 0.f;
 		bool first_time = true;
 
 		float sensitivity = 0.5f;
 		
 	public:
 		/**
-		 * @brief Constructor de Camera
-		 * 
-		 * @param pos Posicion inicial de la camaa
-		 * @param direction direccion a la que mira
-		 * @param near_plane plano renderizado minimo
-		 * @param far_plane plano de renderizado maximo
-		 * @param fov punto de vista
-		 * @param ratio ratio
+		 * @brief Constructor
+		 * @param pos Initial position 
+		 * @param direction Forward direction of the view
+		 * @param near_plane Minimal render plane
+		 * @param far_plane Maximum render plane
+		 * @param fov Field of view
+		 * @param ratio View ratio
 		 */
 		Camera(vec3 pos, vec3 direction, float near_plane = 0.1f, float far_plane = 1000.f, float fov =90.f, float ratio = 1.f)
 			: position(pos),direction(direction),up(vec3(0.f,1.f,0.f)), front(vec3(0.f,0.f,-1.f)),
 			  yaw(-90.f), pitch(0.f), roll(0.f), near_plane(near_plane), far_plane(far_plane), fov(fov), ratio(ratio)
 		{}
 
-		/**
-		 * @brief Constructor por defecto
-		 * 
-		 * @param near_plane 
-		 * @param far_plane 
-		 * @param fov 
-		 * @param ratio 
-		 */
+		/* Constructor by default */
 		Camera(float near_plane = 0.1f, float far_plane = 1000.f, float fov = 90.f, float ratio = 1.f)
 			: position(0.f, 0.f, 0.f), direction(0.f,0.f,-1.f), up(vec3(0.f, 1.f, 0.f)), front(vec3(0.f, 0.f, -1.f)),
 			yaw(-90.f), pitch(0.f), roll(0.f), near_plane(near_plane), far_plane(far_plane), fov(fov), ratio(ratio)
@@ -78,65 +70,29 @@ namespace example
 			
 		}
 
-		/**
-		 * @brief Rota la camara en funcion del raton
-		 * 
-		 * @param mouse_x 
-		 * @param mouse_y 
-		 */
+		/* Rotates the camera with the mouse location */
 		void rotate(float mouse_x, float mouse_y);
 
-		/**
-		 * @brief Movimiento de la camara en una direccion y una velocidad
-		 * 
-		 * @param dir Direccion
-		 * @param speed Velocidad
-		 */
+		/* Moves the camera into a direction with a speed */
 		void move(glm::vec3 dir, float speed);
 
-		/**
-		 * @brief Devuelve la matriz de vista
-		 * 
-		 * @return mat4 
-		 */
+		/* Returns the view matrix */
 		mat4 get_view() const { return glm::lookAt(position, position + front, up); }
 
-		/**
-		 * @brief Devuelve la matriz de proyeccion
-		 * 
-		 * @return mat4 
-		 */
+		/* Returns the projection matrix */
 		mat4 get_projection() const { return glm::perspective(fov, ratio, near_plane, far_plane); }
 
-		/**
-		 * @brief Devuelve la posicion de la camara
-		 * 
-		 * @return vec3 
-		 */
+		/* Returns the camera position */
 		vec3 get_position() const{ return position; }
 
-		/**
-		 * @brief Devuelve camera front
-		 * 
-		 * @return vec3 
-		 */
+		/* Returns the camera forward vector */
 		vec3 get_camera_front() const { return front; }
 
-		/**
-		 * @brief Devuelve camera up 
-		 * 
-		 * @return vec3 
-		 */
+		/* Returns the camera up vector */
 		vec3 get_camera_up() const { return up; }
 
-		/**
-		 * @brief Devuelve camera field of view
-		 * 
-		 * @return float 
-		 */
+		/* Returns the camera field of view */
 		float get_camera_fov() const { return fov; }
-
-
 	};
 }
 

@@ -1,11 +1,11 @@
 /**
  * @file Variant.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase Variant, para el uso de variables no tipadas
- * @version 0.1
+ * @brief Class of a variant, a non type varialbe
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -36,7 +36,8 @@ namespace example
 			GLfloat vec2[2];
 			GLfloat vec3[3];
 			GLfloat vec4[4];
-		}value;
+		}
+		value;
 
 		GLint id;
 	};

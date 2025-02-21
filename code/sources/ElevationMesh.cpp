@@ -127,7 +127,7 @@ namespace example
 		glEnableVertexAttribArray(3);
 		glVertexAttribPointer(3, 3, normals_buffer->get_element_type(), GL_FALSE, 3 * sizeof(GLfloat), 0);
 
-		indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], indices.size() * sizeof(GLuint), Vertex_Buffer_Object::EAB));
+		indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], indices.size() * sizeof(GLuint), Vertex_Buffer_Object::Target::EAB));
 
 		vao->unbind();
 
@@ -243,7 +243,7 @@ namespace example
 
 	}
 
-	std::vector<glm::vec3> Elevation_Mesh::convert_vec1_to_vec3(std::vector<float>& vector1)
+	std::vector<glm::vec3> Elevation_Mesh::convert_vec1_to_vec3(std::vector<float>& vector1) const
 	{
 		bool check = vector1.size() % 3 == 0;
 		assert(check);

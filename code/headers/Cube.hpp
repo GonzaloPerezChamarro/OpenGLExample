@@ -1,18 +1,16 @@
 /**
  * @file Cube.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que representa un cubo
- * @version 0.1
+ * @brief Class that represent a cube
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
 #ifndef CUBE_HEADER
 #define CUBE_HEADER
-
-
 
 #include "Mesh.hpp"
 
@@ -22,42 +20,25 @@ namespace example
 	class Cube :public Mesh
 	{
 	private:
-		/**
-		 * @brief Conjunto de vertices
-		 * 
-		 */
+		/* Array of vertex */
 		static const GLfloat vertex[];
 
-		/**
-		 * @brief Conjunto de coordenadas de textura
-		 * 
-		 */
+		/* Array of texture coord */
 		static const GLfloat texcoord[];
 
-		/**
-		 * @brief Conjunto de normales
-		 * 
-		 */
+		/* Array of normals */
 		static const GLfloat normals[];
 
-		/**
-		 * @brief Conjunto de indices de la malla
-		 * 
-		 */
+		/* Array of mesh indices */
 		static const GLubyte indices[];
 
 	public:
-		/**
-		 * @brief Constructor de cubo
-		 * 
-		 */
+		/* Constructor */
 		Cube();
 
 	public:
 		void render() override;
 	};
-
-
 }
 
 #endif

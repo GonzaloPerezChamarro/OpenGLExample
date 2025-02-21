@@ -1,15 +1,16 @@
 /**
  * @file View.hpp
- * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
- * @brief Clase que recoge los elementos de la escena
- * @version 0.1
+ * @author Gonzalo Perez Chamarro
+ * @brief Class that represent a game scene
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
-#pragma once
+#ifndef VIEW_HEADER
+#define VIEW_HEADER
 
 #include "Camera.hpp"
 #include "Skybox.hpp"
@@ -27,113 +28,72 @@ namespace example
 	class View
 	{
 	private:
-		/**
-		 * @brief Puntero a la camara principal
-		 * 
-		 */
-		Camera * camera;
-		/**
-		 * @brief Puntero al skybox de la escena
-		 * 
-		 */
-		Skybox * skybox;
-		/**
-		 * @brief puntero a la luz principal
-		 * 
-		 */
-		Light * light;
+		/* Pointer to main camera */
+		Camera* camera;
 
-		/**
-		 * @brief Puntero al Framebuffer de postprocesado
-		 * 
-		 */
+		/* Pointer to scene skybox */
+		Skybox* skybox;
+		
+		/* Pointer to main scene light */
+		Light* light;
+
+		/* Pointer to the postprocess framebuffer */
 		Framebuffer* framebuffer;
 
-		/**
-		 * @brief Indica si el postprocesado esta activo
-		 * 
-		 */
+		/* Flag that indicates if the post process is active*/
 		bool postprocess_active = false;
 
-		/**
-		 * @brief Ancho de la pantalla
-		 * 
-		 */
+		/* Window's width */
 		unsigned width;
 
-		/**
-		 * @brief alto de la pantalla
-		 * 
-		 */
+		/* Window's height */
 		unsigned height;
 
-		/**
-		 * @brief Mapa de todos los modelos de la escena ordenados por su nombre
-		 * 
-		 */
+		/* Map of all models of the scene, sort by name */
 		std::map<std::string, std::shared_ptr<Model>> models_map;
 
-		/**
-		 * @brief Mapa de todos los modelos con transparencia de la escena ordenados por su nombre
-		 * 
-		 */
+		/* Map of all models with transparency of the scene, sort by name */
 		std::map<std::string, std::shared_ptr<Model>> tr_models_map;
 
-		/**
-		 * @brief Movimiento de la camara en cada frame
-		 * 
-		 */
+		/* Camera movement each tick */
 		glm::vec2 camera_direction;
 
 	private:
-		/**
-		 * @brief Matrix de vista de la camara
-		 * 
-		 */
+		/* Camera view matrix */
 		glm::mat4 model_view_matrix;
 
-		/**
-		 * @brief Matriz de proyeccion de la camara
-		 * 
-		 */
+		/* Camera projection matrix */
 		glm::mat4 projection_matrix;
 
 	public:
-	/**
-	 * @brief Constructor de View
-	 * 
-	 * @param camera Camara principal
-	 * @param width Ancho de la ventana
-	 * @param height Altoo de la ventana
-	 */
+		/**
+		 * @brief Constructor
+		 * @param camera Main camera
+		 * @param width Window's height
+		 * @param height Window's height
+		 */
 		View(Camera & camera, unsigned width, unsigned height);
 
 	public:
 		/**
-		 * @brief Actualiza el estado de la escena
-		 * 
-		 * @param deltaTime 
+		 * @brief Updates the scene state
+		 * @param deltaTime Delta time
 		 */
 		void update(float deltaTime);
 
-		/**
-		 * @brief Renderiza la escena
-		 * 
-		 */
+		/* Renders the scene*/
 		void render();
 
 		/**
-		 * @brief Gestiona los eventos relacionados con la escena
-		 * 
-		 * @param e 
+		 * @brief Handle scene events
+		 * @param e Event
 		 */
-		void handler(sf::Event & e);
+		void handler(sf::Event& e);
 
 	private:
-		/**
-		 * @brief Crea la escena
-		 * 
-		 */
+		/* Creates the scene */
 		void create_scene();
 	};
 }
+#endif // !VIEW_HEADER
+

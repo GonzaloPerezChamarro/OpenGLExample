@@ -2,10 +2,11 @@
  * @file ElevationMesh.hpp
  * @author Gonzalo Perez Chamarro (Gonzalo1810 Github)
  * @brief Clase de una malla de elevacion a partir de una imagen bump.tga
- * @version 0.1
+ * @brief Class of a heightmap from an imagen bump.tga
+ * @version 1.0
  * @date 2019-05-24
  * 
- * @copyright Copyright (c) 2019
+ * @copyright Copyright (c) 2025
  * 
  */
 
@@ -20,41 +21,27 @@
 
 namespace example
 {
-	class Elevation_Mesh :public Mesh
+	class Elevation_Mesh : public Mesh
 	{
 	private:
-	/**
-	 * @brief Vector de vertices
-	 * 
-	 */
+		/* Array of vertex */
 		std::vector<GLfloat> vertex;
 
-		/**
-		 * @brief Vector de normales
-		 * 
-		 */
+		/* Array of texture coord */
 		std::vector<GLfloat> normals;
 
-		/**
-		 * @brief Vector de coordenadas de textura
-		 * 
-		 */
+		/* Array of normals */
 		std::vector<GLfloat> texcoord;
 
-		/**
-		 * @brief Vector de indices
-		 * 
-		 */
+		/* Array of mesh indices */
 		std::vector<GLuint> indices;
 
 	public:
-
 		/**
-		 * @brief Constructor de la malla de navegacion
-		 * 
-		 * @param path_file ruta al archivo tga
-		 * @param width ancho del plano
-		 * @param height largo del plano
+		 * @brief Constructor
+		 * @param path_file path to the tga file 
+		 * @param width of the plane
+		 * @param height (large) of the plane
 		 */
 		Elevation_Mesh(const std::string & path_file,unsigned width, unsigned height);
 
@@ -63,24 +50,17 @@ namespace example
 	private:
 
 		/**
-		 * @brief Calcula las normales del vertice que recibe
-		 * 
-		 * @param width ancho
-		 * @param height largo
-		 * @param i indice del array a lo largo
-		 * @param index indice del vertice dentro de su vector
-		 * @return glm::vec3 valor de la normal
+		 * @brief Calculates the normal for a vertex
+		 * @param width
+		 * @param height
+		 * @param i Vertex index (height)
+		 * @param index Vertex index (width)
+		 * @return glm::vec3 Normal value
 		 */
 		glm::vec3 calculate_normal(unsigned width, unsigned height, size_t i, size_t index);
 
-		/**
-		 * @brief convierte un vector continuo en un vector de vec3
-		 * 
-		 * @param vector1 
-		 * @return std::vector<glm::vec3> 
-		 */
-		std::vector<glm::vec3> convert_vec1_to_vec3(std::vector<float> & vector1);
-
+		/* Converts a vector into a vec3 */
+		std::vector<glm::vec3> convert_vec1_to_vec3(std::vector<float> & vector1) const;
 	};
 }
 #endif
