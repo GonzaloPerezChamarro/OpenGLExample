@@ -12,7 +12,7 @@
 #ifndef VERTEX_SHADER_HEADER
 #define VERTEX_SHADER_HEADER
 
-#include "Shader.hpp"
+#include "Shader.h"
 
 namespace example
 {

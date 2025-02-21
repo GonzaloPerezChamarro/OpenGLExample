@@ -16,8 +16,8 @@
 #include <memory>
 #include <chrono>
 
-#include "Window.hpp"
-#include "View.hpp"
+#include "Window.h"
+#include "View.h"
 
 namespace example
 {

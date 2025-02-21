@@ -1,7 +1,7 @@
 
 
 
-#include "MeshObj.hpp"
+#include "MeshObj.h"
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <tiny_obj_loader.h>
@@ -15,10 +15,10 @@ namespace example
 {
 	Mesh_Obj::Mesh_Obj(const std::string & file)
 	{
-		//Carga del .obj
+		// Load .obj
 		load_obj(file);
 
-		//Vao y vbos
+		// Vao and vbos
 		vao.reset(new Vertex_Array_Object);
 		vao->bind();
 
@@ -54,15 +54,13 @@ namespace example
 		std::vector<material_t> materials;
 
 		attrib_t attributes;
-
-		
 		if (!LoadObj(&attributes, &shapes, &materials, &log_error, file.c_str(),0, true))
 		{
 			assert(false);
 			return;
 		}
 
-		//Comprobacion de errores
+		// Check some errors
 		if (attributes.vertices.size() == 0) { log_error += std::string("vertex error"); }
 		if (attributes.normals.size() == 0) { log_error += std::string("normals error"); }
 		if (attributes.texcoords.size() == 0) { log_error += std::string("Texcoord error"); }
@@ -80,7 +78,5 @@ namespace example
 		{
 			indices[i] = shapes[0].mesh.indices[i].vertex_index ;
 		}
-
 	}
-
 }

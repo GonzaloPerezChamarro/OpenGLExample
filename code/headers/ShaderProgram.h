@@ -12,9 +12,9 @@
 #ifndef SHADER_PROGRAM_HEADER
 #define SHADER_PROGRAM_HEADER
 
-#include "Shader.hpp"
+#include "Shader.h"
 
-#include "Texture.hpp"
+#include "Texture.h"
 
 #include <glad/glad.h>
 #include <cassert>

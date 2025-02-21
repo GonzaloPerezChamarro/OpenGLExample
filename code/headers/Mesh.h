@@ -14,9 +14,9 @@
 #define MESH_HEADER
 
 
-#include "OpenGL.hpp"
-#include "VertexArrayObject.hpp"
-#include "VertexBufferObject.hpp"
+#include "OpenGL.h"
+#include "VertexArrayObject.h"
+#include "VertexBufferObject.h"
 
 #include <glm.hpp>
 #include <memory>

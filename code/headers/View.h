@@ -12,12 +12,12 @@
 #ifndef VIEW_HEADER
 #define VIEW_HEADER
 
-#include "Camera.hpp"
-#include "Skybox.hpp"
-#include "Model.hpp"
-#include "Cube.hpp"
-#include "Light.hpp"
-#include "Framebuffer.hpp"
+#include "Camera.h"
+#include "Skybox.h"
+#include "Model.h"
+#include "Cube.h"
+#include "Light.h"
+#include "Framebuffer.h"
 
 
 #include <vector>

@@ -1,5 +1,5 @@
-#include "Light.hpp"
-#include "ShaderProgram.hpp"
+#include "Light.h"
+#include "ShaderProgram.h"
 
 void example::Light::render(Camera & camera)
 {

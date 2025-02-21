@@ -1,8 +1,8 @@
 
-#include "Window.hpp"
+#include "Window.h"
 
 #include <cassert>
-#include "OpenGL.hpp"
+#include "OpenGL.h"
 
 
 namespace example
@@ -12,7 +12,7 @@ namespace example
 	{
 		window = new sf::Window(sf::VideoMode(width, height),title, sf::Style::Titlebar | sf::Style::Close, sf::ContextSettings(32));
 		
-		//Inicializacion de OpenGL
+		// Init Open GL
 		if (!init_opengl_extensions()) exit(-1);
 
 		active_VSync(true);
@@ -20,9 +20,12 @@ namespace example
 		clear_color(0.f, 0.f, 0.f, 1.f);
 		glViewport(0, 0, width, height);
 
-		//Mantener el raton en la pantalla
+		// Keep the mouse on the window
 		window->setMouseCursorGrabbed(true);
 		window->setMouseCursorVisible(true);
+
+		// Set the mouse in the middle
+		sf::Mouse::setPosition(window->getPosition() + sf::Vector2i(width * 0.5, height * 0.5));
 	}
 
 	void Window::swap_buffers()

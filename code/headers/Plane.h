@@ -13,8 +13,8 @@
 #define PLANE_HEADER
 
 
-#include "Mesh.hpp"
-#include "OpenGL.hpp"
+#include "Mesh.h"
+#include "OpenGL.h"
 #include <vector>
 
 namespace example

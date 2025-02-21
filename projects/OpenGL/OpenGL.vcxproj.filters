@@ -54,85 +54,85 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\code\headers\ShaderProgram.hpp">
+    <ClInclude Include="..\..\code\headers\ShaderProgram.h">
       <Filter>Archivos de encabezado\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Shader.hpp">
+    <ClInclude Include="..\..\code\headers\Shader.h">
       <Filter>Archivos de encabezado\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Texture.hpp">
+    <ClInclude Include="..\..\code\headers\Texture.h">
       <Filter>Archivos de encabezado\Textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Texture2D.hpp">
+    <ClInclude Include="..\..\code\headers\Texture2D.h">
       <Filter>Archivos de encabezado\Textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Cubemap.hpp">
+    <ClInclude Include="..\..\code\headers\Cubemap.h">
       <Filter>Archivos de encabezado\Textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Color_Rgba8888.hpp">
+    <ClInclude Include="..\..\code\headers\Color_Rgba8888.h">
       <Filter>Archivos de encabezado\Textures</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp">
+    <ClInclude Include="..\..\code\headers\Fragment_Shader.h">
       <Filter>Archivos de encabezado\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\VertexShader.hpp">
+    <ClInclude Include="..\..\code\headers\VertexShader.h">
       <Filter>Archivos de encabezado\Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Kernel.hpp">
+    <ClInclude Include="..\..\code\headers\Kernel.h">
       <Filter>Archivos de encabezado\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\View.hpp">
+    <ClInclude Include="..\..\code\headers\View.h">
       <Filter>Archivos de encabezado\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Transform.hpp">
+    <ClInclude Include="..\..\code\headers\Transform.h">
       <Filter>Archivos de encabezado\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Window.hpp">
+    <ClInclude Include="..\..\code\headers\Window.h">
       <Filter>Archivos de encabezado\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Camera.hpp">
+    <ClInclude Include="..\..\code\headers\Camera.h">
       <Filter>Archivos de encabezado\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Light.hpp">
+    <ClInclude Include="..\..\code\headers\Light.h">
       <Filter>Archivos de encabezado\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\OpenGL.hpp">
+    <ClInclude Include="..\..\code\headers\OpenGL.h">
       <Filter>Archivos de encabezado\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Variant.hpp">
+    <ClInclude Include="..\..\code\headers\Variant.h">
       <Filter>Archivos de encabezado\Utility</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Model.hpp">
+    <ClInclude Include="..\..\code\headers\Model.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Material.hpp">
+    <ClInclude Include="..\..\code\headers\Material.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Mesh.hpp">
+    <ClInclude Include="..\..\code\headers\Mesh.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp">
+    <ClInclude Include="..\..\code\headers\VertexBufferObject.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Skybox.hpp">
+    <ClInclude Include="..\..\code\headers\Skybox.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp">
+    <ClInclude Include="..\..\code\headers\VertexArrayObject.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Cube.hpp">
+    <ClInclude Include="..\..\code\headers\Cube.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Plane.hpp">
+    <ClInclude Include="..\..\code\headers\Plane.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\ElevationMesh.hpp">
+    <ClInclude Include="..\..\code\headers\ElevationMesh.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\MeshObj.hpp">
+    <ClInclude Include="..\..\code\headers\MeshObj.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\Framebuffer.hpp">
+    <ClInclude Include="..\..\code\headers\Framebuffer.h">
       <Filter>Archivos de encabezado\Render</Filter>
     </ClInclude>
   </ItemGroup>

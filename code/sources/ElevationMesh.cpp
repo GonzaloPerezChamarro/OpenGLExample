@@ -1,8 +1,8 @@
 
 
-#include "ElevationMesh.hpp"
+#include "ElevationMesh.h"
 
-#include "Color_Rgba8888.hpp"
+#include "Color_Rgba8888.h"
 #include <assert.h>
 
 #include <iostream>
@@ -130,8 +130,6 @@ namespace example
 		indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], indices.size() * sizeof(GLuint), Vertex_Buffer_Object::Target::EAB));
 
 		vao->unbind();
-
-
 	}
 
 	void Elevation_Mesh::render()
@@ -152,7 +150,7 @@ namespace example
 		size_t start = i * height;
 		size_t end = i * height + (width - 1);
 
-		//Calculo de excepciones
+		// Calculate exceptions
 		//1
 		int temp = index - width;
 		if (temp > 0)
@@ -230,17 +228,14 @@ namespace example
 			products.push_back(glm::cross(begin, end));
 		}
 
-		//Calcular medias entre puntos
-
+		// Calculate the average
 		for (size_t k = 0; k < products.size(); ++k)
 		{
 			result += products[k];
 		}
-
 		result /= products.size();
 
 		return glm::normalize(result);
-
 	}
 
 	std::vector<glm::vec3> Elevation_Mesh::convert_vec1_to_vec3(std::vector<float>& vector1) const

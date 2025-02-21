@@ -12,7 +12,7 @@
 #ifndef FRAGMENT_SHADER_HEADER
 #define FRAGMENT_SHADER_HEADER
 
-#include "Shader.hpp"
+#include "Shader.h"
 
 namespace example
 {

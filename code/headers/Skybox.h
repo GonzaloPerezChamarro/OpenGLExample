@@ -12,11 +12,11 @@
 #ifndef SKYBOX_HEADER
 #define SKYBOX_HEADER
 
-#include "Camera.hpp"
-#include "Cubemap.hpp"
-#include "ShaderProgram.hpp"
-#include "VertexArrayObject.hpp"
-#include "VertexBufferObject.hpp"
+#include "Camera.h"
+#include "Cubemap.h"
+#include "ShaderProgram.h"
+#include "VertexArrayObject.h"
+#include "VertexBufferObject.h"
 
 namespace example
 {

@@ -13,8 +13,8 @@
 #define VERTEX_ARRAY_OBJECT_HEADER
 
 
-#include "VertexBufferObject.hpp"
-#include "OpenGL.hpp"
+#include "VertexBufferObject.h"
+#include "OpenGL.h"
 
 #include <list>
 #include <memory>

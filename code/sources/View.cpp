@@ -1,14 +1,14 @@
 
-#include "View.hpp"
+#include "View.h"
 #include <SFML/OpenGL.hpp>
 
-#include "Cube.hpp"
-#include "Plane.hpp"
-#include "ElevationMesh.hpp"
-#include "ShaderProgram.hpp"
-#include "Material.hpp"
-#include "Framebuffer.hpp"
-#include "MeshObj.hpp"
+#include "Cube.h"
+#include "Plane.h"
+#include "ElevationMesh.h"
+#include "ShaderProgram.h"
+#include "Material.h"
+#include "Framebuffer.h"
+#include "MeshObj.h"
 
 
 namespace example
@@ -18,11 +18,11 @@ namespace example
 		skybox(new Skybox("../../assets/skybox/")),
 		light(new Light(glm::vec3(5.f,2.f,12.f), glm::vec3(1.f,1.f,1.f)))
 	{
-		glEnable(GL_DEPTH_TEST);//z-buffer
-		glEnable(GL_CULL_FACE);// BackFace Culling
+		glEnable(GL_DEPTH_TEST); //z-buffer
+		glEnable(GL_CULL_FACE);  // BackFace Culling
 		glCullFace(GL_BACK);
 		
-		//Creacion de los shaders que se van a utilizar
+		// Creating shaders for the example
 		Shader_Program::create_shader("cubeShader", "../../assets/shaders/vertex/cubeVertexShader", "../../assets/shaders/fragment/cubeFragmentShader");
 		Shader_Program::create_shader("trShader", "../../assets/shaders/vertex/transparencyVertex", "../../assets/shaders/fragment/transparencyFragment");
 		Shader_Program::create_shader("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment");
@@ -30,29 +30,28 @@ namespace example
 
 		projection_matrix = glm::perspective(glm::radians(75.f), (float)width / height, 0.3f, 1000.f);
 
-		//Postprocesado
+		// Postprocess
 		framebuffer = new Framebuffer(width, height, "postprocess");
 		framebuffer->build();
 
 		create_scene();
-
 	}
 
 	void View::update(float deltaTime)
 	{
-		//Movimiento de la camara
+		// Camera movement
 		camera->move(camera->get_camera_front() * camera_direction.y, 10.f * deltaTime);
 		camera->move(glm::normalize(glm::cross(camera->get_camera_front(), camera->get_camera_up())) * camera_direction.x, 10.f * deltaTime);
 
-		//Movimiento de los elementos de escena
+		// Movement of scene objects
 		models_map["texturedCube"]->get_transform()->rotate(glm::vec3(0, 15 * deltaTime, 0));
 		models_map["childCube"]->get_transform()->rotate(glm::vec3(0, 0, 20 * deltaTime));
 		models_map["childCube3"]->get_transform()->rotate(glm::vec3(10 * deltaTime, 0,0));
 
-		//Actualizado de elementos
+		// Update scene elements
 		light->transform.update();
 
-		for (auto & model : models_map)
+		for (auto& model : models_map)
 		{
 			model.second->update(deltaTime);
 		}
@@ -63,11 +62,11 @@ namespace example
 		if (postprocess_active)
 			framebuffer->bind();
 
-		//Limpieza de pantalla
+		// Clear the screen
 		glClearColor(0, 1, 0, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
-		//Renderizado de skybox y escena
+		// Render skybox and scene
 		skybox->render(*camera);
 		light->render(*camera);
 
@@ -76,7 +75,7 @@ namespace example
 			model.second->render(camera);
 		}
 
-		//Renderizado de modelos con transparencia
+		// Render models with transparence
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_ONE, GL_ONE);
 		for (auto & model : tr_models_map)
@@ -92,7 +91,6 @@ namespace example
 
 	void View::create_scene()
 	{
-
 		std::shared_ptr<Cube> cube(new Cube);
 		std::shared_ptr<Model> new_model(new Model(glm::vec3(5.f, 10.f, -15.f), glm::vec3(0, 0, 0), glm::vec3(0.5f, 0.5f, 0.5f)));
 		new_model->add_piece(cube, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(1, 1, 1), "../../assets/textures/wood-crate-1.tga"));
@@ -125,6 +123,11 @@ namespace example
 		obj_model->add_piece(obj, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(1, 1, 1), "../../assets/textures/Cube_diff.tga"));
 		models_map["cubeObj"] = obj_model;
 
+		std::shared_ptr<Cube> transparent_cube(new Cube);
+		std::shared_ptr<Model> tr_cube(new Model(glm::vec3(5.f, 5.f, -15.f), glm::vec3(0, 0, 0), glm::vec3(1.f, 1.f, 1.f)));
+		tr_cube->add_piece(transparent_cube, Material::get("trShader", "../../assets/shaders/vertex/transparencyVertex", "../../assets/shaders/fragment/transparencyFragment", glm::vec3(0, 0, 1)));
+		tr_models_map["tr_cube"] = tr_cube;
+
 		//std::shared_ptr<Mesh_Obj> tie(new Mesh_Obj("../../assets/models/tie-eye.obj"));
 		//std::shared_ptr<Model> tie_model(new Model(glm::vec3(-40.f, 10.f, -10.f), glm::vec3(0, 0, 0), glm::vec3(0.01f, 0.01f, 0.01f)));
 		//tie_model->add_piece(tie, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
@@ -134,25 +137,17 @@ namespace example
 		//std::shared_ptr<Mesh_Obj> tie_wr(new Mesh_Obj("../../assets/models/tie-win-r.obj"));
 		//tie_model->add_piece(tie_wr, Material::get("lightShader", "../../assets/shaders/vertex/pointLightVertex", "../../assets/shaders/fragment/pointLightFragment", glm::vec3(0.4f, 0.4f, 0.4f)));
 		//models_map["tie-eye"] = tie_model;
-
-
-		std::shared_ptr<Cube> transparent_cube(new Cube);
-		std::shared_ptr<Model> tr_cube(new Model(glm::vec3(5.f, 5.f, -15.f), glm::vec3(0, 0, 0), glm::vec3(1.f, 1.f, 1.f)));
-		tr_cube->add_piece(transparent_cube, Material::get("trShader", "../../assets/shaders/vertex/transparencyVertex", "../../assets/shaders/fragment/transparencyFragment", glm::vec3(0, 0, 1)));
-		tr_models_map["tr_cube"] = tr_cube;
-
 	}
 
 	void View::handler(sf::Event & e)
 	{
-		//Movimiento de la camara
 		switch (e.type)
 		{
 		case sf::Event::MouseMoved:
-
+		{
 			camera->rotate(e.mouseMove.x, e.mouseMove.y);
 			break;
-
+		}
 		case sf::Event::KeyPressed:
 		{
 			switch (e.key.code)
@@ -172,12 +167,10 @@ namespace example
 			case sf::Keyboard::P:
 				postprocess_active = !postprocess_active;
 			}
+			break;
 		}
-		break;
-
 		case sf::Event::KeyReleased:
 		{
-
 			switch (e.key.code)
 			{
 			case sf::Keyboard::W:
@@ -193,11 +186,8 @@ namespace example
 				camera_direction.x = 0;
 				break;
 			}
+			break;
 		}
-
-		break;
 		}
 	}
-
-
 }

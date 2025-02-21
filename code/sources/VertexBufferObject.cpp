@@ -1,5 +1,5 @@
 
-#include "VertexBufferObject.hpp"
+#include "VertexBufferObject.h"
 
 namespace example
 {
@@ -9,6 +9,6 @@ namespace example
 		bind();
 		glBufferData(target, size, data, GL_STATIC_DRAW);
 		error = glGetError();
-//		unbind();
+		// unbind();
 	}
 }

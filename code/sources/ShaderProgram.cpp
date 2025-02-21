@@ -1,7 +1,7 @@
 
-#include "ShaderProgram.hpp"
-#include "VertexShader.hpp"
-#include "Fragment_Shader.hpp"
+#include "ShaderProgram.h"
+#include "VertexShader.h"
+#include "Fragment_Shader.h"
 
 namespace example
 {

@@ -1,9 +1,9 @@
 
 
 #include "glad/glad.h"
-#include "Skybox.hpp"
-#include "VertexShader.hpp"
-#include "Fragment_Shader.hpp"
+#include "Skybox.h"
+#include "VertexShader.h"
+#include "Fragment_Shader.h"
 #include "glm.hpp"
 #include <assert.h>
 
@@ -52,7 +52,7 @@ namespace example
 			+1.0f, -1.0f, +1.0f,
 		};
 
-		//Vertex shader
+		// Vertex shader
 		const std::string vertex_code =
 			"#version 330 core\n"
 
@@ -70,7 +70,7 @@ namespace example
 			"	gl_Position = projection_matrix * model_view_matrix * vec4(vertex, 1.0);"
 			"}";
 
-		//Fragment shader
+		// Fragment shader
 		const std::string fragment_code =
 			"#version 330 core\n"
 			""
@@ -89,13 +89,13 @@ namespace example
 	Skybox::Skybox(const std::string & path)
 		:cubemap(path), shader(new Shader_Program)
 	{
-		//Creacion del shader
+		// Creation of the sahder
 		shader->attach(Vertex_Shader(Shader::Source_Code::from_string(vertex_code)));
 		shader->attach(Fragment_Shader(Shader::Source_Code::from_string(fragment_code)));
 
 		shader->link();
 
-		//VAO y vbo
+		//VAO and vbo
 		vao.reset(new Vertex_Array_Object);
 
 		vao->bind();
@@ -103,8 +103,6 @@ namespace example
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, vbo->get_element_type(), GL_FALSE, 0, 0);
 		vao->unbind();
-
-
 	}
 
 	void Skybox::render(const Camera & camera)

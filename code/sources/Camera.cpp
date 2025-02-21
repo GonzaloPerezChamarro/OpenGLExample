@@ -1,12 +1,12 @@
 
 
-#include "Camera.hpp"
+#include "Camera.h"
 
 namespace example
 {
 	void Camera::rotate(float mouse_x, float mouse_y)
 	{
-		//Solucion posicion del raton inicial
+		// FIx initial mouse location
 		if (first_time)
 		{
 			first_time = false;
@@ -37,6 +37,7 @@ namespace example
 
 		front = normalize(front);
 	}
+
 	void Camera::move(vec3 dir, float speed)
 	{
 		position += dir * speed;

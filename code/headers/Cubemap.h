@@ -12,7 +12,7 @@
 #ifndef CUBEMAP_HEADER
 #define CUBEMAP_HEADER
 
-#include "Texture.hpp"
+#include "Texture.h"
 
 namespace example
 {

@@ -12,7 +12,7 @@
 #ifndef VERTEX_BUFFER_OBJECT_HEADER
 #define VERTEX_BUFFER_OBJECT_HEADER
 
-#include "OpenGL.hpp"
+#include "OpenGL.h"
 
 namespace example
 {

@@ -1,6 +1,6 @@
 
 
-#include "Cubemap.hpp"
+#include "Cubemap.h"
 
 extern "C"
 {
@@ -34,7 +34,7 @@ namespace example
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 
-		//front, left, back, right, top, bottom
+		// front, left, back, right, top, bottom
 		static const GLenum texture_target[] =
 		{
 			GL_TEXTURE_CUBE_MAP_NEGATIVE_Z,
@@ -86,9 +86,9 @@ namespace example
 			tga_convert_depth(&image, texture->bits_per_color());
 			tga_swap_red_blue(&image);
 
-			Texture::Color * pixels_begin = reinterpret_cast<Texture::Color*>(image.image_data);
-			Texture::Color * pixels_end = pixels_begin + image.width * image.height;
-			Texture::Color * buffer = texture->colors();
+			Texture::Color* pixels_begin = reinterpret_cast<Texture::Color*>(image.image_data);
+			Texture::Color* pixels_end = pixels_begin + image.width * image.height;
+			Texture::Color* buffer = texture->colors();
 
 			while (pixels_begin < pixels_end)
 			{
@@ -97,7 +97,6 @@ namespace example
 
 			tga_free_buffers(&image);
 		}
-
 
 		return texture;
 	}

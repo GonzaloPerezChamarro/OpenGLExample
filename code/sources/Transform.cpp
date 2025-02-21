@@ -1,6 +1,6 @@
 
 
-#include "Transform.hpp"
+#include "Transform.h"
 
 namespace example
 {
@@ -8,7 +8,6 @@ namespace example
 		:position(position), rotation(euler_angles), scale(scale), updated(false),
 		transform(glm::mat4(1.f)), local_transform(glm::mat4(1.f))
 	{
-		//Inicializacion
 		local_transform = glm::translate(glm::mat4(), position);
 		local_transform = glm::scale(local_transform, scale);
 		local_transform = glm::rotate(local_transform, rotation.x, glm::vec3(1.f, 0.f, 0.f));
@@ -17,9 +16,9 @@ namespace example
 
 	}
 
-	const glm::mat4 & Transform::get_matrix()
+	const glm::mat4 & Transform::get_matrix() const
 	{
-		//Sistema de grafo de escena
+		// Scene graph system
 		if (updated) return transform;
 
 		if (parent != nullptr)
@@ -36,17 +35,17 @@ namespace example
 		return transform;
 	}
 
-	glm::vec3 Transform::get_position()
+	glm::vec3 Transform::get_position() const
 	{
 		return glm::vec3(get_matrix()[3].x, get_matrix()[3].y, get_matrix()[3].z);
 
 	}
-	glm::vec3 Transform::get_rotation()
+	glm::vec3 Transform::get_rotation() const
 	{
 		return glm::vec3(get_matrix()[0].x, get_matrix()[1].y, get_matrix()[2].z);
 
 	}
-	glm::vec3 Transform::get_scale()
+	glm::vec3 Transform::get_scale() const
 	{
 		return glm::vec3(get_matrix()[0].x, get_matrix()[1].y, get_matrix()[2].z);
 
@@ -63,7 +62,6 @@ namespace example
 		local_transform = glm::rotate(local_transform, euler_angles.x, glm::vec3(1.f, 0.f, 0.f));
 		local_transform = glm::rotate(local_transform, euler_angles.y, glm::vec3(0.f, 1.f, 0.f));
 		local_transform = glm::rotate(local_transform, euler_angles.z, glm::vec3(0.f, 0.f, 1.f));
-
 	}
 
 	void Transform::to_scale(glm::vec3 scale)

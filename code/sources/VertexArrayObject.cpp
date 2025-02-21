@@ -1,5 +1,5 @@
 
-#include "VertexArrayObject.hpp"
+#include "VertexArrayObject.h"
 
 #include <assert.h>
 
@@ -46,6 +46,5 @@ namespace example
 		error = glGetError();
 
 		assert(error == GL_NO_ERROR);
-	
 	}
 }

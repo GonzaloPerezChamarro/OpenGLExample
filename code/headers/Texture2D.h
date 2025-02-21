@@ -13,8 +13,8 @@
 #define TEXTURE_2D_HEADER
 
 
-#include "Texture.hpp"
-#include "OpenGL.hpp"
+#include "Texture.h"
+#include "OpenGL.h"
 
 #include <map>
 #include <string>

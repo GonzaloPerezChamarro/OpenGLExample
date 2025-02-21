@@ -1,6 +1,6 @@
 
 
-#include "Framebuffer.hpp"
+#include "Framebuffer.h"
 #include <assert.h>
 #include <string>
 
@@ -14,11 +14,11 @@ namespace example
 
 	void Framebuffer::build()
 	{
-		//Generacion de framebuffer
+		// Generate the framebuffer
 		glGenFramebuffers(1, &id);
 		bind();
 
-		//Textura
+		// Texture
 		glGenTextures(1, &out_texture_id);
 		glBindTexture(GL_TEXTURE_2D, out_texture_id);
 
@@ -49,8 +49,7 @@ namespace example
 
 		unbind();
 
-		//Quad de pantalla en el que aplicar el postprocesado
-		//y sus coordenadas
+		// Quad screen for applying the postprocess and their coord
 		static const GLfloat triangle_positions[] =
 		{
 			+1.0f, -1.0f, 0.0f,
@@ -59,7 +58,6 @@ namespace example
 			-1.0f, +1.0f, 0.0f,
 			-1.0f, -1.0f, 0.0f,
 			+1.0f, -1.0f, 0.0f
-
 		};
 		
 		static const GLfloat triangle_texture_uv[] =
@@ -82,9 +80,6 @@ namespace example
 		glGenBuffers(1, &triangle_vbo1);
 		glBindBuffer(GL_ARRAY_BUFFER, triangle_vbo1);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(triangle_texture_uv), triangle_texture_uv, GL_STATIC_DRAW);
-
-		
-
 	}
 
 	void Framebuffer::render()
@@ -92,9 +87,9 @@ namespace example
 		glBindVertexArray(0);
 
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		//Uso del shader de postprocesado
+		// Use postprocess shader
 		shader_program->use();
-		//Textura
+		// Texture
 		glBindTexture(GL_TEXTURE_2D, out_texture_id);
 
 		glEnableVertexAttribArray(0);
@@ -105,8 +100,7 @@ namespace example
 		glBindBuffer(GL_ARRAY_BUFFER, triangle_vbo1);
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-		//Renderizado
+		//Render
 		glDrawArrays(GL_TRIANGLES, 0, 6);
-
 	}
 }

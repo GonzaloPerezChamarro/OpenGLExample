@@ -24,14 +24,13 @@ namespace example
 	{
 	private:
 		/* World transform matrix */
-		mat4 transform;
+		mutable mat4 transform;
 
 		/* Local transform matrix */
 		mat4 local_transform;
 
 		/* FLag that indicates if the transform is updated */
-		bool updated;
-
+		mutable bool updated;
 		
 		glm::vec3 position;
 		glm::vec3 rotation;
@@ -48,11 +47,11 @@ namespace example
 		Transform(glm::vec3 position, glm::vec3 euler_angles, glm::vec3 scale);
 
 		/* Returns the matrix transform (world) */
-		const glm::mat4 & get_matrix();
+		const glm::mat4 & get_matrix() const;
 
-		glm::vec3 get_position();
-		glm::vec3 get_rotation();
-		glm::vec3 get_scale();
+		glm::vec3 get_position() const;
+		glm::vec3 get_rotation() const;
+		glm::vec3 get_scale() const;
 
 		/**
 		 * @brief Traslada el transform el desplazamiento recibido

@@ -13,8 +13,8 @@
 #define LIGHT_HEADER
 
 
-#include "Transform.hpp"
-#include "Camera.hpp"
+#include "Transform.h"
+#include "Camera.h"
 
 namespace example
 {

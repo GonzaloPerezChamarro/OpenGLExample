@@ -13,9 +13,9 @@
 #ifndef MATERIAL_HEADER
 #define MATERIAL_HEADER
 
-#include "Texture2D.hpp"
-#include "ShaderProgram.hpp"
-#include "Variant.hpp"
+#include "Texture2D.h"
+#include "ShaderProgram.h"
+#include "Variant.h"
 #include <map>
 #include <string>
 

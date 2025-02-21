@@ -14,7 +14,7 @@
 #ifndef ELEVATION_MESH_HEADER
 #define ELEVATION_MESH_HEADER
 
-#include "Mesh.hpp"
+#include "Mesh.h"
 
 #include <vector>
 #include <string>

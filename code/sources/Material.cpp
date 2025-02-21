@@ -1,6 +1,6 @@
 
 
-#include "Material.hpp"
+#include "Material.h"
 #include <glm.hpp>
 
 
@@ -11,15 +11,16 @@ namespace example
 
 	std::shared_ptr<Material> Material::get(const std::string & shader_name, const std::string & vertex_path, const std::string & fragment_path, const glm::vec3 & c, const std::string & texture_path, const std::map<std::string, Variant>& variants )
 	{
-		//Nombre del material
+		// Name
 		std::string id_temp = (vertex_path + fragment_path + texture_path);
-		//Comprobacion de existencia del material
+
+		// Checking
 		if (factory.count(id_temp) > 0 && factory[id_temp]->get_color() == c )
 		{
 			return factory[id_temp];
 		}
 
-		//Creacion del nuevo material
+		// Creation of new one 
 		std::shared_ptr<Material> material(new Material(shader_name, vertex_path, fragment_path, texture_path, variants));
 		material->set_color(c);
 
@@ -35,13 +36,11 @@ namespace example
 		:texture(nullptr)
 	{
 		id = vertex_path + fragment_path + texture_path;
-		//Obtencion de la textura
 		texture = Texture2D::get_texture(texture_path);
 
-		//shader
 		shader = Shader_Program::create_shader(shader_name, vertex_path, fragment_path);
 
-		for (auto & value : variants)
+		for (auto& value : variants)
 		{
 			set_value(value.first, value.second);
 		}

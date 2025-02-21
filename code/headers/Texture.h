@@ -12,9 +12,9 @@
 #ifndef TEXTURE_HEADER
 #define TEXTURE_HEADER
 
-#include "OpenGL.hpp"
+#include "OpenGL.h"
 #include "SFML/Graphics.hpp"
-#include "Color_Rgba8888.hpp"
+#include "Color_Rgba8888.h"
 
 #include <string>
 #include <vector>

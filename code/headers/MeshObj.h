@@ -14,7 +14,7 @@
 #define MESH_OBJ_HEADER
 
 
-#include "Mesh.hpp"
+#include "Mesh.h"
 
 #include <string>
 #include <vector>

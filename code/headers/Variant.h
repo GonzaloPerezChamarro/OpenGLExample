@@ -9,7 +9,7 @@
  * 
  */
 
-#include "OpenGL.hpp"
+#include "OpenGL.h"
 
 
 namespace example

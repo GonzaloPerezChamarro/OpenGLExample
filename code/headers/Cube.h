@@ -12,7 +12,7 @@
 #ifndef CUBE_HEADER
 #define CUBE_HEADER
 
-#include "Mesh.hpp"
+#include "Mesh.h"
 
 
 namespace example

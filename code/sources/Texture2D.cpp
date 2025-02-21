@@ -1,6 +1,6 @@
 
 
-#include "Texture2D.hpp"
+#include "Texture2D.h"
 
 
 extern "C" 
@@ -14,10 +14,11 @@ namespace example
 
 	std::shared_ptr<Texture> Texture2D::get_texture(const std::string & path, Parameter wrap, Parameter filter)
 	{
-		//Comprobacion de existencia de la textura /Factoria
+		// Checking Factory
 		if (factory.count(path) > 0)
 			return factory[path];
 
+		// Creating a new one
 		std::shared_ptr<Texture> texture(new Texture2D(path, wrap, filter));
 
 		if (!texture->is_ready())
@@ -64,7 +65,6 @@ namespace example
 			tga_free_buffers(&image);
 
 		}
-		
 
 		return texture;
 	}

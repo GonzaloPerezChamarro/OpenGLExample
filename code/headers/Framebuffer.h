@@ -12,9 +12,9 @@
 #ifndef FRAMEBUFFER_HEADER
 #define FRAMEBUFFER_HEADER
 
-#include "OpenGL.hpp"
+#include "OpenGL.h"
 
-#include "ShaderProgram.hpp"
+#include "ShaderProgram.h"
 
 namespace example
 {

@@ -1,5 +1,5 @@
 
-#include "Plane.hpp"
+#include "Plane.h"
 
 #include <iostream>
 #include <vector>
@@ -16,7 +16,7 @@ namespace example
 		texcoord.resize(dim *2);
 		indices.resize(2 * (width-1) * (height-1) * 3);
 
-		//Vertex y normals
+		// Vertices and normals
 		size_t index = 0;
 		for (size_t i = 0; i < height; ++i)
 		{
@@ -32,7 +32,8 @@ namespace example
 
 			}
 		}
-		//Texcoord
+
+		// Texcoord
 		index = 0;
 		for (size_t i = 0; i < height; ++i)
 		{
@@ -43,7 +44,7 @@ namespace example
 			}
 		}
 
-		//Indices
+		// Indices
 		index = 0;
 		for (size_t i = 0, k = 0; i < height - 1; ++i)
 		{
@@ -60,7 +61,7 @@ namespace example
 			++k;
 		}
 
-		//VAO y vbos
+		//VAO and vbos
 		vao.reset(new Vertex_Array_Object);
 		vao->bind();
 
@@ -79,7 +80,6 @@ namespace example
 		indices_buffer.reset(new Vertex_Buffer_Object(&indices[0], indices.size() * sizeof(GLuint), Vertex_Buffer_Object::Target::EAB));
 
 		vao->unbind();
-	
 	}
 
 	void Plane::render()

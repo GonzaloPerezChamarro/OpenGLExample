@@ -1,7 +1,7 @@
 
 
 
-#include "Kernel.hpp"
+#include "Kernel.h"
 #include <iostream>
 
 using namespace std;
@@ -24,7 +24,7 @@ namespace example
 		auto now = timer.getElapsedTime();
 		auto deltaTime = now - last_time;
 
-		//Flujo de juego
+		// Gameflow
 		do 
 		{
 			now = timer.getElapsedTime();
@@ -38,10 +38,8 @@ namespace example
 			last_time = now;
 
 			window.swap_buffers();
-
-
-		} while (running);
-
+		} 
+		while (running);
 	}
 
 	void Kernel::render()
@@ -51,7 +49,6 @@ namespace example
 
 	void Kernel::handler()
 	{
-
 		sf::Event e;
 		while (window.poll_events(e))
 		{
@@ -66,16 +63,12 @@ namespace example
 			case sf::Event::KeyPressed:
 				switch (e.key.code)
 				{
-
 				case sf::Keyboard::Escape:
 					running = false;
 					break;
 				}
-
+				break;
 			}
 		}
-
-
 	}
-
 }

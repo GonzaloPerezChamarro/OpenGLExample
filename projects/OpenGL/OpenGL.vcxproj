@@ -148,33 +148,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\code\headers\Camera.hpp" />
-    <ClInclude Include="..\..\code\headers\Color_Rgba8888.hpp" />
-    <ClInclude Include="..\..\code\headers\Cube.hpp" />
-    <ClInclude Include="..\..\code\headers\Cubemap.hpp" />
-    <ClInclude Include="..\..\code\headers\ElevationMesh.hpp" />
-    <ClInclude Include="..\..\code\headers\Fragment_Shader.hpp" />
-    <ClInclude Include="..\..\code\headers\Framebuffer.hpp" />
-    <ClInclude Include="..\..\code\headers\Kernel.hpp" />
-    <ClInclude Include="..\..\code\headers\Light.hpp" />
-    <ClInclude Include="..\..\code\headers\Material.hpp" />
-    <ClInclude Include="..\..\code\headers\Mesh.hpp" />
-    <ClInclude Include="..\..\code\headers\MeshObj.hpp" />
-    <ClInclude Include="..\..\code\headers\Model.hpp" />
-    <ClInclude Include="..\..\code\headers\OpenGL.hpp" />
-    <ClInclude Include="..\..\code\headers\Plane.hpp" />
-    <ClInclude Include="..\..\code\headers\Shader.hpp" />
-    <ClInclude Include="..\..\code\headers\ShaderProgram.hpp" />
-    <ClInclude Include="..\..\code\headers\Skybox.hpp" />
-    <ClInclude Include="..\..\code\headers\Texture.hpp" />
-    <ClInclude Include="..\..\code\headers\Texture2D.hpp" />
-    <ClInclude Include="..\..\code\headers\Transform.hpp" />
-    <ClInclude Include="..\..\code\headers\Variant.hpp" />
-    <ClInclude Include="..\..\code\headers\VertexArrayObject.hpp" />
-    <ClInclude Include="..\..\code\headers\VertexBufferObject.hpp" />
-    <ClInclude Include="..\..\code\headers\VertexShader.hpp" />
-    <ClInclude Include="..\..\code\headers\View.hpp" />
-    <ClInclude Include="..\..\code\headers\Window.hpp" />
+    <ClInclude Include="..\..\code\headers\Camera.h" />
+    <ClInclude Include="..\..\code\headers\Color_Rgba8888.h" />
+    <ClInclude Include="..\..\code\headers\Cube.h" />
+    <ClInclude Include="..\..\code\headers\Cubemap.h" />
+    <ClInclude Include="..\..\code\headers\ElevationMesh.h" />
+    <ClInclude Include="..\..\code\headers\Fragment_Shader.h" />
+    <ClInclude Include="..\..\code\headers\Framebuffer.h" />
+    <ClInclude Include="..\..\code\headers\Kernel.h" />
+    <ClInclude Include="..\..\code\headers\Light.h" />
+    <ClInclude Include="..\..\code\headers\Material.h" />
+    <ClInclude Include="..\..\code\headers\Mesh.h" />
+    <ClInclude Include="..\..\code\headers\MeshObj.h" />
+    <ClInclude Include="..\..\code\headers\Model.h" />
+    <ClInclude Include="..\..\code\headers\OpenGL.h" />
+    <ClInclude Include="..\..\code\headers\Plane.h" />
+    <ClInclude Include="..\..\code\headers\Shader.h" />
+    <ClInclude Include="..\..\code\headers\ShaderProgram.h" />
+    <ClInclude Include="..\..\code\headers\Skybox.h" />
+    <ClInclude Include="..\..\code\headers\Texture.h" />
+    <ClInclude Include="..\..\code\headers\Texture2D.h" />
+    <ClInclude Include="..\..\code\headers\Transform.h" />
+    <ClInclude Include="..\..\code\headers\Variant.h" />
+    <ClInclude Include="..\..\code\headers\VertexArrayObject.h" />
+    <ClInclude Include="..\..\code\headers\VertexBufferObject.h" />
+    <ClInclude Include="..\..\code\headers\VertexShader.h" />
+    <ClInclude Include="..\..\code\headers\View.h" />
+    <ClInclude Include="..\..\code\headers\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\code\headers\Light.cpp" />

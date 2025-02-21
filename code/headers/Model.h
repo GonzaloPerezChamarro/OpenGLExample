@@ -12,10 +12,10 @@
 #ifndef MODEL_HEADER
 #define MODEL_HEADER
 
-#include "Mesh.hpp"
-#include "Material.hpp"
-#include "Camera.hpp"
-#include "Transform.hpp"
+#include "Mesh.h"
+#include "Material.h"
+#include "Camera.h"
+#include "Transform.h"
 
 #include <vector>
 

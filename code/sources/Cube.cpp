@@ -1,6 +1,6 @@
 
 
-#include "Cube.hpp"
+#include "Cube.h"
 
 
 namespace example
@@ -43,6 +43,7 @@ namespace example
 		  -1.f, -1.f, -1.f,
 		   1.f, -1.f, -1.f
 	};
+
 	const GLfloat Cube::texcoord[] =
 	{
 		// front
@@ -81,6 +82,7 @@ namespace example
 		1.0f, 1.0f,
 		0.0f, 1.0f,
 	};
+
 	const GLfloat Cube::normals[] = 
 	{
 		// front
@@ -119,6 +121,7 @@ namespace example
 		0.0f, -1.0f, 0.0f,
 		0.0f, -1.0f, 0.0f,
 	};
+
 	const GLubyte Cube::indices[] =
 	{
 		// front
@@ -146,7 +149,6 @@ namespace example
 		21, 22, 23
 	};
 
-
 	Cube::Cube()
 	{
 		vao.reset(new Vertex_Array_Object);
@@ -170,6 +172,7 @@ namespace example
 		vao->unbind();
 
 	}
+
 	void Cube::render()
 	{
 		vao->bind();
